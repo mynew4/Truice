@@ -3554,16 +3554,18 @@ end;
 procedure TMainForm.SetDefaultFields(Where: TType);
 var
   i: integer;
-  s, tn: string;
+  s, tn, columnname : string;
   Ctrl : TComponent;
 begin
   s := '';
   tn := '';
+  columnname := 'entry';
   case Where of
     ttQuest:
     begin
       s := 'edqt';
       tn := 'quest_template';
+      columnname := 'Id';
     end;
 
     ttNPC:
@@ -3586,10 +3588,10 @@ begin
   end;
   if tn<>'' then
   begin
-    MyQuery.SQL.Text := 'replace into '+tn+' (entry) values (987654)';
+    MyQuery.SQL.Text := 'replace into '+tn+' ('+columnname+') values (987654)';
     MyQuery.ExecSQL;
     try
-      MyQuery.SQL.Text := 'select * from '+tn+' where entry = 987654';
+      MyQuery.SQL.Text := 'select * from '+tn+' where '+columnname+' = 987654';
       MyQuery.Open;
       for I := 0 to MyQuery.FieldCount - 1 do
       begin
@@ -3599,7 +3601,7 @@ begin
       end;
       MyQuery.Close;
     finally
-      MyQuery.SQL.Text := 'delete from '+tn+' where entry = 987654';
+      MyQuery.SQL.Text := 'delete from '+tn+' where '+columnname+' = 987654';
       MyQuery.ExecSQL;
     end;
   end;
