@@ -26,7 +26,7 @@ object MainForm: TMainForm
     Top = 0
     Width = 900
     Height = 701
-    ActivePage = tsQuest
+    ActivePage = tsCreature
     Align = alClient
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -4523,7 +4523,7 @@ object MainForm: TMainForm
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
-              TabOrder = 12
+              TabOrder = 10
               OnButtonClick = GetEmote
             end
             object edqtOfferRewardEmote2: TJvComboEdit
@@ -4560,7 +4560,7 @@ object MainForm: TMainForm
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
-              TabOrder = 13
+              TabOrder = 11
               OnButtonClick = GetEmote
             end
             object edqtOfferRewardEmote3: TJvComboEdit
@@ -4597,7 +4597,7 @@ object MainForm: TMainForm
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
-              TabOrder = 14
+              TabOrder = 12
               OnButtonClick = GetEmote
             end
             object edqtOfferRewardEmote4: TJvComboEdit
@@ -4634,7 +4634,7 @@ object MainForm: TMainForm
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
-              TabOrder = 15
+              TabOrder = 13
               OnButtonClick = GetEmote
             end
             object edqtPointMapId: TJvComboEdit
@@ -4684,7 +4684,7 @@ object MainForm: TMainForm
               EditLabel.Height = 13
               EditLabel.Hint = 'DetailsEmoteDelay1'
               EditLabel.Caption = 'edqtDetailsEmoteDelay1'
-              TabOrder = 16
+              TabOrder = 14
             end
             object edqtDetailsEmoteDelay2: TLabeledEdit
               Left = 77
@@ -4696,7 +4696,7 @@ object MainForm: TMainForm
               EditLabel.Height = 13
               EditLabel.Hint = 'DetailsEmoteDelay2'
               EditLabel.Caption = 'edqtDetailsEmoteDelay2'
-              TabOrder = 17
+              TabOrder = 15
             end
             object edqtDetailsEmoteDelay3: TLabeledEdit
               Left = 77
@@ -4708,7 +4708,7 @@ object MainForm: TMainForm
               EditLabel.Height = 13
               EditLabel.Hint = 'DetailsEmoteDelay3'
               EditLabel.Caption = 'edqtDetailsEmoteDelay1'
-              TabOrder = 18
+              TabOrder = 16
             end
             object edqtDetailsEmoteDelay4: TLabeledEdit
               Left = 77
@@ -4720,7 +4720,7 @@ object MainForm: TMainForm
               EditLabel.Height = 13
               EditLabel.Hint = 'DetailsEmoteDelay4'
               EditLabel.Caption = 'edqtDetailsEmoteDelay1'
-              TabOrder = 19
+              TabOrder = 17
             end
             object edqtOfferRewardEmoteDelay1: TLabeledEdit
               Left = 280
@@ -4732,7 +4732,7 @@ object MainForm: TMainForm
               EditLabel.Height = 13
               EditLabel.Hint = 'OfferRewardEmoteDelay1'
               EditLabel.Caption = 'edqtOfferRewardEmoteDelay1'
-              TabOrder = 20
+              TabOrder = 19
             end
             object edqtOfferRewardEmoteDelay2: TLabeledEdit
               Left = 280
@@ -4756,7 +4756,7 @@ object MainForm: TMainForm
               EditLabel.Height = 13
               EditLabel.Hint = 'OfferRewardEmoteDelay3'
               EditLabel.Caption = 'edqtOfferRewardEmoteDelay3'
-              TabOrder = 22
+              TabOrder = 18
             end
             object edqtOfferRewardEmoteDelay4: TLabeledEdit
               Left = 280
@@ -4768,7 +4768,7 @@ object MainForm: TMainForm
               EditLabel.Height = 13
               EditLabel.Hint = 'OfferRewardEmoteDelay4'
               EditLabel.Caption = 'edqtOfferRewardEmoteDelay4'
-              TabOrder = 23
+              TabOrder = 20
             end
           end
           object gbAreatrigger: TGroupBox
@@ -5677,7 +5677,7 @@ object MainForm: TMainForm
         Top = 25
         Width = 892
         Height = 648
-        ActivePage = tsSearchCreature
+        ActivePage = tsEditCreature
         Align = alClient
         MultiLine = True
         TabOrder = 0

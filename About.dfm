@@ -1986,7 +1986,7 @@ object AboutBox: TAboutBox
       end
       object lblAutorName: TLabel
         Left = 292
-        Top = 139
+        Top = 116
         Width = 106
         Height = 15
         AutoSize = False
@@ -2002,11 +2002,11 @@ object AboutBox: TAboutBox
       end
       object LinkSite: TLabel
         Left = 108
-        Top = 124
-        Width = 160
+        Top = 116
+        Width = 169
         Height = 13
         Cursor = crHandPoint
-        Caption = 'http://github.com/Faq/Truice'
+        Caption = 'https://github.com/chaosua/Truice'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clNavy
         Font.Height = -11
@@ -2029,14 +2029,14 @@ object AboutBox: TAboutBox
       end
       object lbprojectwebsite: TLabel
         Left = 19
-        Top = 124
+        Top = 116
         Width = 83
         Height = 13
         Caption = 'Project WEB site:'
       end
       object Label2: TLabel
         Left = 292
-        Top = 160
+        Top = 137
         Width = 106
         Height = 15
         AutoSize = False
@@ -2052,7 +2052,7 @@ object AboutBox: TAboutBox
       end
       object Label1: TLabel
         Left = 292
-        Top = 181
+        Top = 158
         Width = 106
         Height = 15
         AutoSize = False
@@ -2065,6 +2065,29 @@ object AboutBox: TAboutBox
         ParentFont = False
         Transparent = True
         WordWrap = True
+      end
+      object Label3: TLabel
+        Left = 292
+        Top = 179
+        Width = 106
+        Height = 15
+        AutoSize = False
+        Caption = #169' chaosua, 2013'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clGray
+        Font.Height = -11
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        ParentFont = False
+        Transparent = True
+        WordWrap = True
+      end
+      object Label4: TLabel
+        Left = 19
+        Top = 76
+        Width = 63
+        Height = 13
+        Caption = 'Test Release'
       end
     end
     object OKButton: TButton

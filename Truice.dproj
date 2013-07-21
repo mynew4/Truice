@@ -36,16 +36,17 @@
 			<Base>true</Base>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Base)'!=''">
-			<VerInfo_Build>0</VerInfo_Build>
-			<VerInfo_Locale>10310</VerInfo_Locale>
-			<VerInfo_Keys>CompanyName=;FileDescription=Truice - Trinity DB Editor;FileVersion=1.3.1.0;InternalName=Truice;LegalCopyright=© indomit, 2009 (Quice), Ishigure, 2010, Faq, 2012;LegalTrademarks=indomit™;OriginalFilename=Truice.exe;ProductName=Truice;ProductVersion=1.2.53;Comments=</VerInfo_Keys>
+			<Icon_MainIcon>Truice_Icon.ico</Icon_MainIcon>
+			<Manifest_File>None</Manifest_File>
+			<VerInfo_Build>1</VerInfo_Build>
+			<VerInfo_Locale>1058</VerInfo_Locale>
+			<VerInfo_Keys>CompanyName=;FileDescription=Truice - Trinity DB Editor;FileVersion=1.3.7.1;InternalName=Truice;LegalCopyright=© indomit 2009 (Quice), @ Ishigure 2010, @ Faq 2012, @ chaosua 2013;LegalTrademarks=indomit™;OriginalFilename=Truice.exe;ProductName=Truice;ProductVersion=1.3.7.1;Comments=</VerInfo_Keys>
 			<VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
 			<DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;Winapi;System.Win;$(DCC_Namespace)</DCC_Namespace>
-			<VerInfo_Release>1</VerInfo_Release>
-			<VerInfo_MinorVer>0</VerInfo_MinorVer>
+			<VerInfo_Release>7</VerInfo_Release>
+			<VerInfo_MinorVer>3</VerInfo_MinorVer>
 			<DCC_DcuOutput>build\</DCC_DcuOutput>
 			<DCC_UsePackage>vcl;rtl;vclx;vclactnband;xmlrtl;dbrtl;vcldb;vcldbx;bdertl;dsnap;dsnapcon;TeeUI;TeeDB;Tee;adortl;IndyCore;IndySystem;IndyProtocols;inet;intrawebdb_100_120;Intraweb_100_120;VclSmp;vclie;websnap;webdsnap;inetdbbde;inetdbxpress;soaprtl;dbexpress;DbxCommonDriver;DataSnapIndy10ServerTransport;DataSnapProviderClient;DataSnapServer;DbxClientDriver;DBXInterBaseDriver;DBXMySQLDriver;dbxcds;DBXSybaseASEDriver;DBXSybaseASADriver;DBXOracleDriver;DBXMSSQLDriver;DBXInformixDriver;DBXDb2Driver;ZComponent;ZDbc;ZPlain;ZCore;ZParseSql;Jcl;JclVcl;JvCoreD12R;JvSystemD12R;JvStdCtrlsD12R;JvAppFrmD12R;JvBandsD12R;JvDBD12R;JvDlgsD12R;JvBDED12R;JvCmpD12R;JvCryptD12R;JvCtrlsD12R;JvCustomD12R;JvDockingD12R;JvDotNetCtrlsD12R;JvEDID12R;JvGlobusD12R;JvHMID12R;JvInterpreterD12R;JvJansD12R;JvManagedThreadsD12R;JvMMD12R;JvNetD12R;JvPageCompsD12R;JvPluginD12R;JvPrintPreviewD12R;JvRuntimeDesignD12R;JvTimeFrameworkD12R;JvValidatorsD12R;JvWizardD12R;JvXPCtrlsD12R;TMSUnicodeD2009;acnt2009_R;$(DCC_UsePackage)</DCC_UsePackage>
-			<DCC_UnitSearchPath>C:\Users\Public\Documents\RAD Studio\AlphaControlsv6.6\D2009\dcu;C:\Users\Public\Documents\RAD Studio\AlphaControlsv6.6\D2009;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
 			<DCC_IntegerOverflowCheck>true</DCC_IntegerOverflowCheck>
 			<DCC_RangeChecking>true</DCC_RangeChecking>
 			<DCC_DebugInformation>false</DCC_DebugInformation>
@@ -59,25 +60,21 @@
 			<DCC_K>false</DCC_K>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Base_Win32)'!=''">
-			<VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-			<Icon_MainIcon>Truice_Icon.ico</Icon_MainIcon>
 			<DCC_Namespace>Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
 			<VerInfo_Locale>1033</VerInfo_Locale>
 			<Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
-			<VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.3.6.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+			<VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.3.7.1;InternalName=Truice;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.3.7.1;Comments=</VerInfo_Keys>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_1)'!=''">
-			<DCC_UnitSearchPath>D:\Apps\AlphaControls;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
 			<DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
 			<DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
 			<DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
 			<DCC_DebugInformation>false</DCC_DebugInformation>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
-			<VerInfo_Release>6</VerInfo_Release>
-			<VerInfo_Locale>10360</VerInfo_Locale>
-			<VerInfo_MinorVer>3</VerInfo_MinorVer>
-			<VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.3.6.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=;Comments=</VerInfo_Keys>
+			<Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+			<VerInfo_Locale>1033</VerInfo_Locale>
+			<VerInfo_Keys>CompanyName=;FileDescription=Truice - Trinity DB Editor;FileVersion=1.3.7.1;InternalName=Truice;LegalCopyright=© indomit 2009 (Quice), @ Ishigure 2010, @ Faq 2012, @ chaosua 2013;LegalTrademarks=indomit™;OriginalFilename=Truice.exe;ProductName=Truice;ProductVersion=1.3.7.1;Comments=compiled by chaosua</VerInfo_Keys>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_2)'!=''">
 			<DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
@@ -176,26 +173,26 @@
 						<VersionInfo Name="AutoIncBuild">False</VersionInfo>
 						<VersionInfo Name="MajorVer">1</VersionInfo>
 						<VersionInfo Name="MinorVer">3</VersionInfo>
-						<VersionInfo Name="Release">5</VersionInfo>
-						<VersionInfo Name="Build">0</VersionInfo>
+						<VersionInfo Name="Release">7</VersionInfo>
+						<VersionInfo Name="Build">1</VersionInfo>
 						<VersionInfo Name="Debug">False</VersionInfo>
 						<VersionInfo Name="PreRelease">False</VersionInfo>
 						<VersionInfo Name="Special">False</VersionInfo>
 						<VersionInfo Name="Private">False</VersionInfo>
 						<VersionInfo Name="DLL">False</VersionInfo>
-						<VersionInfo Name="Locale">10350</VersionInfo>
+						<VersionInfo Name="Locale">10371</VersionInfo>
 						<VersionInfo Name="CodePage">1252</VersionInfo>
 					</VersionInfo>
 					<VersionInfoKeys>
 						<VersionInfoKeys Name="CompanyName"/>
 						<VersionInfoKeys Name="FileDescription">Truice - Trinity DB Editor</VersionInfoKeys>
-						<VersionInfoKeys Name="FileVersion">1.3.00.0</VersionInfoKeys>
+						<VersionInfoKeys Name="FileVersion">1.3.7.1</VersionInfoKeys>
 						<VersionInfoKeys Name="InternalName">Truice</VersionInfoKeys>
-						<VersionInfoKeys Name="LegalCopyright">© indomit, 2009 (Quice), Ishigure, 2010, Faq, 2012</VersionInfoKeys>
+						<VersionInfoKeys Name="LegalCopyright">© indomit 2009 (Quice), Ishigure 2010, Faq 2012, chaosua 2013</VersionInfoKeys>
 						<VersionInfoKeys Name="LegalTrademarks">indomit™</VersionInfoKeys>
 						<VersionInfoKeys Name="OriginalFilename">Truice.exe</VersionInfoKeys>
 						<VersionInfoKeys Name="ProductName">Truice</VersionInfoKeys>
-						<VersionInfoKeys Name="ProductVersion">1.3.6</VersionInfoKeys>
+						<VersionInfoKeys Name="ProductVersion">1.3.7.1</VersionInfoKeys>
 						<VersionInfoKeys Name="Comments"/>
 					</VersionInfoKeys>
 					<Excluded_Packages>

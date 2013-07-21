@@ -15,8 +15,9 @@ uses
 const
   VERSION_1   = '1'; //*10000
   VERSION_2   = '3'; //*100
-  VERSION_3   = '6';
-  VERSION_EXE = VERSION_1 + '.' + VERSION_2 + '.' + VERSION_3;
+  VERSION_3   = '7';
+  VERSION_4   = '1';
+  VERSION_EXE = VERSION_1 + '.' + VERSION_2 + '.' + VERSION_3 + '.' + VERSION_4;
 
   SCRIPT_TAB_NO_QUEST       = 8;
   SCRIPT_TAB_NO_CREATURE    = 17;
@@ -2184,7 +2185,6 @@ type
     procedure SearchGO;
     procedure LoadGO(Entry: integer);
     procedure LoadGOLocation(GUID: integer);
-    procedure LoadButtonScript(GUID: integer);
     procedure CompleteGOLocationScript;
     procedure CompleteGOLootScript;
     procedure CompleteGOScript;
@@ -3191,7 +3191,7 @@ var
 loc: string;
 begin
   loc:= LoadLocales();
-  MyQuery.SQL.Text := Format('SELECT Title'+loc+', Details'+loc+', Objectives'+loc+', OfferRewardText'+loc+', RequestItemsText'+loc+', EndText'+loc+', CompletedText'+loc+', ObjectiveText1'+loc+', ObjectiveText2'+loc+', ObjectiveText3'+loc+', ObjectiveText4'+loc+' FROM locales_quest WHERE entry=%d', [QuestID]);
+  MyQuery.SQL.Text := Format('SELECT Title'+loc+', Details'+loc+', Objectives'+loc+', OfferRewardText'+loc+', RequestItemsText'+loc+', EndText'+loc+', CompletedText'+loc+', ObjectiveText1'+loc+', ObjectiveText2'+loc+', ObjectiveText3'+loc+', ObjectiveText4'+loc+' FROM locales_quest WHERE Id=%d', [QuestID]);
   MyQuery.Open;
   edlqTitle.EditLabel.Caption:= 'Title'+loc;
   l2Detail.Caption:= 'Detail'+loc;
@@ -4279,11 +4279,6 @@ begin
     dmMain.BrowseSite(ttNPC, StrToInt(lvSearchCreature.Selected.Caption));
 end;
 
-procedure TMainForm.LoadButtonScript(GUID: integer);
-begin
-  LoadQueryToListView(Format('SELECT * FROM `gameobject_scripts` WHERE (`id`=%d)', [GUID]), lvgbButtonScript);
-end;
-
 procedure TMainForm.LoadCharacter(GUID: integer);
 begin
   ShowHourGlassCursor;
@@ -4375,7 +4370,7 @@ end;
 procedure TMainForm.LoadCreature(Entry: integer);
 var
   i: integer;
-  isvendor, istrainer, isEventAI, isEquip: boolean;
+  isvendor, istrainer, isEventAI, isEquip: boolean; //equipment_id deprecated Will use entry of creature
   npcflag: integer;
 begin
   ShowHourGlassCursor;
@@ -4402,7 +4397,7 @@ begin
     //if MyQuery.FieldByName('AIName').AsString = mob_eventai then
     isEventAI := true; //else isEventAI := false;
 
-    if MyQuery.FieldByName('equipment_id').AsInteger <> 0 then isEquip:= true else isEquip:= false;
+    if MyQuery.FieldByName('entry').AsInteger <> 0 then isEquip:= true else isEquip:= false;
 
     MyQuery.Close;
 
@@ -6993,7 +6988,6 @@ begin
   if Selected then
   begin
     LoadGOLocation(StrToIntDef(Item.Caption,0));
-    LoadButtonScript(StrToIntDef(Item.Caption,0));
     edgbGUID.Text := Item.Caption;
   end;
 end;
