@@ -2188,7 +2188,6 @@ type
     procedure CompleteGOLocationScript;
     procedure CompleteGOLootScript;
     procedure CompleteGOScript;
-    procedure CompleteButtonScriptScript;
 
     {items}
     procedure SearchItem;
@@ -2307,7 +2306,6 @@ type
     procedure LoadItemInvolvedIn(Id: string);
     function GetValueFromDBC(Name: string; id: Cardinal; idx_str: integer = 1): WideString;
     function GetZoneOrSortAcronym(ZoneOrSort: integer): string;
-    function ScriptSQLScript(lvList: TJvListView; tn, id: string): string;
     procedure GetSomeFlags(Sender: TObject; What: string);
     function GetActionParamHint(ActionType, ParamNo: integer): string;
 
@@ -2832,48 +2830,6 @@ begin
     lvQuickList.OnClick := nil;
     lvQuickList.Free;
     lvQuickList := nil;
-  end;
-end;
-
-function TMainForm.ScriptSQLScript(lvList: TJvListView; tn: string; id: string ): string;
-var
-  i: integer;
-begin
-  Result := '';
-  if lvList.Items.Count>0 then
-  begin
-    for i := 0 to lvList.Items.Count - 2 do
-    begin
-      Result := Result + Format('(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s),'#13#10,[
-        lvList.Items[i].Caption,
-        lvList.Items[i].SubItems[0],
-        lvList.Items[i].SubItems[1],
-        lvList.Items[i].SubItems[2],
-        lvList.Items[i].SubItems[3],
-        QuotedStr(lvList.Items[i].SubItems[4]),
-        lvList.Items[i].SubItems[5],
-        lvList.Items[i].SubItems[6],
-        lvList.Items[i].SubItems[7],
-        lvList.Items[i].SubItems[8]
-      ]);
-    end;
-    i := lvList.Items.Count - 1;
-    Result := Result + Format('(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s);',[
-      lvList.Items[i].Caption,
-      lvList.Items[i].SubItems[0],
-      lvList.Items[i].SubItems[1],
-      lvList.Items[i].SubItems[2],
-      lvList.Items[i].SubItems[3],
-      QuotedStr(lvList.Items[i].SubItems[4]),
-      lvList.Items[i].SubItems[5],
-      lvList.Items[i].SubItems[6],
-      lvList.Items[i].SubItems[7],
-      lvList.Items[i].SubItems[8]
-    ]);
-    Result := Format('DELETE FROM `%0:s` WHERE `id`=%1:s;'#13#10+
-      'INSERT INTO `%0:s` (`id`, `delay`, `command`, `datalong`, `datalong2`, '+
-        '`dataint`, `x`, `y`, `z`, `o`) VALUES '#13#10'%2:s'#13#10,
-      [tn, id, Result]);
   end;
 end;
 
@@ -6154,11 +6110,6 @@ begin
   GetSomeFlags(Sender, 'LootMode');
 end;
 
-procedure TMainForm.CompleteButtonScriptScript;
-begin
-  megoScript.Text := ScriptSQLScript(lvgbButtonScript, 'gameobject_scripts', edgbGUID.Text);
-end;
-
 procedure TMainForm.CompleteCharacterInventoryScript;
 var
   guid, Fields, Values: string;
@@ -6960,7 +6911,6 @@ begin
     1: CompleteGOScript;
     2: CompleteGOLocationScript;
     3: CompleteGOLootScript;
-    4: CompleteButtonScriptScript;
   end;
 end;
 
