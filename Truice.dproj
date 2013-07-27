@@ -35,12 +35,18 @@
 			<CfgParent>Base</CfgParent>
 			<Base>true</Base>
 		</PropertyGroup>
+		<PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+			<Cfg_2_Win32>true</Cfg_2_Win32>
+			<CfgParent>Cfg_2</CfgParent>
+			<Cfg_2>true</Cfg_2>
+			<Base>true</Base>
+		</PropertyGroup>
 		<PropertyGroup Condition="'$(Base)'!=''">
 			<Icon_MainIcon>Truice_Icon.ico</Icon_MainIcon>
 			<Manifest_File>None</Manifest_File>
-			<VerInfo_Build>1</VerInfo_Build>
+			<VerInfo_Build>2</VerInfo_Build>
 			<VerInfo_Locale>1058</VerInfo_Locale>
-			<VerInfo_Keys>CompanyName=;FileDescription=Truice - Trinity DB Editor;FileVersion=1.3.7.1;InternalName=Truice;LegalCopyright=© indomit 2009 (Quice), @ Ishigure 2010, @ Faq 2012, @ chaosua 2013;LegalTrademarks=indomit™;OriginalFilename=Truice.exe;ProductName=Truice;ProductVersion=1.3.7.1;Comments=</VerInfo_Keys>
+			<VerInfo_Keys>CompanyName=;FileDescription=Truice - Trinity DB Editor;FileVersion=1.3.7.2;InternalName=Truice;LegalCopyright=© indomit 2007-2009 (Quice), @ Ishigure 2010, @ Faq 2012-2013, @ chaosua 2013;LegalTrademarks=indomit™;OriginalFilename=Truice.exe;ProductName=Truice;ProductVersion=1.3.7;Comments=compiled by chaosua</VerInfo_Keys>
 			<VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
 			<DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;Winapi;System.Win;$(DCC_Namespace)</DCC_Namespace>
 			<VerInfo_Release>7</VerInfo_Release>
@@ -63,7 +69,6 @@
 			<DCC_Namespace>Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
 			<VerInfo_Locale>1033</VerInfo_Locale>
 			<Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
-			<VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.3.7.1;InternalName=Truice;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.3.7.1;Comments=</VerInfo_Keys>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_1)'!=''">
 			<DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
@@ -74,10 +79,13 @@
 		<PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
 			<Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
 			<VerInfo_Locale>1033</VerInfo_Locale>
-			<VerInfo_Keys>CompanyName=;FileDescription=Truice - Trinity DB Editor;FileVersion=1.3.7.1;InternalName=Truice;LegalCopyright=© indomit 2009 (Quice), @ Ishigure 2010, @ Faq 2012, @ chaosua 2013;LegalTrademarks=indomit™;OriginalFilename=Truice.exe;ProductName=Truice;ProductVersion=1.3.7.1;Comments=compiled by chaosua</VerInfo_Keys>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_2)'!=''">
 			<DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+			<Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+			<VerInfo_Locale>1033</VerInfo_Locale>
 		</PropertyGroup>
 		<ItemGroup>
 			<DelphiCompile Include="$(MainSource)">

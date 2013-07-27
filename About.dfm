@@ -1972,9 +1972,9 @@ object AboutBox: TAboutBox
       object lblVersion: TLabel
         Left = 19
         Top = 10
-        Width = 69
+        Width = 80
         Height = 13
-        Caption = 'Version: 3.0'
+        Caption = 'Version: 1.3.7'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clGray
         Font.Height = -11
@@ -2056,7 +2056,7 @@ object AboutBox: TAboutBox
         Width = 106
         Height = 15
         AutoSize = False
-        Caption = #169' Faq, 2012'
+        Caption = #169' Faq, 2012-2013'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clGray
         Font.Height = -11
@@ -2085,9 +2085,9 @@ object AboutBox: TAboutBox
       object Label4: TLabel
         Left = 19
         Top = 76
-        Width = 63
+        Width = 73
         Height = 13
-        Caption = 'Test Release'
+        Caption = 'Merged release'
       end
     end
     object OKButton: TButton
