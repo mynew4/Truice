@@ -859,11 +859,7 @@ type
     btFullScriptProsLoot: TButton;
     edsscommand: TJvComboEdit;
     edssid: TLabeledEdit;
-    btssAdd: TSpeedButton;
-    btssUpd: TSpeedButton;
-    btssDel: TSpeedButton;
     edssdelay: TLabeledEdit;
-    lbsscommand: TLabel;
     edssdatalong: TLabeledEdit;
     edssdatalong2: TLabeledEdit;
     edssdataint: TLabeledEdit;
@@ -871,14 +867,9 @@ type
     edssy: TLabeledEdit;
     edssz: TLabeledEdit;
     edsso: TLabeledEdit;
-    lvqtEndScript: TJvListView;
     edescommand: TJvComboEdit;
     edesid: TLabeledEdit;
-    btesAdd: TSpeedButton;
-    btesUpd: TSpeedButton;
-    btesDel: TSpeedButton;
     edesdelay: TLabeledEdit;
-    lbescommand: TLabel;
     edesdatalong: TLabeledEdit;
     edesdatalong2: TLabeledEdit;
     edesdataint: TLabeledEdit;
@@ -13369,21 +13360,6 @@ procedure TMainForm.ScriptDel(lvList: TJvListView);
 begin
   if Assigned(lvList.Selected) then
     lvList.DeleteSelected;
-end;
-
-procedure TMainForm.btesAddClick(Sender: TObject);
-begin
-  ScriptAdd('edes', lvqtEndScript);
-end;
-
-procedure TMainForm.btesUpdClick(Sender: TObject);
-begin
-  ScriptUpd('edes', lvqtEndScript);
-end;
-
-procedure TMainForm.btesDelClick(Sender: TObject);
-begin
-  ScriptDel(lvqtEndScript);
 end;
 
 procedure TMainForm.GetCommand(Sender: TObject);
