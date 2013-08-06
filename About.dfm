@@ -2085,9 +2085,9 @@ object AboutBox: TAboutBox
       object Label4: TLabel
         Left = 19
         Top = 76
-        Width = 73
+        Width = 155
         Height = 13
-        Caption = 'Merged release'
+        Caption = 'TrinityCore/TrinityCore@a71fcee'
       end
     end
     object OKButton: TButton

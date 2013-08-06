@@ -16,7 +16,7 @@ const
   VERSION_1   = '1'; //*10000
   VERSION_2   = '3'; //*100
   VERSION_3   = '7';
-  VERSION_4   = '2';
+  VERSION_4   = '3';
   VERSION_EXE = VERSION_1 + '.' + VERSION_2 + '.' + VERSION_3 + '.' + VERSION_4;
 
   SCRIPT_TAB_NO_QUEST       = 8;
@@ -2373,10 +2373,10 @@ begin
   begin
     GetWhoAndKey(edQuestGiverSearch.Text, who, key);
     if who = 'creature' then
-      MyTempQuery.SQL.Text := Format('SELECT `quest` FROM `creature_questrelation` WHERE (`id`=%s)',[key])
+      MyTempQuery.SQL.Text := Format('SELECT `quest` FROM `creature_queststarter` WHERE (`id`=%s)',[key])
     else
     if who = 'gameobject' then
-      MyTempQuery.SQL.Text := Format('SELECT `quest` FROM `gameobject_questrelation` WHERE (`id`=%s)',[key])
+      MyTempQuery.SQL.Text := Format('SELECT `quest` FROM `gameobject_queststarter` WHERE (`id`=%s)',[key])
     else
     if who = 'item' then
       MyTempQuery.SQL.Text := Format('SELECT `startquest` FROM `item_template` WHERE (`entry`=%s)',[key]);
@@ -2401,10 +2401,10 @@ begin
   begin
     GetWhoAndKey(edQuestTakerSearch.Text, who, key);
     if who = 'creature' then
-      MyTempQuery.SQL.Text := Format('SELECT `quest` FROM `creature_involvedrelation` WHERE (`id`=%s)',[key])
+      MyTempQuery.SQL.Text := Format('SELECT `quest` FROM `creature_questender` WHERE (`id`=%s)',[key])
     else
     if who = 'gameobject' then
-      MyTempQuery.SQL.Text := Format('SELECT `quest` FROM `gameobject_involvedrelation` WHERE (`id`=%s)',[key]);
+      MyTempQuery.SQL.Text := Format('SELECT `quest` FROM `gameobject_questender` WHERE (`id`=%s)',[key]);
     if MyTempQuery.SQL.Text<>'' then
     begin
       MyTempQuery.Open;
@@ -2813,12 +2813,12 @@ begin
   if quest='' then exit;
   meqtLog.Clear;
 
-  s1 := Format('DELETE FROM `creature_questrelation` WHERE `quest` = %0:s;'#13#10+
-             'DELETE FROM `gameobject_questrelation` WHERE `quest` = %0:s;'#13#10+
+  s1 := Format('DELETE FROM `creature_queststarter` WHERE `quest` = %0:s;'#13#10+
+             'DELETE FROM `gameobject_queststarter` WHERE `quest` = %0:s;'#13#10+
              'UPDATE `item_template` SET `StartQuest`=0 WHERE `StartQuest` = %0:s;'#13#10,
               [quest]);
-  s2 := Format('DELETE FROM `creature_involvedrelation` WHERE `quest` = %0:s;'#13#10+
-             'DELETE FROM `gameobject_involvedrelation` WHERE `quest` = %0:s;'#13#10,
+  s2 := Format('DELETE FROM `creature_questender` WHERE `quest` = %0:s;'#13#10+
+             'DELETE FROM `gameobject_questender` WHERE `quest` = %0:s;'#13#10,
               [quest]);
 
   if lvqtGiverTemplate.Items.Count=0 then meqtLog.Lines.Add(dmMain.Text[4])   //'Error: QuestGiver is not set'
@@ -2829,12 +2829,12 @@ begin
       id := lvqtGiverTemplate.Items[i].SubItems[0];
 
       if who = 'creature' then
-        s1 := Format('%0:sINSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (%1:s, %2:s);'#13#10+
+        s1 := Format('%0:sINSERT INTO `creature_queststarter` (`id`, `quest`) VALUES (%1:s, %2:s);'#13#10+
           'UPDATE `creature_template` SET `npcflag`=`npcflag`|2 WHERE `entry` = %1:s;'#13#10,
           [s1, id, quest])
       else
       if who = 'gameobject' then
-        s1 := Format('%0:sINSERT INTO `gameobject_questrelation` (`id`, `quest`) VALUES (%1:s, %2:s);'#13#10,
+        s1 := Format('%0:sINSERT INTO `gameobject_queststarter` (`id`, `quest`) VALUES (%1:s, %2:s);'#13#10,
           [s1, id, quest])
       else
       if who='item' then
@@ -2851,12 +2851,12 @@ begin
       id := lvqtTakerTemplate.Items[i].SubItems[0];
 
       if who = 'creature' then
-        s2 := Format('%0:sINSERT INTO `creature_involvedrelation` (`id`, `quest`) VALUES (%1:s, %2:s);'#13#10+
+        s2 := Format('%0:sINSERT INTO `creature_questender` (`id`, `quest`) VALUES (%1:s, %2:s);'#13#10+
           'UPDATE `creature_template` SET `npcflag`=`npcflag`|2 WHERE `entry`=%1:s;'#13#10,
           [s2, id, quest])
       else
       if who = 'gameobject' then
-        s2 := Format('%0:sINSERT INTO `gameobject_involvedrelation` (`id`, `quest`) VALUES (%1:s, %2:s);'#13#10,
+        s2 := Format('%0:sINSERT INTO `gameobject_questender` (`id`, `quest`) VALUES (%1:s, %2:s);'#13#10,
           [s2, id, quest])
     end;
 
@@ -3151,7 +3151,7 @@ end;
 procedure TMainForm.LoadQuestGivers(QuestID: integer);
 begin
   // search for quest starter
-   MyQuery.SQL.Text := Format('SELECT t.entry, t.name, t.npcflag FROM `creature_questrelation` q ' +
+   MyQuery.SQL.Text := Format('SELECT t.entry, t.name, t.npcflag FROM `creature_queststarter` q ' +
                            'INNER JOIN `creature_template` t ON t.entry = q.id '+
                            'WHERE q.quest = %d', [QuestID]);
   MyQuery.Open;
@@ -3171,7 +3171,7 @@ begin
   end;
   MyQuery.Close;
 
-  MyQuery.SQL.Text := Format('SELECT t.entry, t.name, t.`type` FROM `gameobject_questrelation` q ' +
+  MyQuery.SQL.Text := Format('SELECT t.entry, t.name, t.`type` FROM `gameobject_queststarter` q ' +
                            'INNER JOIN `gameobject_template` t ON t.entry = q.id '+
                            'WHERE q.quest = %d', [QuestID]);
   MyQuery.Open;
@@ -3232,7 +3232,7 @@ end;
 procedure TMainForm.LoadQuestTakers(QuestID: integer);
 begin
   // search for quest starter
-  MyQuery.SQL.Text := Format('SELECT t.entry, t.name, t.npcflag FROM `creature_involvedrelation` q ' +
+  MyQuery.SQL.Text := Format('SELECT t.entry, t.name, t.npcflag FROM `creature_questender` q ' +
                            'INNER JOIN `creature_template` t ON t.entry = q.id '+
                            'WHERE q.quest = %d', [QuestID]);
   MyQuery.Open;
@@ -3252,7 +3252,7 @@ begin
   end;
   MyQuery.Close;
 
-  MyQuery.SQL.Text := Format('SELECT t.entry, t.name, t.`type` FROM `gameobject_involvedrelation` q ' +
+  MyQuery.SQL.Text := Format('SELECT t.entry, t.name, t.`type` FROM `gameobject_questender` q ' +
                            'INNER JOIN `gameobject_template` t ON t.entry = q.id '+
                            'WHERE q.quest = %d', [QuestID]);
   MyQuery.Open;
@@ -3898,10 +3898,10 @@ begin
   PageControl2.ActivePageIndex := SCRIPT_TAB_NO_QUEST;
   meqtScript.Text := Format(
   'DELETE FROM `quest_template` WHERE (`Id`=%0:s);'#13#10+
-  'DELETE FROM `creature_questrelation` WHERE (`quest`=%0:s);'#13#10+
-  'DELETE FROM `gameobject_questrelation` WHERE (`quest`=%0:s);'#13#10+
-  'DELETE FROM `creature_involvedrelation` WHERE (`quest`=%0:s);'#13#10+
-  'DELETE FROM `gameobject_involvedrelation` WHERE (`quest`=%0:s);'#13#10+
+  'DELETE FROM `creature_queststarter` WHERE (`quest`=%0:s);'#13#10+
+  'DELETE FROM `gameobject_queststarter` WHERE (`quest`=%0:s);'#13#10+
+  'DELETE FROM `creature_questender` WHERE (`quest`=%0:s);'#13#10+
+  'DELETE FROM `gameobject_questender` WHERE (`quest`=%0:s);'#13#10+
   'DELETE FROM `areatrigger_involvedrelation` WHERE (`quest`=%0:s);'#13#10
    ,[lvQuest.Selected.Caption]);
 end;
@@ -4706,7 +4706,7 @@ var
 begin
   if trim(id)='' then Exit;
   // STARTS
-  MyTempQuery.SQL.Text := Format('Select qt.* from creature_questrelation ci' +
+  MyTempQuery.SQL.Text := Format('Select qt.* from creature_queststarter ci' +
                                  ' INNER JOIN quest_template qt ON ci.quest = qt.Id' +
                                  ' where ci.id = %s', [Id]);
   MyTempQuery.Open;
@@ -4737,7 +4737,7 @@ begin
   lvCreatureStarts.Items.EndUpdate;
 
   // ENDS
-  MyTempQuery.SQL.Text := Format('Select qt.* from creature_involvedrelation ci' +
+  MyTempQuery.SQL.Text := Format('Select qt.* from creature_questender ci' +
                                  ' INNER JOIN quest_template qt ON ci.quest = qt.Id' +
                                  ' where ci.id = %s',[Id]);
   MyTempQuery.Open;
@@ -4811,7 +4811,7 @@ begin
   if trim(id)='' then Exit;
 
   // STARTS
-  MyTempQuery.SQL.Text := Format('Select qt.* from gameobject_questrelation ci' +
+  MyTempQuery.SQL.Text := Format('Select qt.* from gameobject_queststarter ci' +
                                  ' INNER JOIN quest_template qt ON ci.quest = qt.Id' +
                                  ' where ci.id = %s',[Id]);
   MyTempQuery.Open;
@@ -4842,7 +4842,7 @@ begin
   lvGameObjectStarts.Items.EndUpdate;
 
   // ENDS
-  MyTempQuery.SQL.Text := Format('Select qt.* from gameobject_involvedrelation ci' +
+  MyTempQuery.SQL.Text := Format('Select qt.* from gameobject_questender ci' +
                                  ' INNER JOIN quest_template qt ON ci.quest = qt.Id' +
                                  ' where ci.id = %s',[Id]);
   MyTempQuery.Open;

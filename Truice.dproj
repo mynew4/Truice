@@ -44,9 +44,9 @@
 		<PropertyGroup Condition="'$(Base)'!=''">
 			<Icon_MainIcon>Truice_Icon.ico</Icon_MainIcon>
 			<Manifest_File>None</Manifest_File>
-			<VerInfo_Build>2</VerInfo_Build>
+			<VerInfo_Build>3</VerInfo_Build>
 			<VerInfo_Locale>1058</VerInfo_Locale>
-			<VerInfo_Keys>CompanyName=;FileDescription=Truice - Trinity DB Editor;FileVersion=1.3.7.2;InternalName=Truice;LegalCopyright=© indomit 2007-2009 (Quice), @ Ishigure 2010, @ Faq 2012-2013, @ chaosua 2013;LegalTrademarks=indomit™;OriginalFilename=Truice.exe;ProductName=Truice;ProductVersion=1.3.7;Comments=compiled by chaosua</VerInfo_Keys>
+			<VerInfo_Keys>CompanyName=;FileDescription=Truice - Trinity DB Editor;FileVersion=1.3.7.3;InternalName=Truice;LegalCopyright=© indomit 2007-2009 (Quice), @ Ishigure 2010, @ Faq 2012-2013, @ chaosua 2013;LegalTrademarks=indomit™;OriginalFilename=Truice.exe;ProductName=Truice;ProductVersion=1.3.7;Comments=compiled by chaosua</VerInfo_Keys>
 			<VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
 			<DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;Winapi;System.Win;$(DCC_Namespace)</DCC_Namespace>
 			<VerInfo_Release>7</VerInfo_Release>
