@@ -54,7 +54,6 @@
 			<DCC_DcuOutput>build\</DCC_DcuOutput>
 			<DCC_UsePackage>vcl;rtl;vclx;vclactnband;xmlrtl;dbrtl;vcldb;vcldbx;bdertl;dsnap;dsnapcon;TeeUI;TeeDB;Tee;adortl;IndyCore;IndySystem;IndyProtocols;inet;intrawebdb_100_120;Intraweb_100_120;VclSmp;vclie;websnap;webdsnap;inetdbbde;inetdbxpress;soaprtl;dbexpress;DbxCommonDriver;DataSnapIndy10ServerTransport;DataSnapProviderClient;DataSnapServer;DbxClientDriver;DBXInterBaseDriver;DBXMySQLDriver;dbxcds;DBXSybaseASEDriver;DBXSybaseASADriver;DBXOracleDriver;DBXMSSQLDriver;DBXInformixDriver;DBXDb2Driver;ZComponent;ZDbc;ZPlain;ZCore;ZParseSql;Jcl;JclVcl;JvCoreD12R;JvSystemD12R;JvStdCtrlsD12R;JvAppFrmD12R;JvBandsD12R;JvDBD12R;JvDlgsD12R;JvBDED12R;JvCmpD12R;JvCryptD12R;JvCtrlsD12R;JvCustomD12R;JvDockingD12R;JvDotNetCtrlsD12R;JvEDID12R;JvGlobusD12R;JvHMID12R;JvInterpreterD12R;JvJansD12R;JvManagedThreadsD12R;JvMMD12R;JvNetD12R;JvPageCompsD12R;JvPluginD12R;JvPrintPreviewD12R;JvRuntimeDesignD12R;JvTimeFrameworkD12R;JvValidatorsD12R;JvWizardD12R;JvXPCtrlsD12R;TMSUnicodeD2009;acnt2009_R;$(DCC_UsePackage)</DCC_UsePackage>
 			<DCC_IntegerOverflowCheck>true</DCC_IntegerOverflowCheck>
-			<DCC_RangeChecking>true</DCC_RangeChecking>
 			<DCC_DebugInformation>false</DCC_DebugInformation>
 			<DCC_ImageBase>00400000</DCC_ImageBase>
 			<DCC_E>false</DCC_E>
@@ -81,6 +80,8 @@
 			<VerInfo_Locale>1033</VerInfo_Locale>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_2)'!=''">
+			<DCC_DebugInformation>true</DCC_DebugInformation>
+			<DCC_RangeChecking>true</DCC_RangeChecking>
 			<DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
