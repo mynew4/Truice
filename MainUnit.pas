@@ -11857,15 +11857,15 @@ procedure TMainForm.SetSAIAction(t: integer);
             lbcyaction_type.Hint := '';
             edcyaction_type.Hint := lbcyaction_type.Hint;
         end;
-    16:  //SMART_ACTION_SEND_CASTCREATUREORGO
+    16:  //NOT USED SMART_ACTION_SEND_CASTCREATUREORGO
         begin
-            lbcyaction_param1.Caption := 'QuestID';
-            lbcyaction_param2.Caption := 'SpellId';
+            lbcyaction_param1.Caption := '';
+            lbcyaction_param2.Caption := '';
             lbcyaction_param3.Caption := '';
             lbcyaction_param4.Caption := '';
             lbcyaction_param5.Caption := '';
             lbcyaction_param6.Caption := '';
-            lbcyaction_type.Hint := '';
+            lbcyaction_type.Hint := 'not used';
             edcyaction_type.Hint := lbcyaction_type.Hint;
         end;
     17:  //SMART_ACTION_SET_EMOTE_STATE
