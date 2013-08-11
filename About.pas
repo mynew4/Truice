@@ -55,9 +55,11 @@ type
     Label1: TLabel;
     Label3: TLabel;
     Label4: TLabel;
+    Label5: TLabel;
     procedure FormShow(Sender: TObject);
     procedure LinkSiteClick(Sender: TObject);
     procedure PayPalClick(Sender: TObject);
+    procedure Image1Click(Sender: TObject);
   private
     procedure InitializeCaptions;
     { Private declarations }
@@ -97,6 +99,11 @@ begin
     FreeMem(Pt, Size);
     Result:= True;
   end;
+end;
+
+procedure TAboutBox.Image1Click(Sender: TObject);
+begin
+
 end;
 
 procedure TAboutBox.InitializeCaptions;

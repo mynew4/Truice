@@ -16,7 +16,7 @@ const
   VERSION_1   = '1'; //*10000
   VERSION_2   = '3'; //*100
   VERSION_3   = '7';
-  VERSION_4   = '3';
+  VERSION_4   = '5';
   VERSION_EXE = VERSION_1 + '.' + VERSION_2 + '.' + VERSION_3 + '.' + VERSION_4;
 
   SCRIPT_TAB_NO_QUEST       = 8;
@@ -12296,8 +12296,8 @@ procedure TMainForm.SetSAIAction(t: integer);
         end;
     53:  //SMART_ACTION_WP_START
         begin
-            lbcyaction_param1.Caption := 'run(0)/walk(1)';
-            lbcyaction_param2.Caption := 'Waypoint_data.PathID';
+            lbcyaction_param1.Caption := 'run(1)/walk(0)';
+            lbcyaction_param2.Caption := 'waypoints.PathID';
             lbcyaction_param3.Caption := 'canRepeat';
             lbcyaction_param4.Caption := 'Quest_template.entry';
             lbcyaction_param5.Caption := 'despawntime';
@@ -12474,9 +12474,9 @@ procedure TMainForm.SetSAIAction(t: integer);
         end;
     69:  //SMART_ACTION_MOVE_TO_POS
         begin
-            lbcyaction_param1.Caption := 'x';
-            lbcyaction_param2.Caption := 'y';
-            lbcyaction_param3.Caption := 'z';
+            lbcyaction_param1.Caption := 'PointId(0)';
+            lbcyaction_param2.Caption := '';
+            lbcyaction_param3.Caption := '';
             lbcyaction_param4.Caption := '';
             lbcyaction_param5.Caption := '';
             lbcyaction_param6.Caption := '';
@@ -12485,7 +12485,7 @@ procedure TMainForm.SetSAIAction(t: integer);
         end;
     70:  //SMART_ACTION_RESPAWN_TARGET
         begin
-            lbcyaction_param1.Caption := 'only GOs in ms';
+            lbcyaction_param1.Caption := 'time in ms (only for GO)';
             lbcyaction_param2.Caption := '';
             lbcyaction_param3.Caption := '';
             lbcyaction_param4.Caption := '';
@@ -12852,6 +12852,94 @@ procedure TMainForm.SetSAIAction(t: integer);
             lbcyaction_type.Hint := '0 - disable, 1 - enable HP regeneration';
             edcyaction_type.Hint := lbcyaction_type.Hint;
         end;
+    103:  //SMART_ACTION_SET_ROOT
+        begin
+            lbcyaction_param1.Caption := '0 or 1';
+            lbcyaction_param2.Caption := '';
+            lbcyaction_param3.Caption := '';
+            lbcyaction_param4.Caption := '';
+            lbcyaction_param5.Caption := '';
+            lbcyaction_param6.Caption := '';
+            lbcyaction_type.Hint := '0 - disable, 1 - enable Enables or disables creature movement';
+            edcyaction_type.Hint := lbcyaction_type.Hint;
+        end;
+    104:  //SMART_ACTION_SET_GO_FLAG
+        begin
+            lbcyaction_param1.Caption := 'gameobject_template.flags';
+            lbcyaction_param2.Caption := '';
+            lbcyaction_param3.Caption := '';
+            lbcyaction_param4.Caption := '';
+            lbcyaction_param5.Caption := '';
+            lbcyaction_param6.Caption := '';
+            lbcyaction_type.Hint := 'oldFlag = newFlag';
+            edcyaction_type.Hint := lbcyaction_type.Hint;
+        end;
+    105:  //SMART_ACTION_ADD_GO_FLAG
+        begin
+            lbcyaction_param1.Caption := 'gameobject_template.flags';
+            lbcyaction_param2.Caption := '';
+            lbcyaction_param3.Caption := '';
+            lbcyaction_param4.Caption := '';
+            lbcyaction_param5.Caption := '';
+            lbcyaction_param6.Caption := '';
+            lbcyaction_type.Hint := 'oldFlag |= newFlag';
+            edcyaction_type.Hint := lbcyaction_type.Hint;
+        end;
+    106:  //SMART_ACTION_REMOVE_GO_FLAG
+        begin
+            lbcyaction_param1.Caption := 'gameobject_template.flags';
+            lbcyaction_param2.Caption := '';
+            lbcyaction_param3.Caption := '';
+            lbcyaction_param4.Caption := '';
+            lbcyaction_param5.Caption := '';
+            lbcyaction_param6.Caption := '';
+            lbcyaction_type.Hint := 'oldFlag &= ~newFlag';
+            edcyaction_type.Hint := lbcyaction_type.Hint;
+        end;
+    107:  //SMART_ACTION_SUMMON_CREATURE_GROUP
+        begin
+            lbcyaction_param1.Caption := 'creature_summon_groups.groupId';
+            lbcyaction_param2.Caption := '';
+            lbcyaction_param3.Caption := '';
+            lbcyaction_param4.Caption := '';
+            lbcyaction_param5.Caption := '';
+            lbcyaction_param6.Caption := '';
+            lbcyaction_type.Hint := '';
+            edcyaction_type.Hint := lbcyaction_type.Hint;
+        end;
+    108:  //SMART_ACTION_SET_POWER
+        begin
+            lbcyaction_param1.Caption := 'Power type';
+            lbcyaction_param2.Caption := 'New power';
+            lbcyaction_param3.Caption := '';
+            lbcyaction_param4.Caption := '';
+            lbcyaction_param5.Caption := '';
+            lbcyaction_param6.Caption := '';
+            lbcyaction_type.Hint := '';
+            edcyaction_type.Hint := lbcyaction_type.Hint;
+        end;
+    109:  //SMART_ACTION_ADD_POWER
+        begin
+            lbcyaction_param1.Caption := 'Power type';
+            lbcyaction_param2.Caption := 'Power to add';
+            lbcyaction_param3.Caption := '';
+            lbcyaction_param4.Caption := '';
+            lbcyaction_param5.Caption := '';
+            lbcyaction_param6.Caption := '';
+            lbcyaction_type.Hint := '';
+            edcyaction_type.Hint := lbcyaction_type.Hint;
+        end;
+    110:  //SMART_ACTION_REMOVE_POWER
+        begin
+            lbcyaction_param1.Caption := 'Power type';
+            lbcyaction_param2.Caption := 'Power to remove';
+            lbcyaction_param3.Caption := '';
+            lbcyaction_param4.Caption := '';
+            lbcyaction_param5.Caption := '';
+            lbcyaction_param6.Caption := '';
+            lbcyaction_type.Hint := '0 - disable, 1 - enable Enables or disables creature movement';
+            edcyaction_type.Hint := lbcyaction_type.Hint;
+        end;
     end;
     SAI_Action := t;
 end;
@@ -13161,6 +13249,18 @@ procedure TMainForm.SetSAITarget(t: integer);
             lbcytarget_z.Caption := '';
             lbcytarget_o.Caption := '';
             lbcytarget_type.Hint := 'All units on creature''s threat list';
+            edcytarget_type.Hint := lbcytarget_type.Hint;
+        end;
+    25:  //SMART_TARGET_CLOSEST_ENEMY
+        begin
+            lbcytarget_param1.Caption := 'maxDist';
+            lbcytarget_param2.Caption := '';
+            lbcytarget_param3.Caption := '';
+            lbcytarget_x.Caption := '';
+            lbcytarget_y.Caption := '';
+            lbcytarget_z.Caption := '';
+            lbcytarget_o.Caption := '';
+            lbcytarget_type.Hint := 'Any attackable target (creature or player) within maxDist';
             edcytarget_type.Hint := lbcytarget_type.Hint;
         end;
     end;
