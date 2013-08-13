@@ -12597,15 +12597,15 @@ procedure TMainForm.SetSAIAction(t: integer);
         end;
     80:  //SMART_ACTION_CALL_TIMED_ACTIONLIST
         begin
-            lbcyaction_param1.Caption := 'ID';
-            lbcyaction_param2.Caption := 'Stop after combat (0/1)';
-            lbcyaction_param3.Caption := 'timer update type';
+            lbcyaction_param1.Caption := 'EntryOrGuid';
+            lbcyaction_param2.Caption := 'timer update type(0 OOC, 1 IC, 2 ALWAYS)';
+            lbcyaction_param3.Caption := '';
             lbcyaction_param4.Caption := '';
             lbcyaction_param5.Caption := '';
             lbcyaction_param6.Caption := '';
             lbcyaction_param1.Hint := 'overwrites already running actionlist';
             edcyaction_param1.Hint := lbcyaction_param1.Hint;
-            lbcyaction_param3.Hint := '0 = OOC; 1 = IC; 2 = ALWAYS';
+            lbcyaction_param2.Hint := '0 = OOC; 1 = IC; 2 = ALWAYS';
             edcyaction_param3.Hint := lbcyaction_param3.Hint;
             lbcyaction_type.Hint := '';
             edcyaction_type.Hint := lbcyaction_type.Hint;
