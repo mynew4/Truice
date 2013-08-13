@@ -19,7 +19,7 @@ const
   VERSION_4   = '6';
   VERSION_EXE = VERSION_1 + '.' + VERSION_2 + '.' + VERSION_3 + '.' + VERSION_4;
 
-  SCRIPT_TAB_NO_QUEST       = 8;
+  SCRIPT_TAB_NO_QUEST       = 6;
   SCRIPT_TAB_NO_CREATURE    = 17;
   SCRIPT_TAB_NO_GAMEOBJECT  = 6;
   SCRIPT_TAB_NO_ITEM        = 10;
