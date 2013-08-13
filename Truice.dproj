@@ -44,9 +44,9 @@
 		<PropertyGroup Condition="'$(Base)'!=''">
 			<Icon_MainIcon>Truice_Icon.ico</Icon_MainIcon>
 			<Manifest_File>None</Manifest_File>
-			<VerInfo_Build>3</VerInfo_Build>
+			<VerInfo_Build>6</VerInfo_Build>
 			<VerInfo_Locale>1058</VerInfo_Locale>
-			<VerInfo_Keys>CompanyName=;FileDescription=Truice - Trinity DB Editor;FileVersion=1.3.7.3;InternalName=Truice;LegalCopyright=© indomit 2007-2009 (Quice), @ Ishigure 2010, @ Faq 2012-2013, @ chaosua 2013;LegalTrademarks=indomit™;OriginalFilename=Truice.exe;ProductName=Truice;ProductVersion=1.3.7;Comments=compiled by chaosua</VerInfo_Keys>
+			<VerInfo_Keys>CompanyName=;FileDescription=Truice - Trinity DB Editor;FileVersion=1.3.7.6;InternalName=Truice;LegalCopyright=© indomit 2007-2009 (Quice), @ Ishigure 2010, @ Faq 2012-2013, @ chaosua 2013;LegalTrademarks=indomit™;OriginalFilename=Truice.exe;ProductName=Truice;ProductVersion=1.3.7;Comments=compiled by chaosua</VerInfo_Keys>
 			<VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
 			<DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;Winapi;System.Win;$(DCC_Namespace)</DCC_Namespace>
 			<VerInfo_Release>7</VerInfo_Release>
@@ -65,28 +65,36 @@
 			<DCC_K>false</DCC_K>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Base_Win32)'!=''">
+			<VerInfo_Build>6</VerInfo_Build>
 			<DCC_Namespace>Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
 			<VerInfo_Locale>1033</VerInfo_Locale>
 			<Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+			<VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.3.7.6;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_1)'!=''">
+			<VerInfo_Build>6</VerInfo_Build>
+			<VerInfo_Keys>CompanyName=;FileDescription=Truice - Trinity DB Editor;FileVersion=1.3.7.6;InternalName=Truice;LegalCopyright=© indomit 2007-2009 (Quice), @ Ishigure 2010, @ Faq 2012-2013, @ chaosua 2013;LegalTrademarks=indomit™;OriginalFilename=Truice.exe;ProductName=Truice;ProductVersion=1.3.7;Comments=compiled by chaosua</VerInfo_Keys>
 			<DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
 			<DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
 			<DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
 			<DCC_DebugInformation>false</DCC_DebugInformation>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
-			<VerInfo_Keys>CompanyName=;FileDescription=Truice - Trinity DB Editor;FileVersion=1.3.7.5;InternalName=Truice;LegalCopyright=© indomit 2007-2009 (Quice), @ Ishigure 2010, @ Faq 2012-2013, @ chaosua 2013;LegalTrademarks=indomit™;OriginalFilename=Truice.exe;ProductName=Truice;ProductVersion=1.3.7;Comments=compiled by chaosua</VerInfo_Keys>
-			<VerInfo_Build>5</VerInfo_Build>
+			<VerInfo_Keys>CompanyName=;FileDescription=Truice - Trinity DB Editor;FileVersion=1.3.7.6;InternalName=Truice;LegalCopyright=© indomit 2007-2009 (Quice), @ Ishigure 2010, @ Faq 2012-2013, @ chaosua 2013;LegalTrademarks=indomit™;OriginalFilename=Truice.exe;ProductName=Truice;ProductVersion=1.3.7;Comments=compiled by chaosua</VerInfo_Keys>
+			<VerInfo_Build>6</VerInfo_Build>
 			<Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
 			<VerInfo_Locale>1033</VerInfo_Locale>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_2)'!=''">
+			<VerInfo_Build>6</VerInfo_Build>
+			<VerInfo_Keys>CompanyName=;FileDescription=Truice - Trinity DB Editor;FileVersion=1.3.7.6;InternalName=Truice;LegalCopyright=© indomit 2007-2009 (Quice), @ Ishigure 2010, @ Faq 2012-2013, @ chaosua 2013;LegalTrademarks=indomit™;OriginalFilename=Truice.exe;ProductName=Truice;ProductVersion=1.3.7;Comments=compiled by chaosua</VerInfo_Keys>
 			<DCC_DebugInformation>true</DCC_DebugInformation>
 			<DCC_RangeChecking>true</DCC_RangeChecking>
 			<DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+			<VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.3.7.6;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+			<VerInfo_Build>6</VerInfo_Build>
 			<Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
 			<VerInfo_Locale>1033</VerInfo_Locale>
 		</PropertyGroup>
@@ -185,7 +193,7 @@
 						<VersionInfo Name="MajorVer">1</VersionInfo>
 						<VersionInfo Name="MinorVer">3</VersionInfo>
 						<VersionInfo Name="Release">7</VersionInfo>
-						<VersionInfo Name="Build">1</VersionInfo>
+						<VersionInfo Name="Build">6</VersionInfo>
 						<VersionInfo Name="Debug">False</VersionInfo>
 						<VersionInfo Name="PreRelease">False</VersionInfo>
 						<VersionInfo Name="Special">False</VersionInfo>
@@ -203,7 +211,7 @@
 						<VersionInfoKeys Name="LegalTrademarks">indomit™</VersionInfoKeys>
 						<VersionInfoKeys Name="OriginalFilename">Truice.exe</VersionInfoKeys>
 						<VersionInfoKeys Name="ProductName">Truice</VersionInfoKeys>
-						<VersionInfoKeys Name="ProductVersion">1.3.7.1</VersionInfoKeys>
+						<VersionInfoKeys Name="ProductVersion">1.3.7</VersionInfoKeys>
 						<VersionInfoKeys Name="Comments"/>
 					</VersionInfoKeys>
 					<Excluded_Packages>
