@@ -11113,6 +11113,15 @@ begin
             lbcyevent_type.Hint := '';
             edcyevent_type.Hint := lbcyevent_type.Hint;
         end;
+    74:  //SMART_EVENT_FRIENDLY_HEALTH_PCT
+        begin
+            lbcyevent_param1.Caption := 'minHpPct';
+            lbcyevent_param2.Caption := 'maxHpPct';
+            lbcyevent_param3.Caption := 'repeatMin';
+            lbcyevent_param4.Caption := 'repeatMax';
+            lbcyevent_type.Hint := '';
+            edcyevent_type.Hint := lbcyevent_type.Hint;
+        end;
     end;
     SAI_Event := t;
 end;
@@ -13241,6 +13250,20 @@ procedure TMainForm.SetSAITarget(t: integer);
             lbcytarget_z.Caption := '';
             lbcytarget_o.Caption := '';
             lbcytarget_param1.Hint := 'Any attackable target (creature or player) within maxDist';
+            edcytarget_param1.Hint := lbcytarget_param1.Hint;
+            lbcytarget_type.Hint := '';
+            edcytarget_type.Hint := lbcytarget_type.Hint;
+        end;
+    26:  //SMART_TARGET_CLOSEST_FRIENDLY
+        begin
+            lbcytarget_param1.Caption := 'maxDist';
+            lbcytarget_param2.Caption := '';
+            lbcytarget_param3.Caption := '';
+            lbcytarget_x.Caption := '';
+            lbcytarget_y.Caption := '';
+            lbcytarget_z.Caption := '';
+            lbcytarget_o.Caption := '';
+            lbcytarget_param1.Hint := 'Friendly target (creature or player) within maxDist';
             edcytarget_param1.Hint := lbcytarget_param1.Hint;
             lbcytarget_type.Hint := '';
             edcytarget_type.Hint := lbcytarget_type.Hint;
