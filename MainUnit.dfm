@@ -5677,7 +5677,7 @@ object MainForm: TMainForm
         Top = 25
         Width = 892
         Height = 648
-        ActivePage = tsCreatureLocation
+        ActivePage = tsNPCVendor
         Align = alClient
         MultiLine = True
         TabOrder = 0
@@ -6748,13 +6748,6 @@ object MainForm: TMainForm
               Height = 13
               Caption = 'type'
             end
-            object lbctfaction_H: TLabel
-              Left = 391
-              Top = 162
-              Width = 46
-              Height = 13
-              Caption = 'faction_H'
-            end
             object lbctunit_flags: TLabel
               Left = 107
               Top = 166
@@ -6903,7 +6896,7 @@ object MainForm: TMainForm
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
-              TabOrder = 15
+              TabOrder = 14
               OnButtonClick = edctnpcflagButtonClick
             end
             object edctrank: TJvComboEdit
@@ -7016,7 +7009,7 @@ object MainForm: TMainForm
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
-              TabOrder = 14
+              TabOrder = 13
               OnButtonClick = edcttypeButtonClick
             end
             object edctmindmg: TLabeledEdit
@@ -7073,44 +7066,6 @@ object MainForm: TMainForm
               EditLabel.Caption = 'dmgschool'
               TabOrder = 7
             end
-            object edctfaction_H: TJvComboEdit
-              Left = 391
-              Top = 181
-              Width = 89
-              Height = 21
-              Hint = 'unit flags 2'
-              ButtonWidth = 22
-              ClickKey = 13
-              Glyph.Data = {
-                36030000424D3603000000000000360000002800000010000000100000000100
-                18000000000000030000120B0000120B00000000000000000000FFFFFFFFFFFF
-                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD79C64
-                DB9E63FFFFFFFFFFFFFFFFFFFFFFFFDA9E63D89D65FFFFFFFFFFFFFFFFFFFFFF
-                FFD79C64DB9E63FFFFFFC2773FEBB36FEDB570D19059FFFFFFFFFFFFC57D44ED
-                B571EBB26ECC9164FFFFFFFFFFFFC27840EBB36FECB470D1915AC48355D5955B
-                D89960CA8C5FFFFFFFFFFFFFC68457D8995FD6965BCE9974FFFFFFFFFFFFC380
-                52D6975DD99A61CB8D5FFFFFFFC68A65C17F54FFFFFFFFFFFFFFFFFFFFFFFFC2
-                8157C58963FFFFFFFFFFFFFFFFFFFFFFFFC68B65C17F54FFFFFFFFFFFFFFFFFF
-                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
-              TabOrder = 13
-              OnButtonClick = GetFactionTemplate
-            end
             object edctRegenHealth: TLabeledEdit
               Left = 8
               Top = 106
@@ -7155,7 +7110,7 @@ object MainForm: TMainForm
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
-              TabOrder = 16
+              TabOrder = 15
               OnButtonClick = GetUnitFlags
             end
             object edctunit_flags2: TJvComboEdit
@@ -7192,7 +7147,7 @@ object MainForm: TMainForm
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
-              TabOrder = 22
+              TabOrder = 21
               OnButtonClick = GetUnitFlags2
             end
             object edcttype_flags: TJvComboEdit
@@ -7229,7 +7184,7 @@ object MainForm: TMainForm
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
-              TabOrder = 17
+              TabOrder = 16
               OnButtonClick = GetCreatureFlag1
             end
             object edctdynamicflags: TJvComboEdit
@@ -7266,7 +7221,7 @@ object MainForm: TMainForm
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
-              TabOrder = 18
+              TabOrder = 17
               OnButtonClick = GetCreatureDynamicFlags
             end
             object edctdmg_multiplier: TLabeledEdit
@@ -7277,7 +7232,7 @@ object MainForm: TMainForm
               EditLabel.Width = 66
               EditLabel.Height = 13
               EditLabel.Caption = 'dmg_multiplier'
-              TabOrder = 19
+              TabOrder = 18
             end
             object edctunit_class: TLabeledEdit
               Left = 105
@@ -7287,7 +7242,7 @@ object MainForm: TMainForm
               EditLabel.Width = 47
               EditLabel.Height = 13
               EditLabel.Caption = 'unit_class'
-              TabOrder = 20
+              TabOrder = 19
             end
             object edctVerifiedBuild: TLabeledEdit
               Left = 391
@@ -7297,7 +7252,7 @@ object MainForm: TMainForm
               EditLabel.Width = 58
               EditLabel.Height = 13
               EditLabel.Caption = 'VerifiedBuild'
-              TabOrder = 21
+              TabOrder = 20
             end
           end
           object gbLoot: TGroupBox
@@ -8421,8 +8376,6 @@ object MainForm: TMainForm
         object tsCreatureLocation: TTabSheet
           Caption = 'Creature Location'
           ImageIndex = 2
-          ExplicitLeft = 0
-          ExplicitTop = 34
           DesignSize = (
             884
             602)
@@ -10784,9 +10737,16 @@ object MainForm: TMainForm
                 Width = 100
               end
               item
-                Width = 200
+                Width = 100
               end
               item
+                Width = 120
+              end
+              item
+                Width = 70
+              end
+              item
+                Width = 100
               end>
             HideSelection = False
             ReadOnly = True
@@ -10795,8 +10755,12 @@ object MainForm: TMainForm
             ViewStyle = vsReport
             OnChange = lvcvNPCVendorChange
             OnSelectItem = lvcvNPCVendorSelectItem
-            ColumnsOrder = '0=80,1=80,2=80,3=80,4=100,5=200,6=50'
+            ColumnsOrder = '0=80,1=80,2=80,3=80,4=100,5=100,6=120,7=70,8=100'
             ExtendedColumns = <
+              item
+              end
+              item
+              end
               item
               end
               item
@@ -10820,7 +10784,7 @@ object MainForm: TMainForm
             EditLabel.Width = 23
             EditLabel.Height = 13
             EditLabel.Caption = 'entry'
-            TabOrder = 1
+            TabOrder = 9
           end
           object edcvitem: TJvComboEdit
             Left = 192
@@ -10933,6 +10897,26 @@ object MainForm: TMainForm
               FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
             TabOrder = 7
             OnButtonClick = edcvExtendedCostButtonClick
+          end
+          object edcvtype: TLabeledEdit
+            Left = 285
+            Top = 526
+            Width = 80
+            Height = 21
+            EditLabel.Width = 20
+            EditLabel.Height = 13
+            EditLabel.Caption = 'type'
+            TabOrder = 10
+          end
+          object edcvVerifiedBuild: TLabeledEdit
+            Left = 374
+            Top = 526
+            Width = 80
+            Height = 21
+            EditLabel.Width = 58
+            EditLabel.Height = 13
+            EditLabel.Caption = 'VerifiedBuild'
+            TabOrder = 1
           end
           object edcvslot: TLabeledEdit
             Left = 97

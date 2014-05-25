@@ -72,8 +72,7 @@
 			<VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.3.7.6;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_1)'!=''">
-			<VerInfo_Build>6</VerInfo_Build>
-			<VerInfo_Keys>CompanyName=;FileDescription=Truice - Trinity DB Editor;FileVersion=1.3.7.6;InternalName=Truice;LegalCopyright=© indomit 2007-2009 (Quice), @ Ishigure 2010, @ Faq 2012-2013, @ chaosua 2013;LegalTrademarks=indomit™;OriginalFilename=Truice.exe;ProductName=Truice;ProductVersion=1.3.7;Comments=compiled by chaosua</VerInfo_Keys>
+			<DCC_IntegerOverflowCheck>false</DCC_IntegerOverflowCheck>
 			<DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
 			<DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
 			<DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>

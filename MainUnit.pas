@@ -15,8 +15,8 @@ uses
 const
   VERSION_1   = '1'; //*10000
   VERSION_2   = '3'; //*100
-  VERSION_3   = '7';
-  VERSION_4   = '6';
+  VERSION_3   = '8';
+  VERSION_4   = '0';
   VERSION_EXE = VERSION_1 + '.' + VERSION_2 + '.' + VERSION_3 + '.' + VERSION_4;
 
   SCRIPT_TAB_NO_QUEST       = 6;
@@ -1049,8 +1049,6 @@ type
     lbcmemote: TLabel;
     edclequipment_id: TLabeledEdit;
     edclmodelid: TLabeledEdit;
-    edctfaction_H: TJvComboEdit;
-    lbctfaction_H: TLabel;
     edctRegenHealth: TLabeledEdit;
     tsCreatureModelInfo: TTabSheet;
     tsCreatureEquipTemplate: TTabSheet;
@@ -1451,6 +1449,8 @@ type
     edqtUnknown0: TLabeledEdit;
     edgtVerifiedBuild: TLabeledEdit;
     edcvslot: TLabeledEdit;
+	edcvtype: TLabeledEdit;
+	edcvVerifiedBuild: TLabeledEdit;
     tsSmartAI: TTabSheet;
     lvcySmartAI: TJvListView;
     tsConditions: TTabSheet;
@@ -4331,16 +4331,17 @@ begin
     npcflag := MyQuery.FieldByName('npcflag').AsInteger;
 
     // is creature vendor?
-    if npcflag and $80 = $80 then isvendor := true else isvendor := false;
+    if npcflag and 128 = 128 then isvendor := true else isvendor := false;
 
     // is creature trainer?
     if npcflag and 16 = 16 then istrainer := true else istrainer := false;
 
     // is eventAI ?
     //if MyQuery.FieldByName('AIName').AsString = mob_eventai then
-    isEventAI := true; //else isEventAI := false;
+    //isEventAI := true; //else
+    isEventAI := false;
 
-    if MyQuery.FieldByName('entry').AsInteger <> 0 then isEquip:= true else isEquip:= false;
+   // if MyQuery.FieldByName('entry').AsInteger <> 0 then isEquip:= true else isEquip:= false;
 
     MyQuery.Close;
 
@@ -4365,7 +4366,7 @@ begin
       [Entry]),lvcvNPCVendor);
     tsNPCVendor.TabVisible := isvendor;
 
-    if isEquip then LoadCreatureEquip(StrToIntDef(edctentry.Text,0));
+    //if isEquip then LoadCreatureEquip(StrToIntDef(edctentry.Text,0));
 
     if isEventAI then
       LoadQueryToListView(Format('SELECT   `id`,  `creature_id` as `cid`,  `event_type` as `et`,  '+
@@ -7509,6 +7510,8 @@ begin
       edcvmaxcount.Text := SubItems[2];
       edcvincrtime.Text := SubItems[3];
       edcvExtendedCost.Text := SubItems[4];
+	  edcvtype.Text := SubItems[5];
+	  edcvVerifiedBuild.Text := SubItems[6];
     end;
   end;
 end;
@@ -8506,6 +8509,8 @@ begin
     SubItems.Add(edcvmaxcount.Text);
     SubItems.Add(edcvincrtime.Text);
     SubItems.Add(edcvExtendedCost.Text);
+	SubItems.Add(edcvtype.Text);
+	SubItems.Add(edcvVerifiedBuild.Text);
   end;
 end;
 
@@ -8521,6 +8526,8 @@ begin
       SubItems[2] := edcvmaxcount.Text;
       SubItems[3] := edcvincrtime.Text;
       SubItems[4] := edcvExtendedCost.Text;
+  	  SubItems[5] := edcvtype.Text;
+	  SubItems[6] := edcvVerifiedBuild.Text;
     end;
   end;
 end;
@@ -8610,29 +8617,33 @@ begin
   begin
     for i := 0 to lvcvNPCVendor.Items.Count - 2 do
     begin
-      Values := Values + Format('(%s, %s, %s, %s, %s, %s),'#13#10,[
+      Values := Values + Format('(%s, %s, %s, %s, %s, %s, %s %s);',[
         lvcvNPCVendor.Items[i].Caption,
         lvcvNPCVendor.Items[i].SubItems[0],
         lvcvNPCVendor.Items[i].SubItems[1],
         lvcvNPCVendor.Items[i].SubItems[2],
         lvcvNPCVendor.Items[i].SubItems[3],
-        lvcvNPCVendor.Items[i].SubItems[4]
+        lvcvNPCVendor.Items[i].SubItems[4],
+        lvcvNPCVendor.Items[i].SubItems[5],
+        lvcvNPCVendor.Items[i].SubItems[6]
       ]);
     end;
     i := lvcvNPCVendor.Items.Count - 1;
-    Values := Values + Format('(%s, %s, %s, %s, %s, %s);',[
+    Values := Values + Format('(%s, %s, %s, %s, %s, %s, %s, %s);',[
       lvcvNPCVendor.Items[i].Caption,
       lvcvNPCVendor.Items[i].SubItems[0],
       lvcvNPCVendor.Items[i].SubItems[1],
       lvcvNPCVendor.Items[i].SubItems[2],
       lvcvNPCVendor.Items[i].SubItems[3],
-      lvcvNPCVendor.Items[i].SubItems[4]
+      lvcvNPCVendor.Items[i].SubItems[4],
+      lvcvNPCVendor.Items[i].SubItems[5],
+      lvcvNPCVendor.Items[i].SubItems[6]
     ]);
   end;
   if Values<>'' then
   begin
     mectScript.Text := Format('DELETE FROM `npc_vendor` WHERE (`entry`=%s);'#13#10+
-      'INSERT INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `ExtendedCost`) VALUES '#13#10'%s',[entry, Values])
+      'INSERT INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `ExtendedCost`, `type`, `VerifiedBuild`) VALUES '#13#10'%s',[entry, Values])
   end
   else
     mectScript.Text := Format('DELETE FROM `npc_vendor` WHERE (`entry`=%s);',[entry]);
