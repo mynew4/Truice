@@ -1575,11 +1575,10 @@ type
     edgtAIName: TLabeledEdit;
     edclnpcflag: TJvComboEdit;
     edclunit_flags: TJvComboEdit;
-    edclunit_flags2: TJvComboEdit;
+    edclVerifiedBuild: TLabeledEdit;
     edcldynamicflags: TJvComboEdit;
     lbclnpcflag: TLabel;
     lbclunit_flags: TLabel;
-    lbclunit_flags2: TLabel;
     lbcldynamicflags: TLabel;
     edptVerifiedBuild: TLabeledEdit;
     edgeworld_event: TLabeledEdit;
