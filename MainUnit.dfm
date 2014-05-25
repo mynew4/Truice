@@ -26,7 +26,7 @@ object MainForm: TMainForm
     Top = 0
     Width = 900
     Height = 701
-    ActivePage = tsQuest
+    ActivePage = tsCreature
     Align = alClient
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -4925,15 +4925,15 @@ object MainForm: TMainForm
               EditLabel.Caption = 'RewardTalents'
               TabOrder = 6
             end
-            object edqtWDBVerified: TLabeledEdit
+            object edqtVerifiedBuild: TLabeledEdit
               Left = 8
               Top = 68
               Width = 73
               Height = 21
               Hint = 'PlayersSlain'
-              EditLabel.Width = 61
+              EditLabel.Width = 58
               EditLabel.Height = 13
-              EditLabel.Caption = 'WDBVerified'
+              EditLabel.Caption = 'VerifiedBuild'
               TabOrder = 7
             end
             object edqtUnknown0: TLabeledEdit
@@ -5933,6 +5933,7 @@ object MainForm: TMainForm
                 Width = 112
               end>
             HideSelection = False
+            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 1
@@ -7289,14 +7290,14 @@ object MainForm: TMainForm
               EditLabel.Caption = 'unit_class'
               TabOrder = 20
             end
-            object edctWDBVerified: TLabeledEdit
+            object edctVerifiedBuild: TLabeledEdit
               Left = 391
               Top = 106
               Width = 90
               Height = 21
-              EditLabel.Width = 61
+              EditLabel.Width = 58
               EditLabel.Height = 13
-              EditLabel.Caption = 'WDBVerified'
+              EditLabel.Caption = 'VerifiedBuild'
               TabOrder = 21
             end
           end
@@ -9016,6 +9017,7 @@ object MainForm: TMainForm
                 Width = 120
               end>
             HideSelection = False
+            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 1
@@ -9595,6 +9597,7 @@ object MainForm: TMainForm
                 Width = 200
               end>
             HideSelection = False
+            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -10008,6 +10011,7 @@ object MainForm: TMainForm
                 Width = 200
               end>
             HideSelection = False
+            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -10420,6 +10424,7 @@ object MainForm: TMainForm
                 Width = 200
               end>
             HideSelection = False
+            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -10819,6 +10824,7 @@ object MainForm: TMainForm
               item
               end>
             HideSelection = False
+            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -11203,6 +11209,7 @@ object MainForm: TMainForm
                 Width = 200
               end>
             HideSelection = False
+            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -11900,6 +11907,7 @@ object MainForm: TMainForm
                 Width = 48
               end>
             HideSelection = False
+            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -12343,6 +12351,10 @@ object MainForm: TMainForm
           Caption = 'Involved in'
           ImageIndex = 11
           OnShow = tsCreatureUsedShow
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           object pcCreatureInfo: TPageControl
             Left = 0
             Top = 41
@@ -12385,6 +12397,7 @@ object MainForm: TMainForm
                     Width = 80
                   end>
                 HideSelection = False
+                Items.ItemData = {}
                 ReadOnly = True
                 RowSelect = True
                 TabOrder = 0
@@ -12441,6 +12454,7 @@ object MainForm: TMainForm
                     Width = 80
                   end>
                 HideSelection = False
+                Items.ItemData = {}
                 ReadOnly = True
                 RowSelect = True
                 TabOrder = 0
@@ -12497,6 +12511,7 @@ object MainForm: TMainForm
                     Width = 80
                   end>
                 HideSelection = False
+                Items.ItemData = {}
                 ReadOnly = True
                 RowSelect = True
                 TabOrder = 0
@@ -12531,6 +12546,10 @@ object MainForm: TMainForm
         object tsCreatureSmartAI: TTabSheet
           Caption = 'SmartAI'
           ImageIndex = 18
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           object lbctGoToSmartAI: TLabel
             Left = 15
             Top = 52
@@ -12964,6 +12983,7 @@ object MainForm: TMainForm
                 Width = 36
               end>
             HideSelection = False
+            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -13732,6 +13752,10 @@ object MainForm: TMainForm
           Caption = 'Script'
           ImageIndex = 3
           OnShow = tsCreatureScriptShow
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             884
             602)
@@ -14661,14 +14685,14 @@ object MainForm: TMainForm
               EditLabel.Caption = 'unk1'
               TabOrder = 10
             end
-            object edgtWDBVerified: TLabeledEdit
+            object edgtVerifiedBuild: TLabeledEdit
               Left = 292
               Top = 111
               Width = 60
               Height = 21
-              EditLabel.Width = 61
+              EditLabel.Width = 58
               EditLabel.Height = 13
-              EditLabel.Caption = 'WDBVerified'
+              EditLabel.Caption = 'VerifiedBuild'
               TabOrder = 11
             end
             object edgtAIName: TLabeledEdit
@@ -19701,14 +19725,14 @@ object MainForm: TMainForm
               EditLabel.Caption = 'HolidayId'
               TabOrder = 22
             end
-            object editWDBVerified: TLabeledEdit
+            object editVerifiedBuild: TLabeledEdit
               Left = 277
               Top = 156
               Width = 79
               Height = 21
-              EditLabel.Width = 61
+              EditLabel.Width = 58
               EditLabel.Height = 13
-              EditLabel.Caption = 'WDBVerified'
+              EditLabel.Caption = 'VerifiedBuild'
               TabOrder = 23
             end
             object editflagsCustom: TJvComboEdit
@@ -25323,14 +25347,14 @@ object MainForm: TMainForm
               TabOrder = 3
               OnClick = btScriptPageTextClick
             end
-            object edptWDBVerified: TLabeledEdit
+            object edptVerifiedBuild: TLabeledEdit
               Left = 8
               Top = 125
               Width = 71
               Height = 21
-              EditLabel.Width = 61
+              EditLabel.Width = 58
               EditLabel.Height = 13
-              EditLabel.Caption = 'WDBVerified'
+              EditLabel.Caption = 'VerifiedBuild'
               TabOrder = 4
             end
           end

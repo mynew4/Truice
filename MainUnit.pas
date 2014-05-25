@@ -1426,7 +1426,7 @@ type
     edqtRewardFactionValueIdOverride3: TLabeledEdit;
     edqtRewardFactionValueIdOverride4: TLabeledEdit;
     edqtRewardFactionValueIdOverride5: TLabeledEdit;
-    editWDBVerified: TLabeledEdit;
+    editVerifiedBuild: TLabeledEdit;
     edctspeed_run: TLabeledEdit;
     edctVehicleId: TLabeledEdit;
     edctspell5: TJvComboEdit;
@@ -1438,7 +1438,7 @@ type
     edctspell6: TJvComboEdit;
     Label8: TLabel;
     edctexp: TLabeledEdit;
-    edctWDBVerified: TLabeledEdit;
+    edctVerifiedBuild: TLabeledEdit;
     edcapath_id: TLabeledEdit;
     edcdpath_id: TLabeledEdit;
     UpDown3: TUpDown;
@@ -1446,10 +1446,10 @@ type
     edqtRequiredFactionValue2: TLabeledEdit;
     edqtRequiredFactionId2: TJvComboEdit;
     lbqtRepObjectiveFaction2: TLabel;
-    edqtWDBVerified: TLabeledEdit;
+    edqtVerifiedBuild: TLabeledEdit;
     edqtRewardArenaPoints: TLabeledEdit;
     edqtUnknown0: TLabeledEdit;
-    edgtWDBVerified: TLabeledEdit;
+    edgtVerifiedBuild: TLabeledEdit;
     edcvslot: TLabeledEdit;
     tsSmartAI: TTabSheet;
     lvcySmartAI: TJvListView;
@@ -1581,7 +1581,7 @@ type
     lbclunit_flags: TLabel;
     lbclunit_flags2: TLabel;
     lbcldynamicflags: TLabel;
-    edptWDBVerified: TLabeledEdit;
+    edptVerifiedBuild: TLabeledEdit;
     edgeworld_event: TLabeledEdit;
     Timer2: TTimer;
     edhtgender: TLabeledEdit;
@@ -11642,7 +11642,8 @@ begin
 end;
 
 procedure TMainForm.SetSAIAction(t: integer);
-begin
+
+begin
     //Buttons
     edcyaction_param1.ShowButton := false;
     edcyaction_param2.ShowButton := false;
@@ -12934,7 +12935,8 @@ procedure TMainForm.SetSAIAction(t: integer);
 end;
 
 procedure TMainForm.SetSAITarget(t: integer);
-begin
+
+begin
     case t of
     0:  //SMART_TARGET_NONE
         begin
