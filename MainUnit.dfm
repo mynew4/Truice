@@ -5677,7 +5677,7 @@ object MainForm: TMainForm
         Top = 25
         Width = 892
         Height = 648
-        ActivePage = tsEditCreature
+        ActivePage = tsCreatureLocation
         Align = alClient
         MultiLine = True
         TabOrder = 0
@@ -5933,7 +5933,6 @@ object MainForm: TMainForm
                 Width = 112
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 1
@@ -6714,12 +6713,12 @@ object MainForm: TMainForm
             Height = 207
             Caption = 'Creature II'
             TabOrder = 1
-            object lbctfaction_A: TLabel
+            object lbctfaction: TLabel
               Left = 200
               Top = 126
-              Width = 45
+              Width = 32
               Height = 13
-              Caption = 'faction_A'
+              Caption = 'faction'
             end
             object lbctnpcflag: TLabel
               Left = 8
@@ -6743,15 +6742,15 @@ object MainForm: TMainForm
               Caption = 'family'
             end
             object lbcttype: TLabel
-              Left = 391
+              Left = 296
               Top = 126
               Width = 20
               Height = 13
               Caption = 'type'
             end
             object lbctfaction_H: TLabel
-              Left = 296
-              Top = 126
+              Left = 391
+              Top = 162
               Width = 46
               Height = 13
               Caption = 'faction_H'
@@ -6828,7 +6827,7 @@ object MainForm: TMainForm
               EditLabel.Caption = 'rangedattackpower'
               TabOrder = 9
             end
-            object edctfaction_A: TJvComboEdit
+            object edctfaction: TJvComboEdit
               Left = 199
               Top = 142
               Width = 89
@@ -6984,7 +6983,7 @@ object MainForm: TMainForm
               OnButtonClick = edctfamilyButtonClick
             end
             object edcttype: TJvComboEdit
-              Left = 392
+              Left = 296
               Top = 142
               Width = 89
               Height = 21
@@ -7075,11 +7074,11 @@ object MainForm: TMainForm
               TabOrder = 7
             end
             object edctfaction_H: TJvComboEdit
-              Left = 296
-              Top = 142
+              Left = 391
+              Top = 181
               Width = 89
               Height = 21
-              Hint = 'Creature'#39's faction.'
+              Hint = 'unit flags 2'
               ButtonWidth = 22
               ClickKey = 13
               Glyph.Data = {
@@ -7160,7 +7159,7 @@ object MainForm: TMainForm
               OnButtonClick = GetUnitFlags
             end
             object edctunit_flags2: TJvComboEdit
-              Left = 201
+              Left = 200
               Top = 106
               Width = 89
               Height = 21
@@ -9017,7 +9016,6 @@ object MainForm: TMainForm
                 Width = 120
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 1
@@ -9597,7 +9595,6 @@ object MainForm: TMainForm
                 Width = 200
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -10011,7 +10008,6 @@ object MainForm: TMainForm
                 Width = 200
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -10424,7 +10420,6 @@ object MainForm: TMainForm
                 Width = 200
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -10824,7 +10819,6 @@ object MainForm: TMainForm
               item
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -11209,7 +11203,6 @@ object MainForm: TMainForm
                 Width = 200
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -11907,7 +11900,6 @@ object MainForm: TMainForm
                 Width = 48
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -12351,10 +12343,6 @@ object MainForm: TMainForm
           Caption = 'Involved in'
           ImageIndex = 11
           OnShow = tsCreatureUsedShow
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           object pcCreatureInfo: TPageControl
             Left = 0
             Top = 41
@@ -12397,7 +12385,6 @@ object MainForm: TMainForm
                     Width = 80
                   end>
                 HideSelection = False
-                Items.ItemData = {}
                 ReadOnly = True
                 RowSelect = True
                 TabOrder = 0
@@ -12454,7 +12441,6 @@ object MainForm: TMainForm
                     Width = 80
                   end>
                 HideSelection = False
-                Items.ItemData = {}
                 ReadOnly = True
                 RowSelect = True
                 TabOrder = 0
@@ -12511,7 +12497,6 @@ object MainForm: TMainForm
                     Width = 80
                   end>
                 HideSelection = False
-                Items.ItemData = {}
                 ReadOnly = True
                 RowSelect = True
                 TabOrder = 0
@@ -12546,10 +12531,6 @@ object MainForm: TMainForm
         object tsCreatureSmartAI: TTabSheet
           Caption = 'SmartAI'
           ImageIndex = 18
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           object lbctGoToSmartAI: TLabel
             Left = 15
             Top = 52
@@ -12983,7 +12964,6 @@ object MainForm: TMainForm
                 Width = 36
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -13752,10 +13732,6 @@ object MainForm: TMainForm
           Caption = 'Script'
           ImageIndex = 3
           OnShow = tsCreatureScriptShow
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             884
             602)

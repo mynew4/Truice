@@ -364,7 +364,7 @@ type
     edctmingold: TLabeledEdit;
     edctmaxgold: TLabeledEdit;
     gbCreature2: TGroupBox;
-    lbctfaction_A: TLabel;
+    lbctfaction: TLabel;
     lbctnpcflag: TLabel;
     lbctrank: TLabel;
     lbctfamily: TLabel;
@@ -373,7 +373,7 @@ type
     edctbaseattacktime: TLabeledEdit;
     edctrangeattacktime: TLabeledEdit;
     edctrangedattackpower: TLabeledEdit;
-    edctfaction_A: TJvComboEdit;
+    edctfaction: TJvComboEdit;
     edctnpcflag: TJvComboEdit;
     edctrank: TJvComboEdit;
     edctfamily: TJvComboEdit;
