@@ -5677,7 +5677,7 @@ object MainForm: TMainForm
         Top = 25
         Width = 892
         Height = 648
-        ActivePage = tsNPCVendor
+        ActivePage = tsCreatureLocation
         Align = alClient
         MultiLine = True
         TabOrder = 0
@@ -8857,16 +8857,6 @@ object MainForm: TMainForm
               FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
             TabOrder = 25
             OnButtonClick = GetUnitFlags
-          end
-          object edclVerifiedBuild: TLabeledEdit
-            Left = 462
-            Top = 488
-            Width = 81
-            Height = 21
-            EditLabel.Width = 78
-            EditLabel.Height = 13
-            EditLabel.Caption = 'edclVerifiedBuild'
-            TabOrder = 27
           end
           object edcldynamicflags: TJvComboEdit
             Left = 375
