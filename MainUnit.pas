@@ -1055,6 +1055,7 @@ type
     Panel23: TPanel;
     edceentry: TLabeledEdit;
     edceid: TLabeledEdit;
+    edceWDBVerified: TLabeledEdit;
     btShowCreatureEquipmentScript: TButton;
     lvCreatureModelSearch: TJvListView;
     Panel24: TPanel;
@@ -4364,7 +4365,7 @@ begin
       [Entry]),lvcvNPCVendor);
     tsNPCVendor.TabVisible := isvendor;
 
-    //if isEquip then LoadCreatureEquip(StrToIntDef(edctentry.Text,0));
+    LoadCreatureEquip(StrToIntDef(edctentry.Text,0));
 
     if isEventAI then
       LoadQueryToListView(Format('SELECT   `id`,  `creature_id` as `cid`,  `event_type` as `et`,  '+
@@ -4387,6 +4388,7 @@ begin
       for i := 0 to lvcrNPCTrainer.Items.Count - 1 do
         lvcrNPCTrainer.Items[i].SubItems.Add(SpellsForm.GetSpellName(StrToIntDef(lvcrNPCTrainer.Items[i].SubItems[0],0)));
     end;
+
     tsNPCTrainer.TabVisible := istrainer;
     LoadCreatureTemplateAddon(Entry);
     edclid.Text := IntToStr(Entry);
@@ -4605,7 +4607,7 @@ begin
   if (edceitemEntry1.Text='') then edceitemEntry1.Text := '0';
   if (edceitemEntry2.Text='') then edceitemEntry2.Text := '0';
   if (edceitemEntry3.Text='') then edceitemEntry3.Text := '0';
-
+  if (edceWDBVerified.Text='') then edceWDBVerified.Text := '0';
   if Assigned(lvclCreatureLocation.Selected) and (StrToIntDef(edclequipment_id.Text,0)<>0) then
     itemEntry := StrToIntDef(edclequipment_id.Text,0);
 end;
@@ -7508,8 +7510,8 @@ begin
       edcvmaxcount.Text := SubItems[2];
       edcvincrtime.Text := SubItems[3];
       edcvExtendedCost.Text := SubItems[4];
-	  edcvtype.Text := SubItems[5];
-	  edcvVerifiedBuild.Text := SubItems[6];
+	    edcvtype.Text := SubItems[5];
+	    edcvVerifiedBuild.Text := SubItems[6];
     end;
   end;
 end;
@@ -8507,8 +8509,9 @@ begin
     SubItems.Add(edcvmaxcount.Text);
     SubItems.Add(edcvincrtime.Text);
     SubItems.Add(edcvExtendedCost.Text);
-	SubItems.Add(edcvtype.Text);
-	SubItems.Add(edcvVerifiedBuild.Text);
+    //cataclysm
+    SubItems.Add(edcvtype.Text);
+    SubItems.Add(edcvVerifiedBuild.Text);
   end;
 end;
 
@@ -8524,8 +8527,9 @@ begin
       SubItems[2] := edcvmaxcount.Text;
       SubItems[3] := edcvincrtime.Text;
       SubItems[4] := edcvExtendedCost.Text;
+      //cataclysm
   	  SubItems[5] := edcvtype.Text;
-	  SubItems[6] := edcvVerifiedBuild.Text;
+      SubItems[6] := edcvVerifiedBuild.Text;
     end;
   end;
 end;
@@ -8622,6 +8626,7 @@ begin
         lvcvNPCVendor.Items[i].SubItems[2],
         lvcvNPCVendor.Items[i].SubItems[3],
         lvcvNPCVendor.Items[i].SubItems[4],
+        //cataclysm
         lvcvNPCVendor.Items[i].SubItems[5],
         lvcvNPCVendor.Items[i].SubItems[6]
       ]);
@@ -8634,6 +8639,7 @@ begin
       lvcvNPCVendor.Items[i].SubItems[2],
       lvcvNPCVendor.Items[i].SubItems[3],
       lvcvNPCVendor.Items[i].SubItems[4],
+      //cataclysm
       lvcvNPCVendor.Items[i].SubItems[5],
       lvcvNPCVendor.Items[i].SubItems[6]
     ]);
