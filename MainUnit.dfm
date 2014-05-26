@@ -5677,7 +5677,7 @@ object MainForm: TMainForm
         Top = 25
         Width = 892
         Height = 648
-        ActivePage = tsCreatureEquipTemplate
+        ActivePage = tsNPCVendor
         Align = alClient
         MultiLine = True
         TabOrder = 0
@@ -5933,7 +5933,6 @@ object MainForm: TMainForm
                 Width = 112
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 1
@@ -8453,7 +8452,6 @@ object MainForm: TMainForm
                 Width = 100
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -8941,7 +8939,6 @@ object MainForm: TMainForm
                 Width = 120
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 1
@@ -9531,7 +9528,6 @@ object MainForm: TMainForm
                 Width = 200
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -9945,7 +9941,6 @@ object MainForm: TMainForm
                 Width = 200
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -10358,7 +10353,6 @@ object MainForm: TMainForm
                 Width = 200
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -10757,27 +10751,16 @@ object MainForm: TMainForm
               end
               item
                 Width = 120
-              end
-              item
-                Width = 70
-              end
-              item
-                Width = 100
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
             ViewStyle = vsReport
             OnChange = lvcvNPCVendorChange
             OnSelectItem = lvcvNPCVendorSelectItem
-            ColumnsOrder = '0=80,1=80,2=80,3=80,4=100,5=100,6=120,7=70,8=100'
+            ColumnsOrder = '0=80,1=80,2=80,3=80,4=100,5=100,6=120'
             ExtendedColumns = <
-              item
-              end
-              item
-              end
               item
               end
               item
@@ -10801,7 +10784,7 @@ object MainForm: TMainForm
             EditLabel.Width = 23
             EditLabel.Height = 13
             EditLabel.Caption = 'entry'
-            TabOrder = 9
+            TabOrder = 8
           end
           object edcvitem: TJvComboEdit
             Left = 192
@@ -10837,7 +10820,7 @@ object MainForm: TMainForm
               FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
               FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
               FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
-            TabOrder = 2
+            TabOrder = 1
             OnButtonClick = GetItem
           end
           object edcvmaxcount: TLabeledEdit
@@ -10848,7 +10831,7 @@ object MainForm: TMainForm
             EditLabel.Width = 46
             EditLabel.Height = 13
             EditLabel.Caption = 'maxcount'
-            TabOrder = 3
+            TabOrder = 2
           end
           object edcvincrtime: TLabeledEdit
             Left = 374
@@ -10858,7 +10841,7 @@ object MainForm: TMainForm
             EditLabel.Width = 36
             EditLabel.Height = 13
             EditLabel.Caption = 'incrtime'
-            TabOrder = 4
+            TabOrder = 3
           end
           object btScriptNPCVendor: TButton
             Left = 8
@@ -10866,7 +10849,7 @@ object MainForm: TMainForm
             Width = 169
             Height = 25
             Caption = 'Show NPC Vendor Script'
-            TabOrder = 5
+            TabOrder = 4
             OnClick = btScriptCreatureClick
           end
           object btFullScriptVendor: TButton
@@ -10875,7 +10858,7 @@ object MainForm: TMainForm
             Width = 185
             Height = 25
             Caption = 'Show FULL Vendor Script'
-            TabOrder = 6
+            TabOrder = 5
             OnClick = btFullScriptVendorClick
           end
           object edcvExtendedCost: TJvComboEdit
@@ -10912,28 +10895,8 @@ object MainForm: TMainForm
               FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
               FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
               FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
-            TabOrder = 7
+            TabOrder = 6
             OnButtonClick = edcvExtendedCostButtonClick
-          end
-          object edcvtype: TLabeledEdit
-            Left = 285
-            Top = 526
-            Width = 80
-            Height = 21
-            EditLabel.Width = 20
-            EditLabel.Height = 13
-            EditLabel.Caption = 'type'
-            TabOrder = 10
-          end
-          object edcvVerifiedBuild: TLabeledEdit
-            Left = 374
-            Top = 526
-            Width = 80
-            Height = 21
-            EditLabel.Width = 58
-            EditLabel.Height = 13
-            EditLabel.Caption = 'VerifiedBuild'
-            TabOrder = 1
           end
           object edcvslot: TLabeledEdit
             Left = 97
@@ -10943,7 +10906,7 @@ object MainForm: TMainForm
             EditLabel.Width = 16
             EditLabel.Height = 13
             EditLabel.Caption = 'slot'
-            TabOrder = 8
+            TabOrder = 7
           end
         end
         object tsNPCTrainer: TTabSheet
@@ -11174,7 +11137,6 @@ object MainForm: TMainForm
                 Width = 200
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -11852,7 +11814,6 @@ object MainForm: TMainForm
                 Width = 48
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -12296,10 +12257,6 @@ object MainForm: TMainForm
           Caption = 'Involved in'
           ImageIndex = 11
           OnShow = tsCreatureUsedShow
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           object pcCreatureInfo: TPageControl
             Left = 0
             Top = 41
@@ -12342,7 +12299,6 @@ object MainForm: TMainForm
                     Width = 80
                   end>
                 HideSelection = False
-                Items.ItemData = {}
                 ReadOnly = True
                 RowSelect = True
                 TabOrder = 0
@@ -12399,7 +12355,6 @@ object MainForm: TMainForm
                     Width = 80
                   end>
                 HideSelection = False
-                Items.ItemData = {}
                 ReadOnly = True
                 RowSelect = True
                 TabOrder = 0
@@ -12456,7 +12411,6 @@ object MainForm: TMainForm
                     Width = 80
                   end>
                 HideSelection = False
-                Items.ItemData = {}
                 ReadOnly = True
                 RowSelect = True
                 TabOrder = 0
@@ -12491,10 +12445,6 @@ object MainForm: TMainForm
         object tsCreatureSmartAI: TTabSheet
           Caption = 'SmartAI'
           ImageIndex = 18
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           object lbctGoToSmartAI: TLabel
             Left = 15
             Top = 52
@@ -12928,7 +12878,6 @@ object MainForm: TMainForm
                 Width = 36
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -13697,10 +13646,6 @@ object MainForm: TMainForm
           Caption = 'Script'
           ImageIndex = 3
           OnShow = tsCreatureScriptShow
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             884
             602)

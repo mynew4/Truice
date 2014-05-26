@@ -1448,8 +1448,6 @@ type
     edqtUnknown0: TLabeledEdit;
     edgtVerifiedBuild: TLabeledEdit;
     edcvslot: TLabeledEdit;
-	edcvtype: TLabeledEdit;
-	edcvVerifiedBuild: TLabeledEdit;
     tsSmartAI: TTabSheet;
     lvcySmartAI: TJvListView;
     tsConditions: TTabSheet;
@@ -7510,8 +7508,6 @@ begin
       edcvmaxcount.Text := SubItems[2];
       edcvincrtime.Text := SubItems[3];
       edcvExtendedCost.Text := SubItems[4];
-	    edcvtype.Text := SubItems[5];
-	    edcvVerifiedBuild.Text := SubItems[6];
     end;
   end;
 end;
@@ -8509,9 +8505,6 @@ begin
     SubItems.Add(edcvmaxcount.Text);
     SubItems.Add(edcvincrtime.Text);
     SubItems.Add(edcvExtendedCost.Text);
-    //cataclysm
-    SubItems.Add(edcvtype.Text);
-    SubItems.Add(edcvVerifiedBuild.Text);
   end;
 end;
 
@@ -8527,9 +8520,6 @@ begin
       SubItems[2] := edcvmaxcount.Text;
       SubItems[3] := edcvincrtime.Text;
       SubItems[4] := edcvExtendedCost.Text;
-      //cataclysm
-  	  SubItems[5] := edcvtype.Text;
-      SubItems[6] := edcvVerifiedBuild.Text;
     end;
   end;
 end;
