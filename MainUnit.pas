@@ -1268,8 +1268,6 @@ type
     lbRewardSpellCast: TLabel;
     edqtRewardSpellCast: TJvComboEdit;
     edqtRewardTitleId: TLabeledEdit;
-    edcdmoveflags: TLabeledEdit;
-    edcamoveflags: TLabeledEdit;
     edqtSuggestedPlayers: TLabeledEdit;
     edqtRequiredSkillId: TJvComboEdit;
     edqtZoneOrSort: TJvComboEdit;
@@ -4590,11 +4588,11 @@ end;
 procedure TMainForm.reaShow(Sender: TObject);
 begin
   if (edcaguid.Text='') then edcaguid.Text := edclguid.Text;
+  if (edcapath_id.Text='') then edcapath_id.Text := '0';
   if (edcamount.Text='') then edcamount.Text := '0';
   if (edcabytes1.Text='') then edcabytes1.Text := '0';
   if (edcabytes2.Text='') then edcabytes2.Text := '0';
   if (edcaemote.Text='') then edcaemote.Text := '0';
-  if (edcamoveflags.Text='') then edcamoveflags.Text := '0';
   if (edcaauras.Text='') then edcaauras.Text := '';
 end;
 
@@ -4679,11 +4677,11 @@ end;
 procedure TMainForm.tsCreatureTemplateAddonShow(Sender: TObject);
 begin
   if (edcdentry.Text='') then edcdentry.Text := edctEntry.Text;
+  if (edcdpath_id.Text='') then edcdpath_id.Text := '0';
   if (edcdmount.Text='') then edcdmount.Text := '0';
   if (edcdbytes1.Text='') then edcdbytes1.Text := '0';
   if (edcdbytes2.Text='') then edcdbytes2.Text := '0';
   if (edcdemote.Text='') then edcdemote.Text := '0';
-  if (edcdmoveflags.Text='') then edcdmoveflags.Text := '0';
   if (edcdauras.Text='') then edcdauras.Text := '';
  end;
 

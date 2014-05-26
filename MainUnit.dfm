@@ -5677,7 +5677,7 @@ object MainForm: TMainForm
         Top = 25
         Width = 892
         Height = 648
-        ActivePage = tsNPCVendor
+        ActivePage = rea
         Align = alClient
         MultiLine = True
         TabOrder = 0
@@ -11435,16 +11435,6 @@ object MainForm: TMainForm
             TabOrder = 4
             OnButtonClick = GetEmote
           end
-          object edcdmoveflags: TLabeledEdit
-            Left = 670
-            Top = 108
-            Width = 121
-            Height = 21
-            EditLabel.Width = 48
-            EditLabel.Height = 13
-            EditLabel.Caption = 'moveflags'
-            TabOrder = 7
-          end
           object edcdpath_id: TLabeledEdit
             Left = 8
             Top = 108
@@ -11456,7 +11446,7 @@ object MainForm: TMainForm
             EditLabel.Width = 35
             EditLabel.Height = 13
             EditLabel.Caption = 'path_id'
-            TabOrder = 8
+            TabOrder = 7
           end
         end
         object rea: TTabSheet
@@ -11580,16 +11570,6 @@ object MainForm: TMainForm
             TabOrder = 6
             OnClick = btScriptCreatureClick
           end
-          object edcamoveflags: TLabeledEdit
-            Left = 663
-            Top = 120
-            Width = 121
-            Height = 21
-            EditLabel.Width = 48
-            EditLabel.Height = 13
-            EditLabel.Caption = 'moveflags'
-            TabOrder = 7
-          end
           object edcapath_id: TLabeledEdit
             Left = 3
             Top = 118
@@ -11599,7 +11579,7 @@ object MainForm: TMainForm
             EditLabel.Width = 35
             EditLabel.Height = 13
             EditLabel.Caption = 'path_id'
-            TabOrder = 8
+            TabOrder = 7
             Text = '0'
           end
         end
