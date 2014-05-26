@@ -1,5 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-	</Transactions>
+    <Transaction>2014.05.26 19:13:48.728,D:\WoWServer\Truice\MainUnit.pas=</Transaction>
+    <Transaction>2014.05.26 19:51:03.851,D:\WoWServer\Truice\MainUnit.pas=</Transaction>
+  </Transactions>
 </BorlandProject>
