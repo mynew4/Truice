@@ -16,7 +16,7 @@ const
   VERSION_1   = '1'; //*10000
   VERSION_2   = '3'; //*100
   VERSION_3   = '8';
-  VERSION_4   = '1';
+  VERSION_4   = '3';
   VERSION_EXE = VERSION_1 + '.' + VERSION_2 + '.' + VERSION_3 + '.' + VERSION_4;
 
   SCRIPT_TAB_NO_QUEST       = 6;
@@ -1467,7 +1467,8 @@ type
     edcyevent_flags: TJvComboEdit;
     edcNegativeCondition: TJvComboEdit;
     edcErrorTextId: TJvComboEdit;
-    edcScriptName: TJvComboEdit;
+    edcScriptName: TLabeledEdit;
+    edcErrorType: TLabeledEdit;
     edcyevent_param1: TJvComboEdit;
     edcyevent_param2: TJvComboEdit;
     edcyevent_param3: TJvComboEdit;
@@ -1512,7 +1513,6 @@ type
     lbcyevent_flags: TLabel;
     lbcNegativeCondition: TLabel;
     lbcErrorTextId: TLabel;
-    lbcScriptName: TLabel;
     lbcyevent_type: TLabel;
     lbcConditionTypeOrReference: TLabel;
     lbcyevent_param1: TLabel;

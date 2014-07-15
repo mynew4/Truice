@@ -26,7 +26,7 @@ object MainForm: TMainForm
     Top = 0
     Width = 917
     Height = 708
-    ActivePage = tsItem
+    ActivePage = Conditions
     Align = alClient
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -23995,18 +23995,11 @@ object MainForm: TMainForm
             Caption = 'Negative Condition'
           end
           object lbcErrorTextId: TLabel
-            Left = 99
-            Top = 389
+            Left = 240
+            Top = 390
             Width = 55
             Height = 13
             Caption = 'Error TextId'
-          end
-          object lbcScriptName: TLabel
-            Left = 166
-            Top = 389
-            Width = 55
-            Height = 13
-            Caption = 'ScriptName'
           end
           object lbcConditionTypeOrReference: TLabel
             Left = 3
@@ -24291,7 +24284,7 @@ object MainForm: TMainForm
             Text = '0'
           end
           object edcErrorTextId: TJvComboEdit
-            Left = 99
+            Left = 240
             Top = 406
             Width = 61
             Height = 21
@@ -24299,12 +24292,24 @@ object MainForm: TMainForm
             TabOrder = 7
             Text = '0'
           end
-          object edcScriptName: TJvComboEdit
-            Left = 166
+          object edcScriptName: TLabeledEdit
+            Left = 336
             Top = 406
             Width = 106
             Height = 21
-            ShowButton = False
+            EditLabel.Width = 55
+            EditLabel.Height = 13
+            EditLabel.Caption = 'ScriptName'
+            TabOrder = 18
+          end
+          object edcErrorType: TLabeledEdit
+            Left = 127
+            Top = 406
+            Width = 67
+            Height = 21
+            EditLabel.Width = 46
+            EditLabel.Height = 13
+            EditLabel.Caption = 'ErrorType'
             TabOrder = 8
             Text = '0'
           end
