@@ -487,6 +487,7 @@ type
     lvcvNPCVendor: TJvListView;
     edcventry: TLabeledEdit;
     edcvitem: TJvComboEdit;
+    edcvVerifiedBuild: TLabeledEdit;
     edcvmaxcount: TLabeledEdit;
     edcvincrtime: TLabeledEdit;
     btScriptNPCVendor: TButton;
@@ -1055,7 +1056,7 @@ type
     Panel23: TPanel;
     edceentry: TLabeledEdit;
     edceid: TLabeledEdit;
-    edceWDBVerified: TLabeledEdit;
+    edceVerifiedBuild: TLabeledEdit;
     btShowCreatureEquipmentScript: TButton;
     lvCreatureModelSearch: TJvListView;
     Panel24: TPanel;
@@ -1435,7 +1436,7 @@ type
     edctspell6: TJvComboEdit;
     Label8: TLabel;
     edctexp: TLabeledEdit;
-    edctWDBVerified: TLabeledEdit;
+    edctVerifiedBuild: TLabeledEdit;
     edcapath_id: TLabeledEdit;
     edcdpath_id: TLabeledEdit;
     UpDown3: TUpDown;
@@ -4554,7 +4555,7 @@ begin
   if (edceitemEntry1.Text='') then edceitemEntry1.Text := '0';
   if (edceitemEntry2.Text='') then edceitemEntry2.Text := '0';
   if (edceitemEntry3.Text='') then edceitemEntry3.Text := '0';
-  if (edceWDBVerified.Text='') then edceWDBVerified.Text := '0';
+  if (edceVerifiedBuild.Text='') then edceVerifiedBuild.Text := '0';
 end;
 
 procedure TMainForm.tsCreatureModelInfoShow(Sender: TObject);
@@ -7455,6 +7456,7 @@ begin
       edcvmaxcount.Text := SubItems[2];
       edcvincrtime.Text := SubItems[3];
       edcvExtendedCost.Text := SubItems[4];
+      edcvVerifiedBuild.Text := SubItems[5];
     end;
   end;
 end;
@@ -8452,6 +8454,7 @@ begin
     SubItems.Add(edcvmaxcount.Text);
     SubItems.Add(edcvincrtime.Text);
     SubItems.Add(edcvExtendedCost.Text);
+    SubItems.Add(edcvVerifiedBuild.Text);
   end;
 end;
 
@@ -8467,6 +8470,7 @@ begin
       SubItems[2] := edcvmaxcount.Text;
       SubItems[3] := edcvincrtime.Text;
       SubItems[4] := edcvExtendedCost.Text;
+      SubItems[5] := edcvVerifiedBuild.Text;
     end;
   end;
 end;
@@ -8556,29 +8560,31 @@ begin
   begin
     for i := 0 to lvcvNPCVendor.Items.Count - 2 do
     begin
-      Values := Values + Format('(%s, %s, %s, %s, %s, %s);',[
+      Values := Values + Format('(%s, %s, %s, %s, %s, %s, %s);',[
         lvcvNPCVendor.Items[i].Caption,
         lvcvNPCVendor.Items[i].SubItems[0],
         lvcvNPCVendor.Items[i].SubItems[1],
         lvcvNPCVendor.Items[i].SubItems[2],
         lvcvNPCVendor.Items[i].SubItems[3],
-        lvcvNPCVendor.Items[i].SubItems[4]
+        lvcvNPCVendor.Items[i].SubItems[4],
+        lvcvNPCVendor.Items[i].SubItems[5]
       ]);
     end;
     i := lvcvNPCVendor.Items.Count - 1;
-    Values := Values + Format('(%s, %s, %s, %s, %s, %s);',[
+    Values := Values + Format('(%s, %s, %s, %s, %s, %s, %s);',[
       lvcvNPCVendor.Items[i].Caption,
       lvcvNPCVendor.Items[i].SubItems[0],
       lvcvNPCVendor.Items[i].SubItems[1],
       lvcvNPCVendor.Items[i].SubItems[2],
       lvcvNPCVendor.Items[i].SubItems[3],
-      lvcvNPCVendor.Items[i].SubItems[4]
+      lvcvNPCVendor.Items[i].SubItems[4],
+      lvcvNPCVendor.Items[i].SubItems[5]
     ]);
   end;
   if Values<>'' then
   begin
     mectScript.Text := Format('DELETE FROM `npc_vendor` WHERE (`entry`=%s);'#13#10+
-      'INSERT INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `ExtendedCost`) VALUES '#13#10'%s',[entry, Values])
+      'INSERT INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `ExtendedCost`, `VerifiedBuild`) VALUES '#13#10'%s',[entry, Values])
   end
   else
     mectScript.Text := Format('DELETE FROM `npc_vendor` WHERE (`entry`=%s);',[entry]);
