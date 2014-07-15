@@ -754,7 +754,7 @@ type
     editMaterial: TJvComboEdit;
     editsheath: TJvComboEdit;
     editBagFamily: TJvComboEdit;
-    editunk0: TLabeledEdit;
+    editSoundOverrideSubclass: TLabeledEdit;
     editPageText: TJvComboEdit;
     editMap: TJvComboEdit;
     editQuality: TJvComboEdit;
@@ -8940,7 +8940,7 @@ var
   entry, Fields, Values: string;
 begin
   meitLog.Clear;
-  entry := editEntry.Text;
+  entry := editentry.Text;
   if entry='' then exit;
   SetFieldsAndValues(Fields, Values, 'item_template', PFX_ITEM_TEMPLATE, meitLog);
   case SyntaxStyle of
@@ -8950,7 +8950,6 @@ begin
     ssUpdate: meitScript.Text := MakeUpdate('item_template', PFX_ITEM_TEMPLATE, 'entry', entry)
    else
    meitScript.Text := Format('REPLACE INTO `item_template` (%s) VALUES (%s);'#13#10,[Fields, Values]);
-
   end;
 end;
 
