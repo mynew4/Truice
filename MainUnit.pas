@@ -1435,7 +1435,7 @@ type
     edctspell6: TJvComboEdit;
     Label8: TLabel;
     edctexp: TLabeledEdit;
-    edctVerifiedBuild: TLabeledEdit;
+    edctWDBVerified: TLabeledEdit;
     edcapath_id: TLabeledEdit;
     edcdpath_id: TLabeledEdit;
     UpDown3: TUpDown;
@@ -8608,35 +8608,29 @@ begin
   begin
     for i := 0 to lvcvNPCVendor.Items.Count - 2 do
     begin
-      Values := Values + Format('(%s, %s, %s, %s, %s, %s, %s %s);',[
+      Values := Values + Format('(%s, %s, %s, %s, %s, %s);',[
         lvcvNPCVendor.Items[i].Caption,
         lvcvNPCVendor.Items[i].SubItems[0],
         lvcvNPCVendor.Items[i].SubItems[1],
         lvcvNPCVendor.Items[i].SubItems[2],
         lvcvNPCVendor.Items[i].SubItems[3],
-        lvcvNPCVendor.Items[i].SubItems[4],
-        //cataclysm
-        lvcvNPCVendor.Items[i].SubItems[5],
-        lvcvNPCVendor.Items[i].SubItems[6]
+        lvcvNPCVendor.Items[i].SubItems[4]
       ]);
     end;
     i := lvcvNPCVendor.Items.Count - 1;
-    Values := Values + Format('(%s, %s, %s, %s, %s, %s, %s, %s);',[
+    Values := Values + Format('(%s, %s, %s, %s, %s, %s);',[
       lvcvNPCVendor.Items[i].Caption,
       lvcvNPCVendor.Items[i].SubItems[0],
       lvcvNPCVendor.Items[i].SubItems[1],
       lvcvNPCVendor.Items[i].SubItems[2],
       lvcvNPCVendor.Items[i].SubItems[3],
-      lvcvNPCVendor.Items[i].SubItems[4],
-      //cataclysm
-      lvcvNPCVendor.Items[i].SubItems[5],
-      lvcvNPCVendor.Items[i].SubItems[6]
+      lvcvNPCVendor.Items[i].SubItems[4]
     ]);
   end;
   if Values<>'' then
   begin
     mectScript.Text := Format('DELETE FROM `npc_vendor` WHERE (`entry`=%s);'#13#10+
-      'INSERT INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `ExtendedCost`, `type`, `VerifiedBuild`) VALUES '#13#10'%s',[entry, Values])
+      'INSERT INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `ExtendedCost`) VALUES '#13#10'%s',[entry, Values])
   end
   else
     mectScript.Text := Format('DELETE FROM `npc_vendor` WHERE (`entry`=%s);',[entry]);
