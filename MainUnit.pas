@@ -2081,7 +2081,6 @@ type
     procedure LoadQuestLocales(QuestID: integer);
     procedure LoadQuestGiverInfo(objtype: string; entry: string);
     procedure LoadQuestTakerInfo(objtype: string; entry: string);
-    procedure SetScriptEditFields(pfx: string; lvList: TJvListView);
     procedure ClearFields(Where: TType);
     procedure SetDefaultFields(Where: TType);
     procedure ShowSettings(n: integer);
@@ -2156,10 +2155,6 @@ type
     procedure MvmntUpd(pfx: string; lvList: TJvListView);
     procedure MvmntDel(lvList: TJvListView);
     procedure SetMvmntEditFields(pfx: string; lvList: TJvListView);
-
-    procedure ScriptAdd(pfx: string; lvList: TJvListView);
-    procedure ScriptDel(lvList: TJvListView);
-    procedure ScriptUpd(pfx: string; lvList: TJvListView);
 
     procedure EnchAdd(pfx: string; lvList: TJvListView);
     procedure EnchDel(lvList: TJvListView);
@@ -2244,7 +2239,6 @@ type
     procedure LoadItemInvolvedIn(Id: string);
     function GetValueFromDBC(Name: string; id: Cardinal; idx_str: integer = 1): WideString;
     function GetZoneOrSortAcronym(ZoneOrSort: integer): string;
-    function ScriptSQLScript(lvList: TJvListView; tn, id: string): string;
     procedure GetSomeFlags(Sender: TObject; What: string);
     function GetActionParamHint(ActionType, ParamNo: integer): string;
 
@@ -2769,48 +2763,6 @@ begin
     lvQuickList.OnClick := nil;
     lvQuickList.Free;
     lvQuickList := nil;
-  end;
-end;
-
-function TMainForm.ScriptSQLScript(lvList: TJvListView; tn: string; id: string ): string;
-var
-  i: integer;
-begin
-  Result := '';
-  if lvList.Items.Count>0 then
-  begin
-    for i := 0 to lvList.Items.Count - 2 do
-    begin
-      Result := Result + Format('(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s),'#13#10,[
-        lvList.Items[i].Caption,
-        lvList.Items[i].SubItems[0],
-        lvList.Items[i].SubItems[1],
-        lvList.Items[i].SubItems[2],
-        lvList.Items[i].SubItems[3],
-        QuotedStr(lvList.Items[i].SubItems[4]),
-        lvList.Items[i].SubItems[5],
-        lvList.Items[i].SubItems[6],
-        lvList.Items[i].SubItems[7],
-        lvList.Items[i].SubItems[8]
-      ]);
-    end;
-    i := lvList.Items.Count - 1;
-    Result := Result + Format('(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s);',[
-      lvList.Items[i].Caption,
-      lvList.Items[i].SubItems[0],
-      lvList.Items[i].SubItems[1],
-      lvList.Items[i].SubItems[2],
-      lvList.Items[i].SubItems[3],
-      QuotedStr(lvList.Items[i].SubItems[4]),
-      lvList.Items[i].SubItems[5],
-      lvList.Items[i].SubItems[6],
-      lvList.Items[i].SubItems[7],
-      lvList.Items[i].SubItems[8]
-    ]);
-    Result := Format('DELETE FROM `%0:s` WHERE `id`=%1:s;'#13#10+
-      'INSERT INTO `%0:s` (`id`, `delay`, `command`, `datalong`, `datalong2`, '+
-        '`dataint`, `x`, `y`, `z`, `o`) VALUES '#13#10'%2:s'#13#10,
-      [tn, id, Result]);
   end;
 end;
 
@@ -4309,7 +4261,7 @@ end;
 procedure TMainForm.LoadCreature(Entry: integer);
 var
   i: integer;
-  isvendor, istrainer, isEventAI, isEquip: boolean; //equipment_id deprecated Will use entry of creature
+  isvendor, istrainer, isEventAI: boolean; //equipment_id deprecated Will use entry of creature
   npcflag: integer;
 begin
   ShowHourGlassCursor;
@@ -4596,8 +4548,6 @@ begin
 end;
 
 procedure TMainForm.tsCreatureEquipTemplateShow(Sender: TObject);
-var
-  itemEntry: integer;
 begin
   if (edceentry.Text='') then edceentry.Text := edctEntry.Text;
   if (edceid.Text='') then edceid.Text := '0';
@@ -4605,8 +4555,6 @@ begin
   if (edceitemEntry2.Text='') then edceitemEntry2.Text := '0';
   if (edceitemEntry3.Text='') then edceitemEntry3.Text := '0';
   if (edceWDBVerified.Text='') then edceWDBVerified.Text := '0';
-  if Assigned(lvclCreatureLocation.Selected) and (StrToIntDef(edclequipment_id.Text,0)<>0) then
-    itemEntry := StrToIntDef(edclequipment_id.Text,0);
 end;
 
 procedure TMainForm.tsCreatureModelInfoShow(Sender: TObject);
@@ -13377,70 +13325,6 @@ procedure TMainForm.lvqtGiverTemplateSelectItem(Sender: TObject; Item: TListItem
 begin
   if Selected then
     LoadQuestGiverInfo(Item.Caption, Item.SubItems[0]);
-end;
-
-procedure TMainForm.SetScriptEditFields(pfx: string;
-  lvList: TJvListView);
-begin
-  if Assigned(lvList.Selected) then
-  begin
-    with lvList.Selected do
-    begin
-      TCustomEdit(FindComponent(pfx + 'id')).Text := Caption;
-      TCustomEdit(FindComponent(pfx + 'delay')).Text := SubItems[0];
-      TCustomEdit(FindComponent(pfx + 'command')).Text := SubItems[1];
-      TCustomEdit(FindComponent(pfx + 'datalong')).Text := SubItems[2];
-      TCustomEdit(FindComponent(pfx + 'datalong2')).Text := SubItems[3];
-      TCustomEdit(FindComponent(pfx + 'dataint')).Text := SubItems[4];
-      TCustomEdit(FindComponent(pfx + 'x')).Text := SubItems[5];
-      TCustomEdit(FindComponent(pfx + 'y')).Text := SubItems[6];
-      TCustomEdit(FindComponent(pfx + 'z')).Text := SubItems[7];
-      TCustomEdit(FindComponent(pfx + 'o')).Text := SubItems[8];
-    end;
-  end;
-end;
-
-procedure TMainForm.ScriptAdd(pfx: string; lvList: TJvListView);
-begin
-  with lvList.Items.Add do
-  begin
-    Caption := TCustomEdit(FindComponent(pfx + 'id')).Text;
-    SubItems.Add(TCustomEdit(FindComponent(pfx + 'delay')).Text);
-    SubItems.Add(TCustomEdit(FindComponent(pfx + 'command')).Text);
-    SubItems.Add(TCustomEdit(FindComponent(pfx + 'datalong')).Text);
-    SubItems.Add(TCustomEdit(FindComponent(pfx + 'datalong2')).Text);
-    SubItems.Add(TCustomEdit(FindComponent(pfx + 'dataint')).Text);
-    SubItems.Add(TCustomEdit(FindComponent(pfx + 'x')).Text);
-    SubItems.Add(TCustomEdit(FindComponent(pfx + 'y')).Text);
-    SubItems.Add(TCustomEdit(FindComponent(pfx + 'z')).Text);
-    SubItems.Add(TCustomEdit(FindComponent(pfx + 'o')).Text);
-  end;
-end;
-
-procedure TMainForm.ScriptUpd(pfx: string; lvList: TJvListView);
-begin
-  if Assigned(lvList.Selected) then
-  begin
-    with lvList.Selected do
-    begin
-      Caption := TCustomEdit(FindComponent(pfx + 'id')).Text;
-      SubItems[0] := TCustomEdit(FindComponent(pfx + 'delay')).Text;
-      SubItems[1] := TCustomEdit(FindComponent(pfx + 'command')).Text;
-      SubItems[2] := TCustomEdit(FindComponent(pfx + 'datalong')).Text;
-      SubItems[3] := TCustomEdit(FindComponent(pfx + 'datalong2')).Text;
-      SubItems[4] := TCustomEdit(FindComponent(pfx + 'dataint')).Text;
-      SubItems[5] := TCustomEdit(FindComponent(pfx + 'x')).Text;
-      SubItems[6] := TCustomEdit(FindComponent(pfx + 'y')).Text;
-      SubItems[7] := TCustomEdit(FindComponent(pfx + 'z')).Text;
-      SubItems[8] := TCustomEdit(FindComponent(pfx + 'o')).Text;
-    end;
-  end;
-end;
-
-procedure TMainForm.ScriptDel(lvList: TJvListView);
-begin
-  if Assigned(lvList.Selected) then
-    lvList.DeleteSelected;
 end;
 
 procedure TMainForm.GetCommand(Sender: TObject);
