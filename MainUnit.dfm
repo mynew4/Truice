@@ -38,6 +38,10 @@ object MainForm: TMainForm
     object tsQuest: TTabSheet
       Caption = 'Quest'
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object pnQuestTop: TPanel
         Left = 0
         Top = 0
@@ -5628,6 +5632,10 @@ object MainForm: TMainForm
           Caption = 'SQL-Script Tab'
           ImageIndex = 2
           OnShow = tsScriptTabShow
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             901
             627)
@@ -5681,6 +5689,10 @@ object MainForm: TMainForm
     object tsCreature: TTabSheet
       Caption = 'Creature'
       ImageIndex = 2
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object PageControl3: TPageControl
         Left = 0
         Top = 25
@@ -13681,6 +13693,10 @@ object MainForm: TMainForm
           Caption = 'Script'
           ImageIndex = 3
           OnShow = tsCreatureScriptShow
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             901
             609)
@@ -13743,6 +13759,10 @@ object MainForm: TMainForm
     object tsGameObject: TTabSheet
       Caption = 'Game Object'
       ImageIndex = 3
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Panel8: TPanel
         Left = 0
         Top = 0
@@ -15922,6 +15942,10 @@ object MainForm: TMainForm
           Caption = 'Script'
           ImageIndex = 3
           OnShow = tsGOScriptShow
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             901
             627)
@@ -15975,6 +15999,10 @@ object MainForm: TMainForm
     object tsItem: TTabSheet
       Caption = 'Item'
       ImageIndex = 3
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Panel9: TPanel
         Left = 0
         Top = 0
@@ -22710,6 +22738,10 @@ object MainForm: TMainForm
           Caption = 'Script'
           ImageIndex = 3
           OnShow = tsItemScriptShow
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             901
             627)
@@ -22763,6 +22795,10 @@ object MainForm: TMainForm
     object SmartAI: TTabSheet
       Caption = 'SmartAI'
       ImageIndex = 5
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object PageControl9: TPageControl
         Left = 0
         Top = 25
@@ -23754,6 +23790,10 @@ object MainForm: TMainForm
           Caption = 'Script'
           ImageIndex = 1
           OnShow = tsSmartAIScriptShow
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             873
             620)
@@ -23816,6 +23856,10 @@ object MainForm: TMainForm
     object Conditions: TTabSheet
       Caption = 'Conditions'
       ImageIndex = 5
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object PageControl10: TPageControl
         Left = 0
         Top = 25
@@ -24434,6 +24478,10 @@ object MainForm: TMainForm
           Caption = 'Script'
           ImageIndex = 1
           OnShow = tsConditionsScriptShow
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             873
             620)
@@ -24510,7 +24558,7 @@ object MainForm: TMainForm
         Top = 25
         Width = 909
         Height = 655
-        ActivePage = tsGameEvents
+        ActivePage = tsPageText
         Align = alClient
         TabOrder = 1
         object tsFishingLoot: TTabSheet
@@ -25017,7 +25065,7 @@ object MainForm: TMainForm
             Left = 0
             Top = 89
             Width = 901
-            Height = 320
+            Height = 191
             Align = alClient
             BorderStyle = bsNone
             Columns = <
@@ -25027,21 +25075,25 @@ object MainForm: TMainForm
               end
               item
                 Caption = 'Text'
-                Width = 700
+                Width = 600
               end
               item
                 Caption = 'Next_Page'
                 Width = 80
+              end
+              item
+                Caption = 'VerifiedBuild'
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
             ViewStyle = vsReport
             OnSelectItem = lvSearchPageTextSelectItem
-            ColumnsOrder = '0=60,1=700,2=80'
+            ColumnsOrder = '0=60,1=600,2=80,3=50'
             ExtendedColumns = <
+              item
+              end
               item
               end
               item
@@ -25157,15 +25209,15 @@ object MainForm: TMainForm
           end
           object Panel13: TPanel
             Left = 0
-            Top = 409
+            Top = 280
             Width = 901
-            Height = 218
+            Height = 347
             Align = alBottom
             BevelOuter = bvNone
             TabOrder = 2
             DesignSize = (
               901
-              218)
+              347)
             object lbptentry: TLabel
               Left = 8
               Top = 16
@@ -25297,14 +25349,14 @@ object MainForm: TMainForm
               Left = 88
               Top = 33
               Width = 791
-              Height = 176
+              Height = 305
               Anchors = [akLeft, akTop, akRight, akBottom]
               ScrollBars = ssVertical
               TabOrder = 2
             end
             object btScriptPageText: TButton
-              Left = 8
-              Top = 183
+              Left = 7
+              Top = 176
               Width = 75
               Height = 25
               Anchors = [akLeft, akBottom]
@@ -25839,6 +25891,7 @@ object MainForm: TMainForm
                 end>
               Enabled = False
               HideSelection = False
+              Items.ItemData = {}
               ReadOnly = True
               RowSelect = True
               TabOrder = 0
@@ -25882,6 +25935,7 @@ object MainForm: TMainForm
                 end>
               Enabled = False
               HideSelection = False
+              Items.ItemData = {}
               ReadOnly = True
               RowSelect = True
               TabOrder = 2
@@ -26029,7 +26083,7 @@ object MainForm: TMainForm
                 end
                 item
                   Caption = 'description'
-                  Width = 250
+                  Width = 150
                 end
                 item
                   Caption = 'world_event'
@@ -26038,6 +26092,7 @@ object MainForm: TMainForm
                   Caption = 'announce'
                 end>
               HideSelection = False
+              Items.ItemData = {}
               ReadOnly = True
               RowSelect = True
               TabOrder = 0
@@ -26359,6 +26414,10 @@ object MainForm: TMainForm
           Caption = 'Script'
           ImageIndex = 3
           OnShow = tsOtherScriptShow
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             901
             627)
@@ -26412,6 +26471,10 @@ object MainForm: TMainForm
     object tsChars: TTabSheet
       Caption = 'Character'
       ImageIndex = 6
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Panel1: TPanel
         Left = 0
         Top = 0
@@ -27805,6 +27868,10 @@ object MainForm: TMainForm
           Caption = 'Script'
           ImageIndex = 2
           OnShow = tsCharacterScriptShow
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             901
             627)
@@ -27858,6 +27925,10 @@ object MainForm: TMainForm
     object tsSQL: TTabSheet
       Caption = 'SQL'
       ImageIndex = 5
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Panel14: TPanel
         Left = 0
         Top = 0
@@ -27877,6 +27948,10 @@ object MainForm: TMainForm
         TabOrder = 1
         object tsSQL1: TTabSheet
           Caption = 'Recordset1'
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           object Panel15: TPanel
             Left = 0
             Top = 0

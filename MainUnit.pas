@@ -9973,6 +9973,7 @@ begin
     edptentry.Text := Item.Caption;
     edpttext.Text := DollToSym(Item.SubItems[0]);
     edptnext_page.Text := Item.SubItems[1];
+    edptVerifiedBuild.Text := Item.SubItems[2];
   end;
 end;
 
