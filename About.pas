@@ -57,7 +57,6 @@ type
     Label4: TLabel;
     procedure FormShow(Sender: TObject);
     procedure LinkSiteClick(Sender: TObject);
-    procedure PayPalClick(Sender: TObject);
   private
     procedure InitializeCaptions;
     { Private declarations }
@@ -118,7 +117,7 @@ end;
 
 procedure TAboutBox.LinkSiteClick(Sender: TObject);
 begin
-  BrowseURL1.URL:='http://github.com/Faq/Truice';
+  BrowseURL1.URL:='http://github.com/chaosua/Truice';
   BrowseURL1.Execute;
 end;
 
@@ -127,11 +126,5 @@ begin
   inherited Create(AOwner);
 end;
          
-procedure TAboutBox.PayPalClick(Sender: TObject);
-begin
-  BrowseURL2.URL:='http://code.google.com/p/truice/';
-  BrowseURL2.Execute;
-end;
-
 end.
 
