@@ -1579,6 +1579,7 @@ type
     lbcldynamicflags: TLabel;
     edptVerifiedBuild: TLabeledEdit;
     edgeworld_event: TLabeledEdit;
+    edgeannounce: TLabeledEdit;
     Timer2: TTimer;
     edhtgender: TLabeledEdit;
     edhtlevel: TLabeledEdit;
@@ -3901,6 +3902,7 @@ begin
   edgelength.Clear;
   edgeoccurence.Clear;
   edgeworld_event.Clear;
+  edgeannounce.Clear;
   edSearchPageTextText.Clear;
   edSearchPageTextNextPage.Clear;
   edQuestID.Clear;
@@ -6654,6 +6656,7 @@ begin
     edgeholiday.Text := Item.SubItems[4];
     edgedescription.Text := Item.SubItems[5];
     edgeworld_event.Text := Item.SubItems[6];
+    edgeannounce.Text := Item.SubItems[7];
     LoadCreaturesAndGOForGameEvent(Item.Caption);
   end
   else
@@ -9820,6 +9823,7 @@ begin
     SubItems.Add(edgelength.Text);
     SubItems.Add(edgedescription.Text);
     SubItems.Add(edgeworld_event.Text);
+    SubItems.Add(edgeannounce.Text);
     Selected := true;
     MakeVisible(false);
   end;
@@ -9849,8 +9853,10 @@ begin
       SubItems[1] := edgeend_time.Text;
       SubItems[2] := edgeoccurence.Text;
       SubItems[3] := edgelength.Text;
-      SubItems[4] := edgedescription.Text;
-      SubItems[5] := edgeworld_event.Text;
+      SubItems[4] := edgeholiday.Text;
+      SubItems[5] := edgedescription.Text;
+      SubItems[6] := edgeworld_event.Text;
+      SubItems[7] := edgeannounce.Text;
     end;
   end;
 end;

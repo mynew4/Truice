@@ -26,7 +26,7 @@ object MainForm: TMainForm
     Top = 0
     Width = 917
     Height = 708
-    ActivePage = Conditions
+    ActivePage = tsOther
     Align = alClient
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -438,6 +438,7 @@ object MainForm: TMainForm
                 Width = 300
               end>
             HideSelection = False
+            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 1
@@ -5113,6 +5114,7 @@ object MainForm: TMainForm
                 Width = 80
               end>
             HideSelection = False
+            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -5175,6 +5177,7 @@ object MainForm: TMainForm
                 Width = 70
               end>
             HideSelection = False
+            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 1
@@ -5372,6 +5375,7 @@ object MainForm: TMainForm
                 Width = 180
               end>
             HideSelection = False
+            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -5422,6 +5426,7 @@ object MainForm: TMainForm
                 Width = 160
               end>
             HideSelection = False
+            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 1
@@ -5449,6 +5454,10 @@ object MainForm: TMainForm
         object tsLocalesQuest: TTabSheet
           Caption = 'Locales Quest'
           ImageIndex = 9
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           object gbLocalesQuest: TsGroupBox
             Left = 3
             Top = 3
@@ -5933,6 +5942,7 @@ object MainForm: TMainForm
                 Width = 112
               end>
             HideSelection = False
+            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 1
@@ -8452,6 +8462,7 @@ object MainForm: TMainForm
                 Width = 100
               end>
             HideSelection = False
+            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -8929,6 +8940,7 @@ object MainForm: TMainForm
                 Width = 120
               end>
             HideSelection = False
+            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 1
@@ -9518,6 +9530,7 @@ object MainForm: TMainForm
                 Width = 200
               end>
             HideSelection = False
+            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -9931,6 +9944,7 @@ object MainForm: TMainForm
                 Width = 200
               end>
             HideSelection = False
+            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -10343,6 +10357,7 @@ object MainForm: TMainForm
                 Width = 200
               end>
             HideSelection = False
+            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -10746,6 +10761,7 @@ object MainForm: TMainForm
                 Width = 120
               end>
             HideSelection = False
+            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -11142,6 +11158,7 @@ object MainForm: TMainForm
                 Width = 200
               end>
             HideSelection = False
+            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -11819,6 +11836,7 @@ object MainForm: TMainForm
                 Width = 48
               end>
             HideSelection = False
+            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -12262,6 +12280,10 @@ object MainForm: TMainForm
           Caption = 'Involved in'
           ImageIndex = 11
           OnShow = tsCreatureUsedShow
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           object pcCreatureInfo: TPageControl
             Left = 0
             Top = 41
@@ -12304,6 +12326,7 @@ object MainForm: TMainForm
                     Width = 80
                   end>
                 HideSelection = False
+                Items.ItemData = {}
                 ReadOnly = True
                 RowSelect = True
                 TabOrder = 0
@@ -12360,6 +12383,7 @@ object MainForm: TMainForm
                     Width = 80
                   end>
                 HideSelection = False
+                Items.ItemData = {}
                 ReadOnly = True
                 RowSelect = True
                 TabOrder = 0
@@ -12416,6 +12440,7 @@ object MainForm: TMainForm
                     Width = 80
                   end>
                 HideSelection = False
+                Items.ItemData = {}
                 ReadOnly = True
                 RowSelect = True
                 TabOrder = 0
@@ -12450,6 +12475,10 @@ object MainForm: TMainForm
         object tsCreatureSmartAI: TTabSheet
           Caption = 'SmartAI'
           ImageIndex = 18
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           object lbctGoToSmartAI: TLabel
             Left = 15
             Top = 52
@@ -12883,6 +12912,7 @@ object MainForm: TMainForm
                 Width = 36
               end>
             HideSelection = False
+            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -13992,6 +14022,7 @@ object MainForm: TMainForm
                 Caption = 'castbarcaption_loc*'
               end>
             HideSelection = False
+            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 1
@@ -14988,6 +15019,7 @@ object MainForm: TMainForm
                 Width = 100
               end>
             HideSelection = False
+            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -15492,6 +15524,7 @@ object MainForm: TMainForm
                 Width = 200
               end>
             HideSelection = False
+            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -15668,6 +15701,10 @@ object MainForm: TMainForm
           Caption = 'Involved in'
           ImageIndex = 5
           OnShow = tsGOInvolvedInShow
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           object pcGameObjectInfo: TPageControl
             Left = 0
             Top = 41
@@ -15710,6 +15747,7 @@ object MainForm: TMainForm
                     Width = 80
                   end>
                 HideSelection = False
+                Items.ItemData = {}
                 ReadOnly = True
                 RowSelect = True
                 TabOrder = 0
@@ -15765,6 +15803,7 @@ object MainForm: TMainForm
                     Width = 80
                   end>
                 HideSelection = False
+                Items.ItemData = {}
                 ReadOnly = True
                 RowSelect = True
                 TabOrder = 0
@@ -15820,6 +15859,7 @@ object MainForm: TMainForm
                     Width = 80
                   end>
                 HideSelection = False
+                Items.ItemData = {}
                 ReadOnly = True
                 RowSelect = True
                 TabOrder = 0
@@ -15854,6 +15894,10 @@ object MainForm: TMainForm
         object tsGOSmartAI: TTabSheet
           Caption = 'GO SmartAI'
           ImageIndex = 7
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           object lbgtGotoSmartAI: TLabel
             Left = 15
             Top = 67
@@ -16380,6 +16424,7 @@ object MainForm: TMainForm
             Font.Name = 'MS Sans Serif'
             Font.Style = []
             HideSelection = False
+            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             ParentFont = False
@@ -20128,6 +20173,7 @@ object MainForm: TMainForm
                 Width = 200
               end>
             HideSelection = False
+            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -20547,6 +20593,7 @@ object MainForm: TMainForm
                 Width = 200
               end>
             HideSelection = False
+            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -20966,6 +21013,7 @@ object MainForm: TMainForm
                 Width = 200
               end>
             HideSelection = False
+            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -21376,6 +21424,7 @@ object MainForm: TMainForm
                 Width = 200
               end>
             HideSelection = False
+            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -21792,6 +21841,7 @@ object MainForm: TMainForm
                 Width = 200
               end>
             HideSelection = False
+            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -22221,6 +22271,7 @@ object MainForm: TMainForm
                 Width = 90
               end>
             HideSelection = False
+            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -22321,6 +22372,7 @@ object MainForm: TMainForm
               item
               end>
             HideSelection = False
+            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -22352,6 +22404,10 @@ object MainForm: TMainForm
           Caption = 'Involved in'
           ImageIndex = 8
           OnShow = tsItemInvolvedInShow
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           object Panel22: TPanel
             Left = 0
             Top = 0
@@ -22403,6 +22459,7 @@ object MainForm: TMainForm
                     Width = 80
                   end>
                 HideSelection = False
+                Items.ItemData = {}
                 ReadOnly = True
                 RowSelect = True
                 TabOrder = 0
@@ -22458,6 +22515,7 @@ object MainForm: TMainForm
                     Width = 80
                   end>
                 HideSelection = False
+                Items.ItemData = {}
                 ReadOnly = True
                 RowSelect = True
                 TabOrder = 0
@@ -22513,6 +22571,7 @@ object MainForm: TMainForm
                     Width = 80
                   end>
                 HideSelection = False
+                Items.ItemData = {}
                 ReadOnly = True
                 RowSelect = True
                 TabOrder = 0
@@ -22568,6 +22627,7 @@ object MainForm: TMainForm
                     Width = 80
                   end>
                 HideSelection = False
+                Items.ItemData = {}
                 ReadOnly = True
                 RowSelect = True
                 TabOrder = 0
@@ -22623,6 +22683,7 @@ object MainForm: TMainForm
                     Width = 80
                   end>
                 HideSelection = False
+                Items.ItemData = {}
                 ReadOnly = True
                 RowSelect = True
                 TabOrder = 0
@@ -23198,6 +23259,7 @@ object MainForm: TMainForm
               item
               end>
             HideSelection = False
+            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -24107,6 +24169,7 @@ object MainForm: TMainForm
                 Width = 135
               end>
             HideSelection = False
+            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -24701,6 +24764,7 @@ object MainForm: TMainForm
                 Width = 200
               end>
             HideSelection = False
+            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 2
@@ -24970,6 +25034,7 @@ object MainForm: TMainForm
                 Width = 80
               end>
             HideSelection = False
+            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -25934,7 +25999,7 @@ object MainForm: TMainForm
               Left = 1
               Top = 1
               Width = 899
-              Height = 185
+              Height = 127
               Align = alClient
               BorderStyle = bsNone
               Columns = <
@@ -25968,6 +26033,9 @@ object MainForm: TMainForm
                 end
                 item
                   Caption = 'world_event'
+                end
+                item
+                  Caption = 'announce'
                 end>
               HideSelection = False
               ReadOnly = True
@@ -25976,8 +26044,10 @@ object MainForm: TMainForm
               ViewStyle = vsReport
               OnChange = lvSearchGameEventChange
               OnSelectItem = lvSearchGameEventSelectItem
-              ColumnsOrder = '0=80,1=120,2=120,3=80,4=80,5=80,6=250,7=50'
+              ColumnsOrder = '0=80,1=120,2=120,3=80,4=80,5=80,6=150,7=50,8=50'
               ExtendedColumns = <
+                item
+                end
                 item
                 end
                 item
@@ -25997,9 +26067,9 @@ object MainForm: TMainForm
             end
             object Panel18: TPanel
               Left = 1
-              Top = 186
+              Top = 128
               Width = 899
-              Height = 59
+              Height = 117
               Align = alBottom
               BevelOuter = bvNone
               TabOrder = 1
@@ -26183,9 +26253,9 @@ object MainForm: TMainForm
                 OnClick = btGameEventAddClick
               end
               object edgedescription: TLabeledEdit
-                Left = 584
-                Top = 29
-                Width = 182
+                Left = 8
+                Top = 69
+                Width = 439
                 Height = 21
                 Hint = 'Description of the event displayed in console'
                 EditLabel.Width = 51
@@ -26269,6 +26339,17 @@ object MainForm: TMainForm
                 EditLabel.Width = 58
                 EditLabel.Height = 13
                 EditLabel.Caption = 'world_event'
+                TabOrder = 8
+              end
+              object edgeannounce: TLabeledEdit
+                Left = 584
+                Top = 29
+                Width = 73
+                Height = 21
+                Hint = '0 dont announce, 1 announce, 2 value from config'
+                EditLabel.Width = 48
+                EditLabel.Height = 13
+                EditLabel.Caption = 'announce'
                 TabOrder = 7
               end
             end
@@ -26497,6 +26578,7 @@ object MainForm: TMainForm
                 Width = 60
               end>
             HideSelection = False
+            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 1
@@ -27658,6 +27740,7 @@ object MainForm: TMainForm
                 Width = 250
               end>
             HideSelection = False
+            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 2
