@@ -26,7 +26,7 @@ object MainForm: TMainForm
     Top = 0
     Width = 917
     Height = 708
-    ActivePage = tsOther
+    ActivePage = tsCreature
     Align = alClient
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -5677,7 +5677,7 @@ object MainForm: TMainForm
         Top = 25
         Width = 909
         Height = 655
-        ActivePage = tsNPCVendor
+        ActivePage = tsEditCreature
         Align = alClient
         MultiLine = True
         TabOrder = 0
@@ -6245,6 +6245,7 @@ object MainForm: TMainForm
         object tsEditCreature: TTabSheet
           Caption = 'Creature Template'
           ImageIndex = 1
+          ExplicitLeft = 0
           object lbctmechanic_immune_mask: TLabel
             Left = 237
             Top = 454
@@ -6418,28 +6419,6 @@ object MainForm: TMainForm
               EditLabel.Caption = 'edctmaxlevel'
               TabOrder = 10
             end
-            object edctHealth_mod: TLabeledEdit
-              Left = 8
-              Top = 248
-              Width = 75
-              Height = 21
-              Hint = 'Creature'#39's Mana Mod'
-              EditLabel.Width = 78
-              EditLabel.Height = 13
-              EditLabel.Caption = 'edctHealth_mod'
-              TabOrder = 11
-            end
-            object edctMana_mod: TLabeledEdit
-              Left = 88
-              Top = 248
-              Width = 75
-              Height = 21
-              Hint = 'Creature'#39's Mana Mod'
-              EditLabel.Width = 74
-              EditLabel.Height = 13
-              EditLabel.Caption = 'edctMana_mod'
-              TabOrder = 12
-            end
             object edctmingold: TLabeledEdit
               Left = 8
               Top = 211
@@ -6492,7 +6471,7 @@ object MainForm: TMainForm
               EditLabel.Width = 49
               EditLabel.Height = 13
               EditLabel.Caption = 'IconName'
-              TabOrder = 13
+              TabOrder = 11
             end
             object edctdifficulty_entry_1: TJvComboEdit
               Left = 88
@@ -6544,7 +6523,7 @@ object MainForm: TMainForm
                 072D342A3C4A4A4A4A4A4A4A4A4A420D322005374A4A4A4A4A4A4A4A4A1B4018
                 1C26174A4A4A4A4A4A4A4A4A4A4A2E082F2C4A4A4A4A4A4A4A4A4A4A4A4A4A10
                 0E4A4A4A4A4A4A4A4A4A4A4A4A4A4A4A4A4A4A4A4A4A4A4A4A4A}
-              TabOrder = 14
+              TabOrder = 12
               OnButtonClick = edctEntryButtonClick
             end
             object edctKillCredit1: TLabeledEdit
@@ -6556,7 +6535,7 @@ object MainForm: TMainForm
               EditLabel.Width = 67
               EditLabel.Height = 13
               EditLabel.Caption = 'edctKillCredit1'
-              TabOrder = 15
+              TabOrder = 13
             end
             object edctKillCredit2: TLabeledEdit
               Left = 178
@@ -6567,7 +6546,7 @@ object MainForm: TMainForm
               EditLabel.Width = 67
               EditLabel.Height = 13
               EditLabel.Caption = 'edctKillCredit2'
-              TabOrder = 16
+              TabOrder = 14
             end
             object edctdifficulty_entry_2: TJvComboEdit
               Left = 178
@@ -6619,7 +6598,7 @@ object MainForm: TMainForm
                 072D342A3C4A4A4A4A4A4A4A4A4A420D322005374A4A4A4A4A4A4A4A4A1B4018
                 1C26174A4A4A4A4A4A4A4A4A4A4A2E082F2C4A4A4A4A4A4A4A4A4A4A4A4A4A10
                 0E4A4A4A4A4A4A4A4A4A4A4A4A4A4A4A4A4A4A4A4A4A4A4A4A4A}
-              TabOrder = 17
+              TabOrder = 15
               OnButtonClick = edctEntryButtonClick
             end
             object edctdifficulty_entry_3: TJvComboEdit
@@ -6672,7 +6651,7 @@ object MainForm: TMainForm
                 072D342A3C4A4A4A4A4A4A4A4A4A420D322005374A4A4A4A4A4A4A4A4A1B4018
                 1C26174A4A4A4A4A4A4A4A4A4A4A2E082F2C4A4A4A4A4A4A4A4A4A4A4A4A4A10
                 0E4A4A4A4A4A4A4A4A4A4A4A4A4A4A4A4A4A4A4A4A4A4A4A4A4A}
-              TabOrder = 18
+              TabOrder = 16
               OnButtonClick = edctEntryButtonClick
             end
             object edctVehicleId: TLabeledEdit
@@ -6687,7 +6666,7 @@ object MainForm: TMainForm
               EditLabel.Caption = 'edctVehicleId'
               EditLabel.Transparent = True
               ParentDoubleBuffered = False
-              TabOrder = 19
+              TabOrder = 17
             end
             object edctexp: TLabeledEdit
               Left = 256
@@ -6703,126 +6682,104 @@ object MainForm: TMainForm
               EditLabel.Caption = 'edctexp'
               EditLabel.Transparent = True
               ParentDoubleBuffered = False
-              TabOrder = 20
+              TabOrder = 18
             end
           end
           object gbCreature2: TGroupBox
-            Left = 360
+            Left = 359
             Top = 8
-            Width = 489
-            Height = 207
+            Width = 498
+            Height = 158
             Caption = 'Creature II'
             TabOrder = 1
             object lbctfaction: TLabel
-              Left = 200
-              Top = 126
+              Left = 297
+              Top = 55
               Width = 32
               Height = 13
               Caption = 'faction'
             end
             object lbctnpcflag: TLabel
-              Left = 8
-              Top = 166
+              Left = 3
+              Top = 55
               Width = 35
               Height = 13
               Caption = 'npcflag'
             end
             object lbctrank: TLabel
-              Left = 8
-              Top = 127
+              Left = 3
+              Top = 101
               Width = 21
               Height = 13
               Caption = 'rank'
             end
             object lbctfamily: TLabel
-              Left = 104
-              Top = 126
+              Left = 107
+              Top = 55
               Width = 26
               Height = 13
               Caption = 'family'
             end
             object lbcttype: TLabel
-              Left = 296
-              Top = 126
+              Left = 391
+              Top = 55
               Width = 20
               Height = 13
               Caption = 'type'
             end
             object lbctunit_flags: TLabel
               Left = 107
-              Top = 166
+              Top = 101
               Width = 45
               Height = 13
               Caption = 'unit_flags'
             end
             object lbctunit_flags2: TLabel
-              Left = 200
-              Top = 90
+              Left = 208
+              Top = 55
               Width = 51
               Height = 13
               Caption = 'unit_flags2'
             end
             object lbcttype_flags: TLabel
               Left = 202
-              Top = 166
+              Top = 101
               Width = 48
               Height = 13
               Caption = 'type_flags'
             end
             object lbctdynamicflags: TLabel
-              Left = 299
-              Top = 166
+              Left = 296
+              Top = 101
               Width = 61
               Height = 13
               Caption = 'dynamicflags'
             end
-            object edctattackpower: TLabeledEdit
-              Left = 200
-              Top = 32
-              Width = 89
-              Height = 21
-              Hint = 'Creature'#39's melee attack power.'
-              EditLabel.Width = 59
-              EditLabel.Height = 13
-              EditLabel.Caption = 'attackpower'
-              TabOrder = 2
-            end
             object edctbaseattacktime: TLabeledEdit
-              Left = 391
-              Top = 32
+              Left = 392
+              Top = 28
               Width = 89
               Height = 21
               Hint = 'Time between each creature'#39's melee attacks.'
               EditLabel.Width = 72
               EditLabel.Height = 13
               EditLabel.Caption = 'baseattacktime'
-              TabOrder = 3
+              TabOrder = 0
             end
             object edctrangeattacktime: TLabeledEdit
-              Left = 295
-              Top = 69
+              Left = 297
+              Top = 28
               Width = 89
               Height = 21
               Hint = 'Time between each creature'#39's range attacks.'
               EditLabel.Width = 76
               EditLabel.Height = 13
               EditLabel.Caption = 'rangeattacktime'
-              TabOrder = 4
-            end
-            object edctrangedattackpower: TLabeledEdit
-              Left = 391
-              Top = 69
-              Width = 89
-              Height = 21
-              Hint = 'Creature'#39's ranged attack power.'
-              EditLabel.Width = 92
-              EditLabel.Height = 13
-              EditLabel.Caption = 'rangedattackpower'
-              TabOrder = 9
+              TabOrder = 1
             end
             object edctfaction: TJvComboEdit
-              Left = 199
-              Top = 142
+              Left = 296
+              Top = 74
               Width = 89
               Height = 21
               Hint = 'Creature'#39's faction.'
@@ -6855,12 +6812,12 @@ object MainForm: TMainForm
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
-              TabOrder = 12
+              TabOrder = 6
               OnButtonClick = GetFactionTemplate
             end
             object edctnpcflag: TJvComboEdit
-              Left = 8
-              Top = 182
+              Left = 3
+              Top = 74
               Width = 89
               Height = 21
               Hint = 
@@ -6896,12 +6853,12 @@ object MainForm: TMainForm
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
-              TabOrder = 14
+              TabOrder = 8
               OnButtonClick = edctnpcflagButtonClick
             end
             object edctrank: TJvComboEdit
-              Left = 8
-              Top = 142
+              Left = 3
+              Top = 121
               Width = 89
               Height = 21
               Hint = 'Creature'#39's honor rank.'
@@ -6934,12 +6891,12 @@ object MainForm: TMainForm
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
-              TabOrder = 10
+              TabOrder = 4
               OnButtonClick = edctrankButtonClick
             end
             object edctfamily: TJvComboEdit
-              Left = 104
-              Top = 142
+              Left = 105
+              Top = 74
               Width = 89
               Height = 21
               Hint = 'Creature'#39's family.'
@@ -6972,12 +6929,12 @@ object MainForm: TMainForm
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
-              TabOrder = 11
+              TabOrder = 5
               OnButtonClick = edctfamilyButtonClick
             end
             object edcttype: TJvComboEdit
-              Left = 296
-              Top = 142
+              Left = 391
+              Top = 74
               Width = 89
               Height = 21
               ButtonWidth = 22
@@ -7009,76 +6966,32 @@ object MainForm: TMainForm
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
-              TabOrder = 13
+              TabOrder = 7
               OnButtonClick = edcttypeButtonClick
             end
-            object edctmindmg: TLabeledEdit
-              Left = 8
-              Top = 32
-              Width = 89
-              Height = 21
-              Hint = 'Creature'#39's minimum melee damage.'
-              EditLabel.Width = 36
-              EditLabel.Height = 13
-              EditLabel.Caption = 'mindmg'
-              TabOrder = 0
-            end
-            object edctmaxdmg: TLabeledEdit
-              Left = 104
-              Top = 32
-              Width = 89
-              Height = 21
-              Hint = 'Creature'#39's maximum melee damage.'
-              EditLabel.Width = 39
-              EditLabel.Height = 13
-              EditLabel.Caption = 'maxdmg'
-              TabOrder = 1
-            end
-            object edctminrangedmg: TLabeledEdit
-              Left = 8
-              Top = 69
-              Width = 89
-              Height = 21
-              Hint = 'Minimum creature'#39's range damage.'
-              EditLabel.Width = 63
-              EditLabel.Height = 13
-              EditLabel.Caption = 'minrangedmg'
-              TabOrder = 5
-            end
-            object edctmaxrangedmg: TLabeledEdit
-              Left = 104
-              Top = 69
-              Width = 89
-              Height = 21
-              Hint = 'Maximum creature'#39's range damage.'
-              EditLabel.Width = 66
-              EditLabel.Height = 13
-              EditLabel.Caption = 'maxrangedmg'
-              TabOrder = 6
-            end
             object edctdmgschool: TLabeledEdit
-              Left = 200
-              Top = 69
+              Left = 202
+              Top = 28
               Width = 89
               Height = 21
               EditLabel.Width = 51
               EditLabel.Height = 13
               EditLabel.Caption = 'dmgschool'
-              TabOrder = 7
+              TabOrder = 2
             end
             object edctRegenHealth: TLabeledEdit
-              Left = 8
-              Top = 106
+              Left = 3
+              Top = 28
               Width = 89
               Height = 21
               EditLabel.Width = 63
               EditLabel.Height = 13
               EditLabel.Caption = 'RegenHealth'
-              TabOrder = 8
+              TabOrder = 3
             end
             object edctunit_flags: TJvComboEdit
-              Left = 104
-              Top = 182
+              Left = 107
+              Top = 120
               Width = 89
               Height = 21
               ButtonWidth = 22
@@ -7110,12 +7023,12 @@ object MainForm: TMainForm
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
-              TabOrder = 15
+              TabOrder = 9
               OnButtonClick = GetUnitFlags
             end
             object edctunit_flags2: TJvComboEdit
-              Left = 200
-              Top = 106
+              Left = 201
+              Top = 72
               Width = 89
               Height = 21
               ButtonWidth = 22
@@ -7147,12 +7060,12 @@ object MainForm: TMainForm
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
-              TabOrder = 21
+              TabOrder = 14
               OnButtonClick = GetUnitFlags2
             end
             object edcttype_flags: TJvComboEdit
-              Left = 199
-              Top = 182
+              Left = 201
+              Top = 120
               Width = 89
               Height = 21
               ButtonWidth = 22
@@ -7184,12 +7097,12 @@ object MainForm: TMainForm
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
-              TabOrder = 16
+              TabOrder = 10
               OnButtonClick = GetCreatureFlag1
             end
             object edctdynamicflags: TJvComboEdit
               Left = 296
-              Top = 182
+              Top = 120
               Width = 89
               Height = 21
               ButtonWidth = 22
@@ -7221,38 +7134,28 @@ object MainForm: TMainForm
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
-              TabOrder = 17
+              TabOrder = 11
               OnButtonClick = GetCreatureDynamicFlags
             end
-            object edctdmg_multiplier: TLabeledEdit
-              Left = 295
-              Top = 32
-              Width = 89
-              Height = 21
-              EditLabel.Width = 66
-              EditLabel.Height = 13
-              EditLabel.Caption = 'dmg_multiplier'
-              TabOrder = 18
-            end
             object edctunit_class: TLabeledEdit
-              Left = 105
-              Top = 106
+              Left = 107
+              Top = 28
               Width = 89
               Height = 21
               EditLabel.Width = 47
               EditLabel.Height = 13
               EditLabel.Caption = 'unit_class'
-              TabOrder = 19
+              TabOrder = 12
             end
             object edctVerifiedBuild: TLabeledEdit
               Left = 391
-              Top = 106
+              Top = 121
               Width = 90
               Height = 21
               EditLabel.Width = 58
               EditLabel.Height = 13
               EditLabel.Caption = 'VerifiedBuild'
-              TabOrder = 20
+              TabOrder = 13
             end
           end
           object gbLoot: TGroupBox
@@ -7308,7 +7211,7 @@ object MainForm: TMainForm
           object gbResistance: TGroupBox
             Left = 128
             Top = 291
-            Width = 225
+            Width = 214
             Height = 145
             Caption = 'Resistance'
             TabOrder = 3
@@ -7380,9 +7283,9 @@ object MainForm: TMainForm
             end
           end
           object gbSpells: TGroupBox
-            Left = 359
-            Top = 341
-            Width = 217
+            Left = 357
+            Top = 292
+            Width = 195
             Height = 184
             Caption = 'Spells'
             TabOrder = 7
@@ -7748,9 +7651,9 @@ object MainForm: TMainForm
             end
           end
           object gbctbehaviour: TGroupBox
-            Left = 712
-            Top = 216
-            Width = 137
+            Left = 717
+            Top = 181
+            Width = 140
             Height = 273
             Caption = 'Behaviour'
             TabOrder = 6
@@ -7957,8 +7860,8 @@ object MainForm: TMainForm
           end
           object gbTrainer: TGroupBox
             Left = 359
-            Top = 216
-            Width = 217
+            Top = 172
+            Width = 194
             Height = 114
             Caption = 'Trainer'
             TabOrder = 4
@@ -8152,27 +8055,27 @@ object MainForm: TMainForm
             end
           end
           object gbArmorSpeed: TGroupBox
-            Left = 585
-            Top = 216
-            Width = 121
-            Height = 133
-            Caption = 'Armor-Speed'
+            Left = 558
+            Top = 172
+            Width = 153
+            Height = 282
+            Caption = 'Modifyers'
             TabOrder = 5
-            object edctArmor_mod: TLabeledEdit
-              Left = 8
+            object edctArmorModifier: TLabeledEdit
+              Left = 3
               Top = 28
-              Width = 107
+              Width = 66
               Height = 21
               Hint = 'Creature'#39's armor mod.'
-              EditLabel.Width = 53
+              EditLabel.Width = 64
               EditLabel.Height = 13
-              EditLabel.Caption = 'Armor_mod'
+              EditLabel.Caption = 'ArmorModifier'
               TabOrder = 0
             end
             object edctspeed_walk: TLabeledEdit
-              Left = 8
+              Left = 3
               Top = 68
-              Width = 49
+              Width = 57
               Height = 21
               Hint = 'Creature'#39's walk speed'
               EditLabel.Width = 57
@@ -8181,9 +8084,9 @@ object MainForm: TMainForm
               TabOrder = 1
             end
             object edctscale: TLabeledEdit
-              Left = 8
-              Top = 108
-              Width = 107
+              Left = 80
+              Top = 28
+              Width = 61
               Height = 21
               Hint = 'Creature'#39's custom scale'
               EditLabel.Width = 25
@@ -8192,9 +8095,9 @@ object MainForm: TMainForm
               TabOrder = 2
             end
             object edctspeed_run: TLabeledEdit
-              Left = 66
+              Left = 72
               Top = 68
-              Width = 49
+              Width = 69
               Height = 21
               Hint = 'Creature'#39's run speed'
               EditLabel.Width = 50
@@ -8202,10 +8105,75 @@ object MainForm: TMainForm
               EditLabel.Caption = 'speed_run'
               TabOrder = 3
             end
+            object edctHealthModifier: TLabeledEdit
+              Left = 3
+              Top = 143
+              Width = 57
+              Height = 21
+              Hint = 'Creature'#39's Mana Mod'
+              EditLabel.Width = 89
+              EditLabel.Height = 13
+              EditLabel.Caption = 'edctHealthModifier'
+              TabOrder = 4
+            end
+            object edctManaModifier: TLabeledEdit
+              Left = 80
+              Top = 143
+              Width = 70
+              Height = 21
+              Hint = 'Creature'#39's Mana Mod'
+              EditLabel.Width = 85
+              EditLabel.Height = 13
+              EditLabel.Caption = 'edctManaModifier'
+              TabOrder = 5
+            end
+            object edctDamageModifier: TLabeledEdit
+              Left = 3
+              Top = 218
+              Width = 65
+              Height = 21
+              EditLabel.Width = 77
+              EditLabel.Height = 13
+              EditLabel.Caption = 'DamageModifier'
+              TabOrder = 6
+            end
+            object edctExperienceModifier: TLabeledEdit
+              Left = 3
+              Top = 105
+              Width = 65
+              Height = 21
+              Hint = 'Experience Modifier'
+              EditLabel.Width = 90
+              EditLabel.Height = 13
+              EditLabel.Caption = 'ExperienceModifier'
+              TabOrder = 7
+            end
+            object edctRangeVariance: TLabeledEdit
+              Left = 80
+              Top = 178
+              Width = 70
+              Height = 21
+              Hint = 'Range Variance'
+              EditLabel.Width = 74
+              EditLabel.Height = 13
+              EditLabel.Caption = 'RangeVariance'
+              TabOrder = 8
+            end
+            object edctBaseVariance: TLabeledEdit
+              Left = 3
+              Top = 178
+              Width = 59
+              Height = 21
+              Hint = 'Base Variance'
+              EditLabel.Width = 66
+              EditLabel.Height = 13
+              EditLabel.Caption = 'BaseVariance'
+              TabOrder = 9
+            end
           end
           object btScriptCreatureTemplate: TButton
-            Left = 623
-            Top = 517
+            Left = 558
+            Top = 473
             Width = 217
             Height = 25
             Caption = 'Show Creature Template Script'

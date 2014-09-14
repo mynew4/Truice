@@ -16,7 +16,7 @@ const
   VERSION_1   = '1'; //*10000
   VERSION_2   = '3'; //*100
   VERSION_3   = '8';
-  VERSION_4   = '3';
+  VERSION_4   = '5';
   VERSION_EXE = VERSION_1 + '.' + VERSION_2 + '.' + VERSION_3 + '.' + VERSION_4;
 
   SCRIPT_TAB_NO_QUEST       = 6;
@@ -359,8 +359,6 @@ type
     edctsubname: TLabeledEdit;
     edctminlevel: TLabeledEdit;
     edctmaxlevel: TLabeledEdit;
-    edctHealth_mod: TLabeledEdit;
-    edctMana_mod: TLabeledEdit;
     edctmingold: TLabeledEdit;
     edctmaxgold: TLabeledEdit;
     gbCreature2: TGroupBox;
@@ -369,19 +367,13 @@ type
     lbctrank: TLabel;
     lbctfamily: TLabel;
     lbcttype: TLabel;
-    edctattackpower: TLabeledEdit;
     edctbaseattacktime: TLabeledEdit;
     edctrangeattacktime: TLabeledEdit;
-    edctrangedattackpower: TLabeledEdit;
     edctfaction: TJvComboEdit;
     edctnpcflag: TJvComboEdit;
     edctrank: TJvComboEdit;
     edctfamily: TJvComboEdit;
     edcttype: TJvComboEdit;
-    edctmindmg: TLabeledEdit;
-    edctmaxdmg: TLabeledEdit;
-    edctminrangedmg: TLabeledEdit;
-    edctmaxrangedmg: TLabeledEdit;
     gbLoot: TGroupBox;
     edctlootid: TLabeledEdit;
     edctpickpocketloot: TLabeledEdit;
@@ -415,7 +407,7 @@ type
     edcttrainer_class: TJvComboEdit;
     edcttrainer_race: TJvComboEdit;
     gbArmorSpeed: TGroupBox;
-    edctArmor_mod: TLabeledEdit;
+    edctArmorModifier: TLabeledEdit;
     edctspeed_walk: TLabeledEdit;
     btScriptCreatureTemplate: TButton;
     tsCreatureLocation: TTabSheet;
@@ -1344,7 +1336,6 @@ type
     edglphaseMask: TLabeledEdit;
     edgeholiday: TLabeledEdit;
     edgtIconName: TLabeledEdit;
-    edctdmg_multiplier: TLabeledEdit;
     edctunit_class: TLabeledEdit;
     edqtDetailsEmoteDelay1: TLabeledEdit;
     edqtDetailsEmoteDelay2: TLabeledEdit;
@@ -1631,6 +1622,12 @@ type
     lbRequiredClasses: TLabel;
     editflagsCustom: TJvComboEdit;
     lbitflagsCustom: TLabel;
+    edctHealthModifier: TLabeledEdit;
+    edctManaModifier: TLabeledEdit;
+    edctDamageModifier: TLabeledEdit;
+    edctExperienceModifier: TLabeledEdit;
+    edctRangeVariance: TLabeledEdit;
+    edctBaseVariance: TLabeledEdit;
     procedure FormActivate(Sender: TObject);
     procedure btSearchClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
