@@ -467,12 +467,16 @@ type
     btSkinLootUpd: TSpeedButton;
     btSkinLootDel: TSpeedButton;
     lvcoSkinLoot: TJvListView;
-    edcsentry: TLabeledEdit;
-    edcsChanceOrQuestChance: TLabeledEdit;
-    edcsgroupid: TLabeledEdit;
-    edcsmincountOrRef: TLabeledEdit;
-    edcsmaxcount: TLabeledEdit;
-    edcsitem: TJvComboEdit;
+    edcsEntry: TLabeledEdit;
+    edcsItem: TJvComboEdit;
+    edcsReference: TLabeledEdit;
+    edcsChance: TLabeledEdit;
+    edcsQuestRequired: TLabeledEdit;
+    edcsLootMode: TJvComboEdit;
+    edcsGroupId: TLabeledEdit;
+    edcsMinCount: TLabeledEdit;
+    edcsMaxCount: TLabeledEdit;
+    edcsComment: TLabeledEdit;
     btScriptSkinLoot: TButton;
     btFullScriptSkinLoot: TButton;
     tsNPCVendor: TTabSheet;
@@ -1160,7 +1164,6 @@ type
     lbcolootmode: TLabel;
     lbcplootmode: TLabel;
     edcplootmode: TJvComboEdit;
-    edcslootmode: TJvComboEdit;
     lbcslootmode: TLabel;
     edgolootmode: TJvComboEdit;
     lbgolootmode: TLabel;
@@ -4309,8 +4312,8 @@ begin
      ' WHERE (plt.`entry`=%d)',[StrToIntDef(edctpickpocketloot.Text,0)]), lvcoPickpocketLoot);
 
     LoadQueryToListView(Format('SELECT slt.*, i.`name` FROM `skinning_loot_template`'+
-     ' slt LEFT OUTER JOIN `item_template` i ON i.`entry` = slt.`item`'+
-     ' WHERE (slt.`entry`=%d)',[StrToIntDef(edctskinloot.Text,0)]), lvcoSkinLoot);
+     ' slt LEFT OUTER JOIN `item_template` i ON i.`entry` = slt.`Item`'+
+     ' WHERE (slt.`Entry`=%d)',[StrToIntDef(edctskinloot.Text,0)]), lvcoSkinLoot);
 
     if isvendor then LoadQueryToListView(Format('SELECT v.*, i.`name` FROM `npc_vendor` v'+
     ' LEFT OUTER JOIN `item_template` i ON i.`entry` = v.`item` WHERE (v.`entry`=%d)',
@@ -4346,7 +4349,7 @@ begin
     edclid.Text := IntToStr(Entry);
     edcoEntry.Text := edctlootid.Text;
     edcpentry.Text := edctpickpocketloot.Text;
-    edcsentry.Text := edctskinloot.Text;
+    edcsEntry.Text := edctskinloot.Text;
     edcventry.Text := IntToStr(Entry);
     edcrentry.Text := IntToStr(Entry);        
   except
@@ -6235,11 +6238,11 @@ var
   csentry, csitem, Fields, Values: string;
 begin
   mectLog.Clear;
-  csentry :=  edcsentry.Text;
-  csitem := edcsitem.Text;
+  csentry :=  edcsEntry.Text;
+  csitem := edcsItem.Text;
   if (csentry='') or (csitem='') then Exit;
   SetFieldsAndValues(Fields, Values, 'skinning_loot_template', PFX_SKINNING_LOOT_TEMPLATE, mectLog);
-  mectScript.Text := Format('DELETE FROM `skinning_loot_template` WHERE (`entry`=%s) AND (`item`=%s);'#13#10+
+  mectScript.Text := Format('DELETE FROM `skinning_loot_template` WHERE (`Entry`=%s) AND (`Item`=%s);'#13#10+
     'INSERT INTO `skinning_loot_template` (%s) VALUES (%s);'#13#10,[csentry, csitem, Fields, Values])
 end;
 
@@ -7277,8 +7280,8 @@ begin
     QueryResult_AddToList;
 
     // load skinning loot
-    MyQuery.SQL.Text := Format('SELECT `entry`, `item`, `ChanceOrQuestChance`, '+
-      '`lootmode`, `groupid`, `mincountOrRef`, `maxcount`, '+
+    MyQuery.SQL.Text := Format('SELECT `Entry`, `Item`, `Reference`, `Chance`, '+
+      '`QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`, `Comment`, '+
       '''skinning_loot_template'' as `table` '+
       'FROM `skinning_loot_template` WHERE (`item`=%s)',[key]);
     QueryResult_AddToList;
