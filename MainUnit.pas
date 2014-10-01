@@ -453,12 +453,16 @@ type
     btPickpocketLootUpd: TSpeedButton;
     btPickpocketLootDel: TSpeedButton;
     lvcoPickpocketLoot: TJvListView;
-    edcpentry: TLabeledEdit;
-    edcpChanceOrQuestChance: TLabeledEdit;
-    edcpgroupid: TLabeledEdit;
-    edcpmincountOrRef: TLabeledEdit;
-    edcpmaxcount: TLabeledEdit;
-    edcpitem: TJvComboEdit;
+    edcpEntry: TLabeledEdit;
+    edcpItem: TJvComboEdit;
+    edcpReference: TLabeledEdit;
+    edcpChance: TLabeledEdit;
+    edcpQuestRequired: TLabeledEdit;
+    edcpLootMode: TJvComboEdit;
+    edcpGroupId: TLabeledEdit;
+    edcpMinCount: TLabeledEdit;
+    edcpMaxCount: TLabeledEdit;
+    edcpComment: TLabeledEdit;
     btScriptPickpocketLoot: TButton;
     btFullScriptPickpocketLoot: TButton;
     tsSkinLoot: TTabSheet;
@@ -1163,7 +1167,6 @@ type
     edhiitem: TLabeledEdit;
     lbcolootmode: TLabel;
     lbcplootmode: TLabel;
-    edcplootmode: TJvComboEdit;
     lbcslootmode: TLabel;
     edgolootmode: TJvComboEdit;
     lbgolootmode: TLabel;
@@ -4308,8 +4311,8 @@ begin
      ' WHERE (clt.`Entry`=%d)',[StrToIntDef(edctlootid.Text,0)]), lvcoCreatureLoot);
 
     LoadQueryToListView(Format('SELECT plt.*, i.`name` FROM `pickpocketing_loot_template`'+
-     ' plt LEFT OUTER JOIN `item_template` i ON i.`entry` = plt.`item`'+
-     ' WHERE (plt.`entry`=%d)',[StrToIntDef(edctpickpocketloot.Text,0)]), lvcoPickpocketLoot);
+     ' plt LEFT OUTER JOIN `item_template` i ON i.`entry` = plt.`Item`'+
+     ' WHERE (plt.`Entry`=%d)',[StrToIntDef(edctpickpocketloot.Text,0)]), lvcoPickpocketLoot);
 
     LoadQueryToListView(Format('SELECT slt.*, i.`name` FROM `skinning_loot_template`'+
      ' slt LEFT OUTER JOIN `item_template` i ON i.`entry` = slt.`Item`'+
@@ -4348,7 +4351,7 @@ begin
     LoadCreatureTemplateAddon(Entry);
     edclid.Text := IntToStr(Entry);
     edcoEntry.Text := edctlootid.Text;
-    edcpentry.Text := edctpickpocketloot.Text;
+    edcpEntry.Text := edctpickpocketloot.Text;
     edcsEntry.Text := edctskinloot.Text;
     edcventry.Text := IntToStr(Entry);
     edcrentry.Text := IntToStr(Entry);        
@@ -6225,11 +6228,11 @@ var
   cpentry, cpitem, Fields, Values: string;
 begin
   mectLog.Clear;
-  cpentry :=  edcpentry.Text;
-  cpitem := edcpitem.Text;
+  cpentry :=  edcpEntry.Text;
+  cpitem := edcpItem.Text;
   if (cpentry='') or (cpitem='') then Exit;
   SetFieldsAndValues(Fields, Values, 'pickpocketing_loot_template', PFX_PICKPOCKETING_LOOT_TEMPLATE, mectLog);
-  mectScript.Text := Format('DELETE FROM `pickpocketing_loot_template` WHERE (`entry`=%s) AND (`item`=%s);'#13#10+
+  mectScript.Text := Format('DELETE FROM `pickpocketing_loot_template` WHERE (`Entry`=%s) AND (`Item`=%s);'#13#10+
    'INSERT INTO `pickpocketing_loot_template` (%s) VALUES (%s);'#13#10,[cpentry, cpitem, Fields, Values])
 end;
 
@@ -7255,7 +7258,7 @@ begin
     MyQuery.SQL.Text := Format('SELECT `Entry`, `Item`, `Reference`, `Chance`, '+
       '`QuestRequired`,`LootMode`, `GroupId`, `MinCount`, `MaxCount`,`Comment`, '+
       '''creature_loot_template'' as `table` '+
-      'FROM `creature_loot_template` WHERE (`item`=%s)',[key]);
+      'FROM `creature_loot_template` WHERE (`Item`=%s)',[key]);
     QueryResult_AddToList;
 
     // load gameobject loot
@@ -7273,17 +7276,17 @@ begin
     QueryResult_AddToList;
 
     // load pickpocketing loot
-    MyQuery.SQL.Text := Format('SELECT `entry`, `item`, `ChanceOrQuestChance`, '+
-      '`lootmode`, `groupid`, `mincountOrRef`, `maxcount`, '+
+    MyQuery.SQL.Text := Format('SELECT `Entry`, `Item`, `Reference`, `Chance`, '+
+      '`QuestRequired`,`LootMode`, `GroupId`, `MinCount`, `MaxCount`,`Comment`, '+
       '''pickpocketing_loot_template'' as `table` '+
-      'FROM `pickpocketing_loot_template` WHERE (`item`=%s)',[key]);
+      'FROM `pickpocketing_loot_template` WHERE (`Item`=%s)',[key]);
     QueryResult_AddToList;
 
     // load skinning loot
     MyQuery.SQL.Text := Format('SELECT `Entry`, `Item`, `Reference`, `Chance`, '+
-      '`QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`, `Comment`, '+
+      '`QuestRequired`,`LootMode`, `GroupId`, `MinCount`, `MaxCount`,`Comment`, '+
       '''skinning_loot_template'' as `table` '+
-      'FROM `skinning_loot_template` WHERE (`item`=%s)',[key]);
+      'FROM `skinning_loot_template` WHERE (`Item`=%s)',[key]);
     QueryResult_AddToList;
 
     // load enchanting loot
