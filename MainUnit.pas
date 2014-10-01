@@ -435,12 +435,16 @@ type
     btCreatureLootUpd: TSpeedButton;
     btCreatureLootDel: TSpeedButton;
     lvcoCreatureLoot: TJvListView;
-    edcoentry: TLabeledEdit;
-    edcoChanceOrQuestChance: TLabeledEdit;
-    edcogroupid: TLabeledEdit;
-    edcomincountOrRef: TLabeledEdit;
-    edcomaxcount: TLabeledEdit;
-    edcoitem: TJvComboEdit;
+    edcoEntry: TLabeledEdit;
+    edcoItem: TJvComboEdit;
+    edcoReference: TLabeledEdit;
+    edcoChance: TLabeledEdit;
+    edcoQuestRequired: TLabeledEdit;
+    edcoLootMode: TJvComboEdit;
+    edcoGroupId: TLabeledEdit;
+    edcoMinCount: TLabeledEdit;
+    edcoMaxCount: TLabeledEdit;
+    edcoComment: TLabeledEdit;
     btScriptCreatureLoot: TButton;
     btFullScriptCreatureLoot: TButton;
     tsPickpocketLoot: TTabSheet;
@@ -1153,7 +1157,6 @@ type
     edhibag: TLabeledEdit;
     edhislot: TLabeledEdit;
     edhiitem: TLabeledEdit;
-    edcolootmode: TJvComboEdit;
     lbcolootmode: TLabel;
     lbcplootmode: TLabel;
     edcplootmode: TJvComboEdit;
@@ -4298,8 +4301,8 @@ begin
       [Entry]),lvclCreatureLocation);
 
     LoadQueryToListView(Format('SELECT clt.*, i.`name` FROM `creature_loot_template`'+
-     ' clt LEFT OUTER JOIN `item_template` i ON i.`entry` = clt.`item`'+
-     ' WHERE (clt.`entry`=%d)',[StrToIntDef(edctlootid.Text,0)]), lvcoCreatureLoot);
+     ' clt LEFT OUTER JOIN `item_template` i ON i.`entry` = clt.`Item`'+
+     ' WHERE (clt.`Entry`=%d)',[StrToIntDef(edctlootid.Text,0)]), lvcoCreatureLoot);
 
     LoadQueryToListView(Format('SELECT plt.*, i.`name` FROM `pickpocketing_loot_template`'+
      ' plt LEFT OUTER JOIN `item_template` i ON i.`entry` = plt.`item`'+
@@ -4341,7 +4344,7 @@ begin
     tsNPCTrainer.TabVisible := istrainer;
     LoadCreatureTemplateAddon(Entry);
     edclid.Text := IntToStr(Entry);
-    edcoentry.Text := edctlootid.Text;
+    edcoEntry.Text := edctlootid.Text;
     edcpentry.Text := edctpickpocketloot.Text;
     edcsentry.Text := edctskinloot.Text;
     edcventry.Text := IntToStr(Entry);
@@ -6206,8 +6209,8 @@ var
   coentry, coitem, Fields, Values: string;
 begin
   mectLog.Clear;
-  coentry :=  edcoentry.Text;
-  coitem := edcoitem.Text;
+  coentry :=  edcoEntry.Text;
+  coitem := edcoItem.Text;
   if (coentry='') or (coitem='') then Exit;
   SetFieldsAndValues(Fields, Values, 'creature_loot_template', PFX_CREATURE_LOOT_TEMPLATE, mectLog);
   mectScript.Text := Format('DELETE FROM `creature_loot_template` WHERE (`entry`=%s) AND (`item`=%s);'#13#10+
@@ -7246,8 +7249,8 @@ begin
   try
     lvList.Clear;
     // load creature loot
-    MyQuery.SQL.Text := Format('SELECT `entry`, `item`, `ChanceOrQuestChance`, '+
-      '`lootmode`, `groupid`, `mincountOrRef`, `maxcount`, '+
+    MyQuery.SQL.Text := Format('SELECT `Entry`, `Item`, `Reference`, `Chance`, '+
+      '`QuestRequired`,`LootMode`, `GroupId`, `MinCount`, `MaxCount`,`Comment`, '+
       '''creature_loot_template'' as `table` '+
       'FROM `creature_loot_template` WHERE (`item`=%s)',[key]);
     QueryResult_AddToList;
@@ -7802,13 +7805,16 @@ procedure TMainForm.LootAdd(pfx: string; lvList: TJvListView);
 begin
   with lvList.Items.Add do
   begin
-    Caption := TCustomEdit(FindComponent(pfx + 'entry')).Text;
-    SubItems.Add(TCustomEdit(FindComponent(pfx + 'item')).Text);
-    SubItems.Add(TCustomEdit(FindComponent(pfx + 'ChanceOrQuestChance')).Text);
-    SubItems.Add(TCustomEdit(FindComponent(pfx + 'lootmode')).Text);
-    SubItems.Add(TCustomEdit(FindComponent(pfx + 'groupid')).Text);
-    SubItems.Add(TCustomEdit(FindComponent(pfx + 'mincountOrRef')).Text);
-    SubItems.Add(TCustomEdit(FindComponent(pfx + 'maxcount')).Text);
+    Caption := TCustomEdit(FindComponent(pfx + 'Entry')).Text;
+    SubItems.Add(TCustomEdit(FindComponent(pfx + 'Item')).Text);
+    SubItems.Add(TCustomEdit(FindComponent(pfx + 'Reference')).Text);
+    SubItems.Add(TCustomEdit(FindComponent(pfx + 'Chance')).Text);
+    SubItems.Add(TCustomEdit(FindComponent(pfx + 'QuestRequired')).Text);
+    SubItems.Add(TCustomEdit(FindComponent(pfx + 'MootMode')).Text);
+    SubItems.Add(TCustomEdit(FindComponent(pfx + 'GroupId')).Text);
+    SubItems.Add(TCustomEdit(FindComponent(pfx + 'MinCount')).Text);
+    SubItems.Add(TCustomEdit(FindComponent(pfx + 'MaxCount')).Text);
+    SubItems.Add(TCustomEdit(FindComponent(pfx + 'Comment')).Text);
   end;
 end;
 
@@ -7904,13 +7910,16 @@ begin
   begin
     with lvList.Selected do
     begin
-      Caption := TCustomEdit(FindComponent(pfx + 'entry')).Text;
-      SubItems[0] := TCustomEdit(FindComponent(pfx + 'item')).Text;
-      SubItems[1] := TCustomEdit(FindComponent(pfx + 'ChanceOrQuestChance')).Text;
-      SubItems[2] := TCustomEdit(FindComponent(pfx + 'lootmode')).Text;
-      SubItems[3] := TCustomEdit(FindComponent(pfx + 'groupid')).Text;
-      SubItems[4] := TCustomEdit(FindComponent(pfx + 'mincountOrRef')).Text;
-      SubItems[5] := TCustomEdit(FindComponent(pfx + 'maxcount')).Text;
+      Caption := TCustomEdit(FindComponent(pfx + 'Entry')).Text;
+      SubItems[0] := TCustomEdit(FindComponent(pfx + 'Item')).Text;
+      SubItems[1] := TCustomEdit(FindComponent(pfx + 'Reference')).Text;
+      SubItems[2] := TCustomEdit(FindComponent(pfx + 'Chance')).Text;
+      SubItems[3] := TCustomEdit(FindComponent(pfx + 'QuestRequired')).Text;
+      SubItems[4] := TCustomEdit(FindComponent(pfx + 'LootMode')).Text;
+      SubItems[5] := TCustomEdit(FindComponent(pfx + 'GroupId')).Text;
+      SubItems[6] := TCustomEdit(FindComponent(pfx + 'MinCount')).Text;
+      SubItems[7] := TCustomEdit(FindComponent(pfx + 'MaxCount')).Text;
+      SubItems[8] := TCustomEdit(FindComponent(pfx + 'Comment')).Text;
     end;
   end;
 end;
@@ -7928,13 +7937,16 @@ begin
   begin
     with lvList.Selected do
     begin
-      TCustomEdit(FindComponent(pfx + 'entry')).Text := Caption;
-      TCustomEdit(FindComponent(pfx + 'item')).Text := SubItems[0];
-      TCustomEdit(FindComponent(pfx + 'ChanceOrQuestChance')).Text := SubItems[1];
-      TCustomEdit(FindComponent(pfx + 'lootmode')).Text := SubItems[2];
-      TCustomEdit(FindComponent(pfx + 'groupid')).Text := SubItems[3];
-      TCustomEdit(FindComponent(pfx + 'mincountOrRef')).Text := SubItems[4];
-      TCustomEdit(FindComponent(pfx + 'maxcount')).Text := SubItems[5];
+      TCustomEdit(FindComponent(pfx + 'Entry')).Text := Caption;
+      TCustomEdit(FindComponent(pfx + 'Item')).Text := SubItems[0];
+      TCustomEdit(FindComponent(pfx + 'Reference')).Text := SubItems[1];
+      TCustomEdit(FindComponent(pfx + 'Chance')).Text := SubItems[2];
+      TCustomEdit(FindComponent(pfx + 'QuestRequired')).Text := SubItems[3];
+      TCustomEdit(FindComponent(pfx + 'LootMode')).Text := SubItems[4];
+      TCustomEdit(FindComponent(pfx + 'GroupId')).Text := SubItems[5];
+      TCustomEdit(FindComponent(pfx + 'MinCount')).Text := SubItems[6];
+      TCustomEdit(FindComponent(pfx + 'MaxCount')).Text := SubItems[7];
+      TCustomEdit(FindComponent(pfx + 'Comment')).Text := SubItems[8];
     end;
   end;
 end;
