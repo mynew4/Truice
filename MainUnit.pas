@@ -6230,10 +6230,10 @@ begin
   mectLog.Clear;
   cpentry :=  edcpEntry.Text;
   cpitem := edcpItem.Text;
-  if (cpentry='') or (cpitem='') then Exit;
+  if (cpEntry='') or (cpItem='') then Exit;
   SetFieldsAndValues(Fields, Values, 'pickpocketing_loot_template', PFX_PICKPOCKETING_LOOT_TEMPLATE, mectLog);
   mectScript.Text := Format('DELETE FROM `pickpocketing_loot_template` WHERE (`Entry`=%s) AND (`Item`=%s);'#13#10+
-   'INSERT INTO `pickpocketing_loot_template` (%s) VALUES (%s);'#13#10,[cpentry, cpitem, Fields, Values])
+   'INSERT INTO `pickpocketing_loot_template` (%s) VALUES (%s);'#13#10,[cpEntry, cpItem, Fields, Values])
 end;
 
 procedure TMainForm.CompleteSkinLootScript;
@@ -7256,78 +7256,78 @@ begin
     lvList.Clear;
     // load creature loot
     MyQuery.SQL.Text := Format('SELECT `Entry`, `Item`, `Reference`, `Chance`, '+
-      '`QuestRequired`,`LootMode`, `GroupId`, `MinCount`, `MaxCount`,`Comment`, '+
+      '`QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`, `Comment`, '+
       '''creature_loot_template'' as `table` '+
       'FROM `creature_loot_template` WHERE (`Item`=%s)',[key]);
     QueryResult_AddToList;
 
     // load gameobject loot
-    MyQuery.SQL.Text := Format('SELECT `entry`, `item`, `ChanceOrQuestChance`, '+
-      '`lootmode`, `groupid`, `mincountOrRef`, `maxcount`, '+
+    MyQuery.SQL.Text := Format('SELECT `Entry`, `Item`, `Reference`, `Chance`, '+
+      '`QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`, `Comment`, '+
       '''gameobject_loot_template'' as `table` '+
       'FROM `gameobject_loot_template` WHERE (`item`=%s)',[key]);
     QueryResult_AddToList;
 
     // load item loot
-    MyQuery.SQL.Text := Format('SELECT `entry`, `item`, `ChanceOrQuestChance`, '+
-      '`lootmode`, `groupid`, `mincountOrRef`, `maxcount`, '+
+    MyQuery.SQL.Text := Format('SELECT `Entry`, `Item`, `Reference`, `Chance`, '+
+      '`QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`, `Comment`, '+
       '''item_loot_template'' as `table` '+
       'FROM `item_loot_template` WHERE (`item`=%s)', [key]);
     QueryResult_AddToList;
 
     // load pickpocketing loot
     MyQuery.SQL.Text := Format('SELECT `Entry`, `Item`, `Reference`, `Chance`, '+
-      '`QuestRequired`,`LootMode`, `GroupId`, `MinCount`, `MaxCount`,`Comment`, '+
+      '`QuestRequired`,`LootMode`, `GroupId`, `MinCount`, `MaxCount`, `Comment`, '+
       '''pickpocketing_loot_template'' as `table` '+
       'FROM `pickpocketing_loot_template` WHERE (`Item`=%s)',[key]);
     QueryResult_AddToList;
 
     // load skinning loot
     MyQuery.SQL.Text := Format('SELECT `Entry`, `Item`, `Reference`, `Chance`, '+
-      '`QuestRequired`,`LootMode`, `GroupId`, `MinCount`, `MaxCount`,`Comment`, '+
+      '`QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`, `Comment`, '+
       '''skinning_loot_template'' as `table` '+
       'FROM `skinning_loot_template` WHERE (`Item`=%s)',[key]);
     QueryResult_AddToList;
 
     // load enchanting loot
-    MyQuery.SQL.Text := Format('SELECT `entry`, `item`, `ChanceOrQuestChance`, '+
-      '`lootmode`, `groupid`, `mincountOrRef`, `maxcount`, '+
+    MyQuery.SQL.Text := Format('SELECT `Entry`, `Item`, `Reference`, `Chance`, '+
+      '`QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`, `Comment`, '+
       '''disenchant_loot_template'' as `table` '+
       'FROM `disenchant_loot_template` WHERE (`item`=%s)',[key]);
     QueryResult_AddToList;
 
     // load fishing loot
-    MyQuery.SQL.Text := Format('SELECT `entry`, `item`, `ChanceOrQuestChance`, '+
-      '`lootmode`, `groupid`, `mincountOrRef`, `maxcount`, '+
+    MyQuery.SQL.Text := Format('SELECT `Entry`, `Item`, `Reference`, `Chance`, '+
+      '`QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`, `Comment`, '+
       '''fishing_loot_template'' as `table` '+
       'FROM `fishing_loot_template` WHERE (`item`=%s)',[key]);
     QueryResult_AddToList;
 
     // load prospecting loot
-    MyQuery.SQL.Text := Format('SELECT `entry`, `item`, `ChanceOrQuestChance`, '+
-      '`lootmode`, `groupid`, `mincountOrRef`, `maxcount`, '+
+    MyQuery.SQL.Text := Format('SELECT `Entry`, `Item`, `Reference`, `Chance`, '+
+      '`QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`, `Comment`, '+
       '''prospecting_loot_template'' as `table` '+
       'FROM `prospecting_loot_template` WHERE (`item`=%s)',[key]);
     QueryResult_AddToList;
 
     // load milling loot
-    MyQuery.SQL.Text := Format('SELECT `entry`, `item`, `ChanceOrQuestChance`, '+
-      '`lootmode`, `groupid`, `mincountOrRef`, `maxcount`, '+
+    MyQuery.SQL.Text := Format('SELECT `Entry`, `Item`, `Reference`, `Chance`, '+
+      '`QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`, `Comment`, '+
       '''milling_loot_template'' as `table` '+
       'FROM `milling_loot_template` WHERE (`item`=%s)',[key]);
     QueryResult_AddToList;
 
    //load reference loot
-    MyQuery.SQL.Text := Format('SELECT `entry`, `item`, `ChanceOrQuestChance`, '+
-      '`lootmode`, `groupid`, `mincountOrRef`, `maxcount`, '+
+    MyQuery.SQL.Text := Format('SELECT `Entry`, `Item`, `Reference`, `Chance`, '+
+      '`QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`, `Comment`, '+
       '''reference_loot_template'' as `table` '+
       'FROM `reference_loot_template` WHERE (`item`=%s)',[key]);
     QueryResult_AddToList;
 
     // load npc_vendor
-    MyQuery.SQL.Text := Format('SELECT `entry`, `item`,  '''' as `ChanceOrQuestChance`, '+
-      ''''' as `groupid`, '''' as `mincountOrRef`, `maxcount`, '+
-      ''''' as `lootmode`, ''npc_vendor'' as `table` '+
+    MyQuery.SQL.Text := Format('SELECT `Entry`, `Item`,   '''' as `Reference`, '''' as `Chance`, '+
+      ' '''' as `QuestRequired`, '''' as `Groupid`, '''' as `MinCount`, `MaxCount`, '+
+      ''''' as `LootMode`, ''npc_vendor'' as `table` '+
       'FROM `npc_vendor` WHERE (`item`=%s)',[key]);
     QueryResult_AddToList;
   finally
@@ -8141,25 +8141,31 @@ begin
   begin
     for i := 0 to lvList.Items.Count - 2 do
     begin
-      Values := Values + Format('(%s, %s, %s, %s, %s, %s, %s),'#13#10,[
+      Values := Values + Format('(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s),'#13#10,[
         lvList.Items[i].Caption,
         lvList.Items[i].SubItems[0],
         lvList.Items[i].SubItems[1],
         lvList.Items[i].SubItems[2],
         lvList.Items[i].SubItems[3],
         lvList.Items[i].SubItems[4],
-        lvList.Items[i].SubItems[5]
+        lvList.Items[i].SubItems[5],
+        lvList.Items[i].SubItems[6],
+        lvList.Items[i].SubItems[7],
+        lvList.Items[i].SubItems[8]
       ]);
     end;
     i := lvList.Items.Count - 1;
-    Values := Values + Format('(%s, %s, %s, %s, %s, %s, %s);',[
+    Values := Values + Format('(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s);',[
       lvList.Items[i].Caption,
       lvList.Items[i].SubItems[0],
       lvList.Items[i].SubItems[1],
       lvList.Items[i].SubItems[2],
       lvList.Items[i].SubItems[3],
       lvList.Items[i].SubItems[4],
-      lvList.Items[i].SubItems[5]
+      lvList.Items[i].SubItems[5],
+      lvList.Items[i].SubItems[6],
+      lvList.Items[i].SubItems[7],
+      lvList.Items[i].SubItems[8]
     ]);
   end;
   if values<>'' then
@@ -13785,7 +13791,7 @@ begin
    end;
    JvHttpUrlGrabber.ProxyUserName := dmMain.ProxyUser;
    JvHttpUrlGrabber.ProxyPassword := dmMain.ProxyPass;
-   JvHttpUrlGrabber.URL := 'http://github.com/Faq/Truice/blob/master/version.txt';
+   JvHttpUrlGrabber.URL := 'https://github.com/chaosua/Truice/blob/master335/version.txt';
    try
     IsFirst := true;
     JvHttpUrlGrabber.Start;
