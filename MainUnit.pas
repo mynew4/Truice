@@ -580,12 +580,16 @@ type
     btGOLootUpd: TSpeedButton;
     btGOLootDel: TSpeedButton;
     lvgoGOLoot: TJvListView;
-    edgoentry: TLabeledEdit;
-    edgoChanceOrQuestChance: TLabeledEdit;
-    edgogroupid: TLabeledEdit;
-    edgomincountOrRef: TLabeledEdit;
-    edgomaxcount: TLabeledEdit;
-    edgoitem: TJvComboEdit;
+    edgoEntry: TLabeledEdit;
+    edgoItem: TJvComboEdit;
+    edgoReference: TLabeledEdit;
+    edgoChance: TLabeledEdit;
+    edgoQuestRequired: TLabeledEdit;
+    edgoLootMode: TJvComboEdit;
+    edgoGroupId: TLabeledEdit;
+    edgoMinCount: TLabeledEdit;
+    edgoMaxCount: TLabeledEdit;
+    edgoComment: TLabeledEdit;
     btScriptGOLoot: TButton;
     btFullScriptGOLoot: TButton;
     tsGOScript: TTabSheet;
@@ -1168,7 +1172,6 @@ type
     lbcolootmode: TLabel;
     lbcplootmode: TLabel;
     lbcslootmode: TLabel;
-    edgolootmode: TJvComboEdit;
     lbgolootmode: TLabel;
     edillootmode: TJvComboEdit;
     lbillootmode: TLabel;
@@ -3752,7 +3755,7 @@ begin
       begin
         if MessageDlg(Format(dmMain.Text[137],[CreateVer(LastVer)]), mtConfirmation, mbYesNoCancel, 0, mbYes) = mrYes then
         begin
-          BrowseURL1.URL := 'http://github.com/Faq/Truice/downloads';
+          BrowseURL1.URL := 'http://github.com/chaosua/Truice/downloads';
           BrowseURL1.Execute;
         end;
       end
@@ -4294,7 +4297,7 @@ begin
     if npcflag and 16 = 16 then istrainer := true else istrainer := false;
 
     // is eventAI ?
-    //if MyQuery.FieldByName('AIName').AsString = mob_eventai then
+    if MyQuery.FieldByName('AIName').AsString = mob_eventai then
     //isEventAI := true; //else
     isEventAI := false;
 
@@ -6833,7 +6836,7 @@ end;
 
 procedure TMainForm.tsGOLootShow(Sender: TObject);
 begin
-  if (edgoentry.Text = '') then edgoentry.Text := edgtdata1.Text;
+  if (edgoEntry.Text = '') then edgoEntry.Text := edgtdata1.Text;
 end;
 
 procedure TMainForm.tsGOScriptShow(Sender: TObject);
@@ -6948,11 +6951,11 @@ var
   goentry, goitem, Fields, Values: string;
 begin
   meGOLog.Clear;
-  goentry := edgoentry.Text;
-  goitem := edgoitem.Text;
+  goentry := edgoEntry.Text;
+  goitem := edgoItem.Text;
   if (goentry='') or (goitem='') then Exit;
   SetFieldsAndValues(Fields, Values, 'gameobject_loot_template', PFX_GAMEOBJECT_LOOT_TEMPLATE, megoLog);
-  meGOScript.Text := Format('DELETE FROM `gameobject_loot_template` WHERE (`entry`=%s) AND (`item`=%s);'#13#10+
+  meGOScript.Text := Format('DELETE FROM `gameobject_loot_template` WHERE (`Entry`=%s) AND (`Item`=%s);'#13#10+
     'INSERT INTO `gameobject_loot_template` (%s) VALUES (%s);'#13#10,[goentry, goitem, Fields, Values])
 end;    
 
@@ -7325,8 +7328,8 @@ begin
     QueryResult_AddToList;
 
     // load npc_vendor
-    MyQuery.SQL.Text := Format('SELECT `Entry`, `Item`,   '''' as `Reference`, '''' as `Chance`, '+
-      ' '''' as `QuestRequired`, '''' as `Groupid`, '''' as `MinCount`, `MaxCount`, '+
+    MyQuery.SQL.Text := Format('SELECT `entry`, `item`,  '''' as `Chance`, '+
+      ''''' as `GroupId`, '''' as `MinCount`, `MaxCount`, '+
       ''''' as `LootMode`, ''npc_vendor'' as `table` '+
       'FROM `npc_vendor` WHERE (`item`=%s)',[key]);
     QueryResult_AddToList;
@@ -7816,7 +7819,7 @@ begin
     SubItems.Add(TCustomEdit(FindComponent(pfx + 'Reference')).Text);
     SubItems.Add(TCustomEdit(FindComponent(pfx + 'Chance')).Text);
     SubItems.Add(TCustomEdit(FindComponent(pfx + 'QuestRequired')).Text);
-    SubItems.Add(TCustomEdit(FindComponent(pfx + 'MootMode')).Text);
+    SubItems.Add(TCustomEdit(FindComponent(pfx + 'LootMode')).Text);
     SubItems.Add(TCustomEdit(FindComponent(pfx + 'GroupId')).Text);
     SubItems.Add(TCustomEdit(FindComponent(pfx + 'MinCount')).Text);
     SubItems.Add(TCustomEdit(FindComponent(pfx + 'MaxCount')).Text);
@@ -8141,7 +8144,7 @@ begin
   begin
     for i := 0 to lvList.Items.Count - 2 do
     begin
-      Values := Values + Format('(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s),'#13#10,[
+      Values := Values + Format('(%s, %s, %s, %s, %s, %s, %s, %s, %s, '#39'%s'#39'),'#13#10,[
         lvList.Items[i].Caption,
         lvList.Items[i].SubItems[0],
         lvList.Items[i].SubItems[1],
@@ -8155,7 +8158,7 @@ begin
       ]);
     end;
     i := lvList.Items.Count - 1;
-    Values := Values + Format('(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s);',[
+    Values := Values + Format('(%s, %s, %s, %s, %s, %s, %s, %s, %s, '#39'%s'#39');'#13#10,[
       lvList.Items[i].Caption,
       lvList.Items[i].SubItems[0],
       lvList.Items[i].SubItems[1],

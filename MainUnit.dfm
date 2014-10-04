@@ -26,7 +26,7 @@ object MainForm: TMainForm
     Top = 0
     Width = 917
     Height = 708
-    ActivePage = tsCreature
+    ActivePage = tsGameObject
     Align = alClient
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -5689,6 +5689,10 @@ object MainForm: TMainForm
     object tsCreature: TTabSheet
       Caption = 'Creature'
       ImageIndex = 2
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object PageControl3: TPageControl
         Left = 0
         Top = 25
@@ -9969,6 +9973,7 @@ object MainForm: TMainForm
                 Width = 200
               end>
             HideSelection = False
+            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -13856,10 +13861,6 @@ object MainForm: TMainForm
     object tsGameObject: TTabSheet
       Caption = 'Game Object'
       ImageIndex = 3
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Panel8: TPanel
         Left = 0
         Top = 0
@@ -13874,7 +13875,7 @@ object MainForm: TMainForm
         Top = 25
         Width = 909
         Height = 655
-        ActivePage = tsGOLoot
+        ActivePage = tsEditGO
         Align = alClient
         TabOrder = 1
         object tsSearchGO: TTabSheet
@@ -15597,11 +15598,11 @@ object MainForm: TMainForm
             OnClick = btGOLootDelClick
           end
           object lbgolootmode: TLabel
-            Left = 432
-            Top = 533
-            Width = 43
+            Left = 9
+            Top = 537
+            Width = 48
             Height = 13
-            Caption = 'lootmode'
+            Caption = 'LootMode'
           end
           object lvgoGOLoot: TJvListView
             Left = 8
@@ -15638,6 +15639,15 @@ object MainForm: TMainForm
                 Width = 60
               end
               item
+                Width = 60
+              end
+              item
+                Width = 60
+              end
+              item
+                Width = 200
+              end
+              item
                 Width = 200
               end>
             HideSelection = False
@@ -15648,7 +15658,9 @@ object MainForm: TMainForm
             ViewStyle = vsReport
             OnChange = lvgoGOLootChange
             OnSelectItem = lvgoGOLootSelectItem
-            ColumnsOrder = '0=60,1=60,2=120,3=60,4=60,5=60,6=60,7=60,8=60,9=200'
+            ColumnsOrder = 
+              '0=60,1=60,2=120,3=60,4=60,5=60,6=60,7=60,8=60,9=60,10=60,11=200,' +
+              '12=200'
             ExtendedColumns = <
               item
               end
@@ -15669,59 +15681,65 @@ object MainForm: TMainForm
               item
               end
               item
+              end
+              item
+              end
+              item
+              end
+              item
               end>
           end
-          object edgoentry: TLabeledEdit
+          object edgoEntry: TLabeledEdit
             Left = 9
             Top = 510
             Width = 80
             Height = 21
-            EditLabel.Width = 47
+            EditLabel.Width = 48
             EditLabel.Height = 13
-            EditLabel.Caption = 'edgoentry'
+            EditLabel.Caption = 'edgoEntry'
             TabOrder = 1
           end
-          object edgoChanceOrQuestChance: TLabeledEdit
-            Left = 9
-            Top = 550
+          object edgoChance: TLabeledEdit
+            Left = 293
+            Top = 510
             Width = 125
             Height = 21
-            EditLabel.Width = 137
+            EditLabel.Width = 61
             EditLabel.Height = 13
-            EditLabel.Caption = 'edgoChanceOrQuestChance'
+            EditLabel.Caption = 'edgoChance'
             TabOrder = 3
           end
-          object edgogroupid: TLabeledEdit
-            Left = 140
+          object edgoGroupId: TLabeledEdit
+            Left = 116
             Top = 549
-            Width = 105
+            Width = 85
             Height = 21
-            EditLabel.Width = 59
+            EditLabel.Width = 62
             EditLabel.Height = 13
-            EditLabel.Caption = 'edgogroupid'
+            EditLabel.Caption = 'edgoGroupId'
             TabOrder = 4
           end
-          object edgomincountOrRef: TLabeledEdit
-            Left = 257
-            Top = 550
+          object edgoMinCount: TLabeledEdit
+            Left = 225
+            Top = 549
             Width = 80
             Height = 21
-            EditLabel.Width = 95
+            EditLabel.Width = 69
             EditLabel.Height = 13
-            EditLabel.Caption = 'edgomincountOrRef'
+            EditLabel.Caption = 'edgoMinCount'
             TabOrder = 5
           end
-          object edgomaxcount: TLabeledEdit
-            Left = 345
-            Top = 550
+          object edgoMaxCount: TLabeledEdit
+            Left = 338
+            Top = 549
             Width = 80
             Height = 21
-            EditLabel.Width = 70
+            EditLabel.Width = 72
             EditLabel.Height = 13
-            EditLabel.Caption = 'edgomaxcount'
+            EditLabel.Caption = 'edgoMaxCount'
             TabOrder = 6
           end
-          object edgoitem: TJvComboEdit
+          object edgoItem: TJvComboEdit
             Left = 97
             Top = 510
             Width = 80
@@ -15776,8 +15794,8 @@ object MainForm: TMainForm
             TabOrder = 9
             OnClick = btFullScriptGOLootClick
           end
-          object edgolootmode: TJvComboEdit
-            Left = 431
+          object edgoLootMode: TJvComboEdit
+            Left = 9
             Top = 549
             Width = 80
             Height = 21
@@ -15812,6 +15830,36 @@ object MainForm: TMainForm
               FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
             TabOrder = 7
             OnButtonClick = GetLootCondition
+          end
+          object edgoReference: TLabeledEdit
+            Left = 183
+            Top = 510
+            Width = 90
+            Height = 21
+            EditLabel.Width = 74
+            EditLabel.Height = 13
+            EditLabel.Caption = 'edgoReference'
+            TabOrder = 10
+          end
+          object edgoQuestRequired: TLabeledEdit
+            Left = 441
+            Top = 510
+            Width = 80
+            Height = 21
+            EditLabel.Width = 95
+            EditLabel.Height = 13
+            EditLabel.Caption = 'edgoQuestRequired'
+            TabOrder = 11
+          end
+          object edgoComment: TLabeledEdit
+            Left = 441
+            Top = 549
+            Width = 184
+            Height = 21
+            EditLabel.Width = 68
+            EditLabel.Height = 13
+            EditLabel.Caption = 'edgoComment'
+            TabOrder = 12
           end
         end
         object tsGOInvolvedIn: TTabSheet
