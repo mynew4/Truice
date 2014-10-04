@@ -26,7 +26,7 @@ object MainForm: TMainForm
     Top = 0
     Width = 917
     Height = 708
-    ActivePage = tsItem
+    ActivePage = tsOther
     Align = alClient
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -24842,14 +24842,14 @@ object MainForm: TMainForm
             627)
           object lbotitem: TLabel
             Left = 96
-            Top = 495
+            Top = 463
             Width = 19
             Height = 13
             Caption = 'item'
           end
           object btFishingLootAdd: TSpeedButton
-            Left = 736
-            Top = 511
+            Left = 552
+            Top = 480
             Width = 23
             Height = 22
             Glyph.Data = {
@@ -24907,8 +24907,8 @@ object MainForm: TMainForm
             OnClick = btFishingLootAddClick
           end
           object btFishingLootUpd: TSpeedButton
-            Left = 768
-            Top = 511
+            Left = 603
+            Top = 480
             Width = 23
             Height = 22
             Enabled = False
@@ -24967,8 +24967,8 @@ object MainForm: TMainForm
             OnClick = btFishingLootUpdClick
           end
           object btFishingLootDel: TSpeedButton
-            Left = 800
-            Top = 511
+            Left = 651
+            Top = 480
             Width = 23
             Height = 22
             Enabled = False
@@ -25028,7 +25028,7 @@ object MainForm: TMainForm
           end
           object lbotentry: TLabel
             Left = 8
-            Top = 495
+            Top = 463
             Width = 23
             Height = 13
             Caption = 'entry'
@@ -25041,8 +25041,8 @@ object MainForm: TMainForm
             Caption = 'Choose Zone for fishing loot:'
           end
           object lbotlootmode: TLabel
-            Left = 421
-            Top = 548
+            Left = 3
+            Top = 509
             Width = 43
             Height = 13
             Caption = 'lootmode'
@@ -25051,7 +25051,7 @@ object MainForm: TMainForm
             Left = 8
             Top = 72
             Width = 872
-            Height = 409
+            Height = 385
             Anchors = [akLeft, akTop, akRight]
             Columns = <
               item
@@ -25082,6 +25082,15 @@ object MainForm: TMainForm
                 Width = 60
               end
               item
+                Width = 60
+              end
+              item
+                Width = 60
+              end
+              item
+                Width = 200
+              end
+              item
                 Width = 200
               end>
             HideSelection = False
@@ -25091,7 +25100,9 @@ object MainForm: TMainForm
             ViewStyle = vsReport
             OnChange = lvotFishingLootChange
             OnSelectItem = lvotFishingLootSelectItem
-            ColumnsOrder = '0=60,1=60,2=120,3=60,4=60,5=60,6=60,7=60,8=60,9=200'
+            ColumnsOrder = 
+              '0=60,1=60,2=120,3=60,4=60,5=60,6=60,7=60,8=60,9=60,10=60,11=200,' +
+              '12=200'
             ExtendedColumns = <
               item
               end
@@ -25112,41 +25123,47 @@ object MainForm: TMainForm
               item
               end
               item
+              end
+              item
+              end
+              item
+              end
+              item
               end>
           end
-          object edotChanceOrQuestChance: TLabeledEdit
-            Left = 9
-            Top = 562
-            Width = 125
+          object edotChance: TLabeledEdit
+            Left = 298
+            Top = 482
+            Width = 80
             Height = 21
-            EditLabel.Width = 113
+            EditLabel.Width = 37
             EditLabel.Height = 13
-            EditLabel.Caption = 'ChanceOrQuestChance'
+            EditLabel.Caption = 'Chance'
             TabOrder = 5
           end
-          object edotgroupid: TLabeledEdit
-            Left = 136
-            Top = 562
-            Width = 105
+          object edotGroupId: TLabeledEdit
+            Left = 96
+            Top = 528
+            Width = 80
             Height = 21
             EditLabel.Width = 35
             EditLabel.Height = 13
             EditLabel.Caption = 'groupid'
             TabOrder = 6
           end
-          object edotmincountOrRef: TLabeledEdit
-            Left = 247
-            Top = 562
+          object edotMinCount: TLabeledEdit
+            Left = 200
+            Top = 528
             Width = 80
             Height = 21
-            EditLabel.Width = 71
+            EditLabel.Width = 64
             EditLabel.Height = 13
-            EditLabel.Caption = 'mincountOrRef'
+            EditLabel.Caption = 'edotmincount'
             TabOrder = 7
           end
-          object edotmaxcount: TLabeledEdit
-            Left = 335
-            Top = 562
+          object edotMaxCount: TLabeledEdit
+            Left = 298
+            Top = 528
             Width = 80
             Height = 21
             EditLabel.Width = 46
@@ -25154,9 +25171,9 @@ object MainForm: TMainForm
             EditLabel.Caption = 'maxcount'
             TabOrder = 8
           end
-          object edotitem: TJvComboEdit
+          object edotItem: TJvComboEdit
             Left = 96
-            Top = 511
+            Top = 482
             Width = 80
             Height = 21
             ButtonWidth = 22
@@ -25192,26 +25209,26 @@ object MainForm: TMainForm
             OnButtonClick = GetItem
           end
           object btScriptFishingLoot: TButton
-            Left = 521
-            Top = 558
-            Width = 169
+            Left = 695
+            Top = 480
+            Width = 185
             Height = 25
             Caption = 'Show Fishing Loot Script'
             TabOrder = 10
             OnClick = btScriptFishingLootClick
           end
           object btFullScriptFishLoot: TButton
-            Left = 696
-            Top = 557
+            Left = 695
+            Top = 526
             Width = 185
             Height = 25
             Caption = 'Show FULL Fishing Loot Script'
             TabOrder = 11
             OnClick = btFullScriptFishLootClick
           end
-          object edotentry: TJvComboEdit
-            Left = 8
-            Top = 511
+          object edotEntry: TJvComboEdit
+            Left = 3
+            Top = 482
             Width = 80
             Height = 21
             ButtonWidth = 22
@@ -25244,7 +25261,7 @@ object MainForm: TMainForm
               FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
               FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
             TabOrder = 3
-            OnButtonClick = edotentryButtonClick
+            OnButtonClick = edotEntryButtonClick
           end
           object edotZone: TJvComboEdit
             Left = 8
@@ -25292,9 +25309,9 @@ object MainForm: TMainForm
             TabOrder = 1
             OnClick = btGetLootForZoneClick
           end
-          object edotlootmode: TJvComboEdit
-            Left = 421
-            Top = 562
+          object edotLootMode: TJvComboEdit
+            Left = 3
+            Top = 528
             Width = 80
             Height = 21
             ButtonWidth = 22
@@ -25328,6 +25345,36 @@ object MainForm: TMainForm
               FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
             TabOrder = 9
             OnButtonClick = GetLootCondition
+          end
+          object edotReference: TLabeledEdit
+            Left = 200
+            Top = 482
+            Width = 80
+            Height = 21
+            EditLabel.Width = 50
+            EditLabel.Height = 13
+            EditLabel.Caption = 'Reference'
+            TabOrder = 12
+          end
+          object edotComment: TLabeledEdit
+            Left = 394
+            Top = 528
+            Width = 151
+            Height = 21
+            EditLabel.Width = 44
+            EditLabel.Height = 13
+            EditLabel.Caption = 'Comment'
+            TabOrder = 13
+          end
+          object edotQuestRequired: TLabeledEdit
+            Left = 394
+            Top = 482
+            Width = 79
+            Height = 21
+            EditLabel.Width = 71
+            EditLabel.Height = 13
+            EditLabel.Caption = 'QuestRequired'
+            TabOrder = 14
           end
         end
         object tsPageText: TTabSheet

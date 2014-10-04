@@ -16,7 +16,7 @@ const
   VERSION_1   = '1'; //*10000
   VERSION_2   = '3'; //*100
   VERSION_3   = '8';
-  VERSION_4   = '5';
+  VERSION_4   = '7';
   VERSION_EXE = VERSION_1 + '.' + VERSION_2 + '.' + VERSION_3 + '.' + VERSION_4;
 
   SCRIPT_TAB_NO_QUEST       = 6;
@@ -822,14 +822,18 @@ type
     lbotentry: TLabel;
     lbotChoose: TLabel;
     lvotFishingLoot: TJvListView;
-    edotChanceOrQuestChance: TLabeledEdit;
-    edotgroupid: TLabeledEdit;
-    edotmincountOrRef: TLabeledEdit;
-    edotmaxcount: TLabeledEdit;
-    edotitem: TJvComboEdit;
+    edotEntry: TJvComboEdit;
+    edotItem: TJvComboEdit;
+    edotReference: TLabeledEdit;
+    edotChance: TLabeledEdit;
+    edotQuestRequired: TLabeledEdit;
+    edotLootMode: TJvComboEdit;
+    edotGroupId: TLabeledEdit;
+    edotMinCount: TLabeledEdit;
+    edotMaxCount: TLabeledEdit;
+    edotComment: TLabeledEdit;
     btScriptFishingLoot: TButton;
     btFullScriptFishLoot: TButton;
-    edotentry: TJvComboEdit;
     edotZone: TJvComboEdit;
     btGetLootForZone: TButton;
     tsPageText: TTabSheet;
@@ -1267,7 +1271,6 @@ type
     edctmechanic_immune_mask: TJvComboEdit;
     lbctmechanic_immune_mask: TLabel;
     ZSQLProcessor: TZSQLProcessor;
-    edotlootmode: TJvComboEdit;
     lbotlootmode: TLabel;
     nDBCDir: TMenuItem;
     edctscale: TLabeledEdit;
@@ -1845,7 +1848,7 @@ type
     procedure GetMap(Sender: TObject);
     procedure GetItemFlags(Sender: TObject);
     procedure nRebuildSpellListClick(Sender: TObject);
-    procedure edotentryButtonClick(Sender: TObject);
+    procedure edotEntryButtonClick(Sender: TObject);
     procedure btScriptFishingLootClick(Sender: TObject);
     procedure btFullScriptFishLootClick(Sender: TObject);
     procedure tsOtherScriptShow(Sender: TObject);
@@ -9774,7 +9777,7 @@ begin
   end;
 end;
 
-procedure TMainForm.edotentryButtonClick(Sender: TObject);
+procedure TMainForm.edotEntryButtonClick(Sender: TObject);
 var
   id: string;
 begin
@@ -9794,7 +9797,7 @@ end;
 procedure TMainForm.btFullScriptFishLootClick(Sender: TObject);
 begin
   PageControl6.ActivePageIndex := SCRIPT_TAB_NO_OTHER;
-  ShowFullLootScript('fishing_loot_template', lvotFishingLoot, meotScript, edotentry.Text);
+  ShowFullLootScript('fishing_loot_template', lvotFishingLoot, meotScript, edotEntry.Text);
 end;
 
 procedure TMainForm.tsOtherScriptShow(Sender: TObject);
@@ -9816,8 +9819,8 @@ var
   entry, item, Fields, Values: string;
 begin
   meotLog.Clear;
-  entry :=  edotentry.Text;
-  item := edotitem.Text;
+  entry :=  edotEntry.Text;
+  item := edotItem.Text;
   if (entry='') or (item='') then Exit;
   SetFieldsAndValues(Fields, Values, 'fishing_loot_template', PFX_FISHING_LOOT_TEMPLATE, meotLog);
   meotScript.Text := Format('DELETE FROM `fishing_loot_template` WHERE (`entry`=%s) AND (`item`=%s);'#13#10+
