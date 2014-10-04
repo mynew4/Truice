@@ -776,12 +776,16 @@ type
     btItemLootUpd: TSpeedButton;
     btItemLootDel: TSpeedButton;
     lvitItemLoot: TJvListView;
-    edilentry: TLabeledEdit;
-    edilChanceOrQuestChance: TLabeledEdit;
-    edilgroupid: TLabeledEdit;
-    edilmincountOrRef: TLabeledEdit;
-    edilmaxcount: TLabeledEdit;
-    edilitem: TJvComboEdit;
+    edilEntry: TLabeledEdit;
+    edilItem: TJvComboEdit;
+    edilReference: TLabeledEdit;
+    edilChance: TLabeledEdit;
+    edilQuestRequired: TLabeledEdit;
+    edilLootMode: TJvComboEdit;
+    edilGroupId: TLabeledEdit;
+    edilMinCount: TLabeledEdit;
+    edilMaxCount: TLabeledEdit;
+    edilComment: TLabeledEdit;
     btScriptItemLoot: TButton;
     btFullScriptItemLoot: TButton;
     tsDisenchantLoot: TTabSheet;
@@ -790,12 +794,16 @@ type
     btDisLootUpd: TSpeedButton;
     btDisLootDel: TSpeedButton;
     lvitDisLoot: TJvListView;
-    edidentry: TLabeledEdit;
-    edidChanceOrQuestChance: TLabeledEdit;
-    edidgroupid: TLabeledEdit;
-    edidmincountOrRef: TLabeledEdit;
-    edidmaxcount: TLabeledEdit;
-    ediditem: TJvComboEdit;
+    edidEntry: TLabeledEdit;
+    edidItem: TJvComboEdit;
+    edidReference: TLabeledEdit;
+    edidChance: TLabeledEdit;
+    edidQuestRequired: TLabeledEdit;
+    edidGroupId: TLabeledEdit;
+    edidLootMode: TJvComboEdit;
+    edidMinCount: TLabeledEdit;
+    edidMaxCount: TLabeledEdit;
+    edidComment: TLabeledEdit;
     btScriptDisLoot: TButton;
     btFullScriptDisLoot: TButton;
     tsItemScript: TTabSheet;
@@ -858,12 +866,16 @@ type
     btProsLootUpd: TSpeedButton;
     btProsLootDel: TSpeedButton;
     lvitProsLoot: TJvListView;
-    edipentry: TLabeledEdit;
-    edipChanceOrQuestChance: TLabeledEdit;
-    edipgroupid: TLabeledEdit;
-    edipmincountOrRef: TLabeledEdit;
-    edipmaxcount: TLabeledEdit;
-    edipitem: TJvComboEdit;
+    edipEntry: TLabeledEdit;
+    edipItem: TJvComboEdit;
+    edipReference: TLabeledEdit;
+    edipChance: TLabeledEdit;
+    edipQuestRequired: TLabeledEdit;
+    edipLootMode: TJvComboEdit;
+    edipGroupId: TLabeledEdit;
+    edipMinCount: TLabeledEdit;
+    edipMaxCount: TLabeledEdit;
+    edipComment: TLabeledEdit;
     btScriptProsLoot: TButton;
     btFullScriptProsLoot: TButton;
     tsEnchantment: TTabSheet;
@@ -1173,11 +1185,8 @@ type
     lbcplootmode: TLabel;
     lbcslootmode: TLabel;
     lbgolootmode: TLabel;
-    edillootmode: TJvComboEdit;
     lbillootmode: TLabel;
-    edidlootmode: TJvComboEdit;
     lbidlootmode: TLabel;
-    ediplootmode: TJvComboEdit;
     lbiplootmode: TLabel;
     edqtSpecialFlags: TJvComboEdit;
     lbqtSpecialFlags: TLabel;
@@ -1324,14 +1333,16 @@ type
     edqtRewardTalents: TLabeledEdit;
     tsMillingLoot: TTabSheet;
     lvitMillingLoot: TJvListView;
-    edimitem: TJvComboEdit;
-    edimentry: TLabeledEdit;
-    Label2: TLabel;
-    edimChanceOrQuestChance: TLabeledEdit;
-    edimgroupid: TLabeledEdit;
-    edimmincountOrRef: TLabeledEdit;
-    edimmaxcount: TLabeledEdit;
-    edimlootmode: TJvComboEdit;
+    edimEntry: TLabeledEdit;
+    edimItem: TJvComboEdit;
+    edimReference: TLabeledEdit;
+    edimChance: TLabeledEdit;
+    edimQuestRequired: TLabeledEdit;
+    edimLootMode: TJvComboEdit;
+    edimGroupId: TLabeledEdit;
+    edimMinCount: TLabeledEdit;
+    edimMaxCount: TLabeledEdit;
+    edimComment: TLabeledEdit;
     Label3: TLabel;
     btMillingLootAdd: TSpeedButton;
     btMillingLootUpd: TSpeedButton;
@@ -1388,20 +1399,23 @@ type
     tsReferenceLoot: TTabSheet;
     PageControl5: TPageControl;
     lvitReferenceLoot: TJvListView;
-    ediritem: TJvComboEdit;
+    edirEntry: TJvComboEdit;
+    edirItem: TJvComboEdit;
+    edirReference: TLabeledEdit;
+    edirChance: TLabeledEdit;
+    edirQuestRequired: TLabeledEdit;
+    edirLootMode: TJvComboEdit;
+    edirGroupId: TLabeledEdit;
+    edirMinCount: TLabeledEdit;
+    edirmaxcount: TLabeledEdit;
+    edirComment: TLabeledEdit;
     Label1: TLabel;
     btReferenceLootAdd: TSpeedButton;
     btReferenceLootUpd: TSpeedButton;
     btReferenceLootDel: TSpeedButton;
-    edirChanceOrQuestChance: TLabeledEdit;
-    edirgroupid: TLabeledEdit;
-    edirmincountOrRef: TLabeledEdit;
-    edirmaxcount: TLabeledEdit;
-    edirlootmode: TJvComboEdit;
     Label4: TLabel;
     btScriptReferenceLoot: TButton;
     btFullScriptReferenceLoot: TButton;
-    edirentry: TJvComboEdit;
     lbirentry: TLabel;
     edPrevQuestIdSearch: TLabeledEdit;
     edNextQuestIdSearch: TLabeledEdit;
@@ -2047,7 +2061,7 @@ type
     procedure lvitReferenceLootSelectItem(Sender: TObject; Item: TListItem;
       Selected: Boolean);
     procedure btFullScriptReferenceLootClick(Sender: TObject);
-    procedure edirentryButtonClick(Sender: TObject);
+    procedure edirEntryButtonClick(Sender: TObject);
     procedure GetSpawnMask(Sender: TObject);
     procedure btcyFullScriptClick(Sender: TObject);
     procedure btcFullScriptClick(Sender: TObject);
@@ -3720,12 +3734,12 @@ begin
   end;
 end;
 
-procedure TMainForm.edirentryButtonClick(Sender: TObject);
+procedure TMainForm.edirEntryButtonClick(Sender: TObject);
 begin
   ClearFields(ttItem);
   LoadQueryToListView(Format('SELECT rlt.*, i.`name` FROM `reference_loot_template`'+
      ' rlt LEFT OUTER JOIN `item_template` i ON i.`entry` = rlt.`entry`'+
-     ' WHERE (rlt.`entry`=%d)',[StrToIntDef(edirentry.Text,0)]), lvitReferenceLoot);
+     ' WHERE (rlt.`entry`=%d)',[StrToIntDef(edirEntry.Text,0)]), lvitReferenceLoot);
 end;
 
 procedure TMainForm.JvHttpUrlGrabberDoneStream(Sender: TObject; Stream: TStream;
@@ -4297,9 +4311,12 @@ begin
     if npcflag and 16 = 16 then istrainer := true else istrainer := false;
 
     // is eventAI ?
-    if MyQuery.FieldByName('AIName').AsString = mob_eventai then
-    //isEventAI := true; //else
+    if MyQuery.FieldByName('AIName').AsString = 'EventAI' then
+        isEventAI := true
+    else
     isEventAI := false;
+
+    tsCreatureEventAI.TabVisible := isEventAI;
 
    // if MyQuery.FieldByName('entry').AsInteger <> 0 then isEquip:= true else isEquip:= false;
 
@@ -4336,7 +4353,6 @@ begin
       '`action2_type` as `a2t`,  `action2_param1` as `a21`,  `action2_param2` as `a22`,  `action2_param3` as `a23`, '+
       '`action3_type` as `a3t`,  `action3_param1` as `a31`,  `action3_param2` as `a32`,  `action3_param3` as `a33`, '+
       '`comment` as `cmt` FROM `creature_ai_scripts` WHERE `creature_id`=%d',[Entry]), lvcnEventAI);
-    //tsCreatureEventAI.TabVisible := isEventAI;
 
     if istrainer then
     begin
@@ -4651,7 +4667,7 @@ end;
 
 procedure TMainForm.tsDisenchantLootShow(Sender: TObject);
 begin
-  if (edidentry.Text = '') then edidentry.Text := editDisenchantID.Text;  
+  if (edidEntry.Text = '') then edidEntry.Text := editDisenchantID.Text;
 end;
 
 procedure TMainForm.tsEnchantmentShow(Sender: TObject);
@@ -8902,8 +8918,8 @@ var
   entry, item, Fields, Values: string;
 begin
   meitLog.Clear;
-  entry :=  edilentry.Text;
-  item := edilitem.Text;
+  entry :=  edilEntry.Text;
+  item := edilItem.Text;
   if (entry='') or (item='') then Exit;
   SetFieldsAndValues(Fields, Values, 'item_loot_template', PFX_ITEM_LOOT_TEMPLATE, meitLog);
   meitScript.Text := Format('DELETE FROM `item_loot_template` WHERE (`entry`=%s) AND (`item`=%s);'#13#10+
@@ -8915,8 +8931,8 @@ var
   entry, item, Fields, Values: string;
 begin
   meitLog.Clear;
-  entry :=  edidentry.Text;
-  item := ediditem.Text;
+  entry :=  edidEntry.Text;
+  item := edidItem.Text;
   if (entry='') or (item='') then Exit;
   SetFieldsAndValues(Fields, Values, 'disenchant_loot_template', PFX_DISENCHANT_LOOT_TEMPLATE, meitLog);
   meitScript.Text := Format('DELETE FROM `disenchant_loot_template` WHERE (`entry`=%s) AND (`item`=%s);'#13#10+
@@ -8928,8 +8944,8 @@ var
   entry, item, Fields, Values: string;
 begin
   meitLog.Clear;
-  entry :=  edipentry.Text;
-  item := edipitem.Text;
+  entry :=  edipEntry.Text;
+  item := edipItem.Text;
   if (entry='') or (item='') then Exit;
   SetFieldsAndValues(Fields, Values, 'prospecting_loot_template', PFX_PROSPECTING_LOOT_TEMPLATE, meitLog);
   meitScript.Text := Format('DELETE FROM `prospecting_loot_template` WHERE (`entry`=%s) AND (`item`=%s);'#13#10+
@@ -8941,8 +8957,8 @@ var
   entry, item, Fields, Values: string;
 begin
   meitLog.Clear;
-  entry :=  edimentry.Text;
-  item := edimitem.Text;
+  entry :=  edimEntry.Text;
+  item := edimItem.Text;
   if (entry='') or (item='') then Exit;
   SetFieldsAndValues(Fields, Values, 'milling_loot_template', PFX_MILLING_LOOT_TEMPLATE, meitLog);
   meitScript.Text := Format('DELETE FROM `milling_loot_template` WHERE (`entry`=%s) AND (`item`=%s);'#13#10+
@@ -8954,8 +8970,8 @@ var
   entry, item, Fields, Values: string;
 begin
   meitLog.Clear;
-  entry :=  edirentry.Text;
-  item := ediritem.Text;
+  entry :=  edirEntry.Text;
+  item := edirItem.Text;
   if (entry='') or (item='') then Exit;
   SetFieldsAndValues(Fields, Values, 'reference_loot_template', PFX_REFERENCE_LOOT_TEMPLATE, meitLog);
   meitScript.Text := Format('DELETE FROM `reference_loot_template` WHERE (`entry`=%s) AND (`item`=%s);'#13#10+
@@ -9412,7 +9428,7 @@ end;
 
 procedure TMainForm.tsItemLootShow(Sender: TObject);
 begin
-  if (edilentry.Text ='') then edilentry.Text := editentry.Text;  
+  if (edilEntry.Text ='') then edilEntry.Text := editentry.Text;
 end;
 
 procedure TMainForm.tsItemScriptShow(Sender: TObject);
@@ -9430,7 +9446,7 @@ end;
        
 procedure TMainForm.tsMillingLootShow(Sender: TObject);
 begin
- if (edipentry.Text = '') then edipentry.Text := editentry.Text;
+ if (edipEntry.Text = '') then edipEntry.Text := editentry.Text;
 end;
 
 procedure TMainForm.editQualityButtonClick(Sender: TObject);
@@ -9792,7 +9808,7 @@ end;
 
 procedure TMainForm.tsProspectingLootShow(Sender: TObject);
 begin
-  if (edipentry.Text = '') then edipentry.Text := editentry.Text;
+  if (edipEntry.Text = '') then edipEntry.Text := editentry.Text;
 end;
 
 procedure TMainForm.CompleteFishingLootScript;

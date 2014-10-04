@@ -26,7 +26,7 @@ object MainForm: TMainForm
     Top = 0
     Width = 917
     Height = 708
-    ActivePage = tsGameObject
+    ActivePage = tsItem
     Align = alClient
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -38,10 +38,6 @@ object MainForm: TMainForm
     object tsQuest: TTabSheet
       Caption = 'Quest'
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object pnQuestTop: TPanel
         Left = 0
         Top = 0
@@ -442,7 +438,6 @@ object MainForm: TMainForm
                 Width = 300
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 1
@@ -5118,7 +5113,6 @@ object MainForm: TMainForm
                 Width = 80
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -5181,7 +5175,6 @@ object MainForm: TMainForm
                 Width = 70
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 1
@@ -5379,7 +5372,6 @@ object MainForm: TMainForm
                 Width = 180
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -5430,7 +5422,6 @@ object MainForm: TMainForm
                 Width = 160
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 1
@@ -5458,10 +5449,6 @@ object MainForm: TMainForm
         object tsLocalesQuest: TTabSheet
           Caption = 'Locales Quest'
           ImageIndex = 9
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           object gbLocalesQuest: TsGroupBox
             Left = 3
             Top = 3
@@ -5632,10 +5619,6 @@ object MainForm: TMainForm
           Caption = 'SQL-Script Tab'
           ImageIndex = 2
           OnShow = tsScriptTabShow
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             901
             627)
@@ -5689,10 +5672,6 @@ object MainForm: TMainForm
     object tsCreature: TTabSheet
       Caption = 'Creature'
       ImageIndex = 2
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object PageControl3: TPageControl
         Left = 0
         Top = 25
@@ -5954,7 +5933,6 @@ object MainForm: TMainForm
                 Width = 112
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 1
@@ -8441,7 +8419,6 @@ object MainForm: TMainForm
                 Width = 100
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -8919,7 +8896,6 @@ object MainForm: TMainForm
                 Width = 120
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 1
@@ -9512,7 +9488,6 @@ object MainForm: TMainForm
                 Width = 200
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -9973,7 +9948,6 @@ object MainForm: TMainForm
                 Width = 200
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -10433,7 +10407,6 @@ object MainForm: TMainForm
                 Width = 200
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -10875,7 +10848,6 @@ object MainForm: TMainForm
                 Width = 120
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -11272,7 +11244,6 @@ object MainForm: TMainForm
                 Width = 200
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -11950,7 +11921,6 @@ object MainForm: TMainForm
                 Width = 48
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -12394,10 +12364,6 @@ object MainForm: TMainForm
           Caption = 'Involved in'
           ImageIndex = 11
           OnShow = tsCreatureUsedShow
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           object pcCreatureInfo: TPageControl
             Left = 0
             Top = 41
@@ -12440,7 +12406,6 @@ object MainForm: TMainForm
                     Width = 80
                   end>
                 HideSelection = False
-                Items.ItemData = {}
                 ReadOnly = True
                 RowSelect = True
                 TabOrder = 0
@@ -12497,7 +12462,6 @@ object MainForm: TMainForm
                     Width = 80
                   end>
                 HideSelection = False
-                Items.ItemData = {}
                 ReadOnly = True
                 RowSelect = True
                 TabOrder = 0
@@ -12554,7 +12518,6 @@ object MainForm: TMainForm
                     Width = 80
                   end>
                 HideSelection = False
-                Items.ItemData = {}
                 ReadOnly = True
                 RowSelect = True
                 TabOrder = 0
@@ -12589,10 +12552,6 @@ object MainForm: TMainForm
         object tsCreatureSmartAI: TTabSheet
           Caption = 'SmartAI'
           ImageIndex = 18
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           object lbctGoToSmartAI: TLabel
             Left = 15
             Top = 52
@@ -13026,7 +12985,6 @@ object MainForm: TMainForm
                 Width = 36
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -13795,10 +13753,6 @@ object MainForm: TMainForm
           Caption = 'Script'
           ImageIndex = 3
           OnShow = tsCreatureScriptShow
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             901
             609)
@@ -14140,7 +14094,6 @@ object MainForm: TMainForm
                 Caption = 'castbarcaption_loc*'
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 1
@@ -15137,7 +15090,6 @@ object MainForm: TMainForm
                 Width = 100
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -15651,7 +15603,6 @@ object MainForm: TMainForm
                 Width = 200
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -15866,10 +15817,6 @@ object MainForm: TMainForm
           Caption = 'Involved in'
           ImageIndex = 5
           OnShow = tsGOInvolvedInShow
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           object pcGameObjectInfo: TPageControl
             Left = 0
             Top = 41
@@ -15912,7 +15859,6 @@ object MainForm: TMainForm
                     Width = 80
                   end>
                 HideSelection = False
-                Items.ItemData = {}
                 ReadOnly = True
                 RowSelect = True
                 TabOrder = 0
@@ -15968,7 +15914,6 @@ object MainForm: TMainForm
                     Width = 80
                   end>
                 HideSelection = False
-                Items.ItemData = {}
                 ReadOnly = True
                 RowSelect = True
                 TabOrder = 0
@@ -16024,7 +15969,6 @@ object MainForm: TMainForm
                     Width = 80
                   end>
                 HideSelection = False
-                Items.ItemData = {}
                 ReadOnly = True
                 RowSelect = True
                 TabOrder = 0
@@ -16059,10 +16003,6 @@ object MainForm: TMainForm
         object tsGOSmartAI: TTabSheet
           Caption = 'GO SmartAI'
           ImageIndex = 7
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           object lbgtGotoSmartAI: TLabel
             Left = 15
             Top = 67
@@ -16087,10 +16027,6 @@ object MainForm: TMainForm
           Caption = 'Script'
           ImageIndex = 3
           OnShow = tsGOScriptShow
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             901
             627)
@@ -16144,10 +16080,6 @@ object MainForm: TMainForm
     object tsItem: TTabSheet
       Caption = 'Item'
       ImageIndex = 3
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Panel9: TPanel
         Left = 0
         Top = 0
@@ -16162,7 +16094,7 @@ object MainForm: TMainForm
         Top = 25
         Width = 909
         Height = 655
-        ActivePage = tsItemTemplate
+        ActivePage = tsReferenceLoot
         Align = alClient
         TabOrder = 1
         object tsSearchItem: TTabSheet
@@ -16597,7 +16529,6 @@ object MainForm: TMainForm
             Font.Name = 'MS Sans Serif'
             Font.Style = []
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             ParentFont = False
@@ -20302,8 +20233,8 @@ object MainForm: TMainForm
             ParentColor = False
           end
           object lbillootmode: TLabel
-            Left = 430
-            Top = 532
+            Left = 8
+            Top = 527
             Width = 43
             Height = 13
             Caption = 'lootmode'
@@ -20343,17 +20274,27 @@ object MainForm: TMainForm
                 Width = 60
               end
               item
+                Width = 60
+              end
+              item
+                Width = 60
+              end
+              item
+                Width = 200
+              end
+              item
                 Width = 200
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
             ViewStyle = vsReport
             OnChange = lvitItemLootChange
             OnSelectItem = lvitItemLootSelectItem
-            ColumnsOrder = '0=60,1=60,2=120,3=60,4=60,5=60,6=60,7=60,8=60,9=200'
+            ColumnsOrder = 
+              '0=60,1=60,2=120,3=60,4=60,5=60,6=60,7=60,8=60,9=60,10=60,11=200,' +
+              '12=200'
             ExtendedColumns = <
               item
               end
@@ -20374,9 +20315,15 @@ object MainForm: TMainForm
               item
               end
               item
+              end
+              item
+              end
+              item
+              end
+              item
               end>
           end
-          object edilentry: TLabeledEdit
+          object edilEntry: TLabeledEdit
             Left = 8
             Top = 500
             Width = 80
@@ -20386,47 +20333,47 @@ object MainForm: TMainForm
             EditLabel.Caption = 'entry'
             TabOrder = 1
           end
-          object edilChanceOrQuestChance: TLabeledEdit
-            Left = 8
-            Top = 548
-            Width = 125
+          object edilChance: TLabeledEdit
+            Left = 390
+            Top = 500
+            Width = 80
             Height = 21
-            EditLabel.Width = 113
+            EditLabel.Width = 37
             EditLabel.Height = 13
-            EditLabel.Caption = 'ChanceOrQuestChance'
+            EditLabel.Caption = 'Chance'
             TabOrder = 3
           end
-          object edilgroupid: TLabeledEdit
-            Left = 139
-            Top = 548
-            Width = 105
+          object edilGroupId: TLabeledEdit
+            Left = 103
+            Top = 546
+            Width = 73
             Height = 21
             EditLabel.Width = 35
             EditLabel.Height = 13
             EditLabel.Caption = 'groupid'
             TabOrder = 4
           end
-          object edilmincountOrRef: TLabeledEdit
-            Left = 256
-            Top = 548
+          object edilMinCount: TLabeledEdit
+            Left = 192
+            Top = 546
             Width = 80
             Height = 21
-            EditLabel.Width = 71
+            EditLabel.Width = 45
             EditLabel.Height = 13
-            EditLabel.Caption = 'mincountOrRef'
+            EditLabel.Caption = 'MinCount'
             TabOrder = 5
           end
-          object edilmaxcount: TLabeledEdit
-            Left = 344
-            Top = 548
+          object edilMaxCount: TLabeledEdit
+            Left = 296
+            Top = 546
             Width = 80
             Height = 21
-            EditLabel.Width = 46
+            EditLabel.Width = 48
             EditLabel.Height = 13
-            EditLabel.Caption = 'maxcount'
+            EditLabel.Caption = 'MaxCount'
             TabOrder = 6
           end
-          object edilitem: TJvComboEdit
+          object edilItem: TJvComboEdit
             Left = 96
             Top = 500
             Width = 80
@@ -20481,9 +20428,9 @@ object MainForm: TMainForm
             TabOrder = 9
             OnClick = btFullScriptItemLootClick
           end
-          object edillootmode: TJvComboEdit
-            Left = 430
-            Top = 547
+          object edilLootMode: TJvComboEdit
+            Left = 8
+            Top = 546
             Width = 80
             Height = 21
             ButtonWidth = 22
@@ -20518,6 +20465,36 @@ object MainForm: TMainForm
             TabOrder = 7
             OnButtonClick = GetLootCondition
           end
+          object edilReference: TLabeledEdit
+            Left = 296
+            Top = 500
+            Width = 80
+            Height = 21
+            EditLabel.Width = 66
+            EditLabel.Height = 13
+            EditLabel.Caption = 'edilReference'
+            TabOrder = 10
+          end
+          object edilQuestRequired: TLabeledEdit
+            Left = 496
+            Top = 500
+            Width = 80
+            Height = 21
+            EditLabel.Width = 87
+            EditLabel.Height = 13
+            EditLabel.Caption = 'edilQuestRequired'
+            TabOrder = 11
+          end
+          object edilComment: TLabeledEdit
+            Left = 390
+            Top = 546
+            Width = 186
+            Height = 21
+            EditLabel.Width = 60
+            EditLabel.Height = 13
+            EditLabel.Caption = 'edilComment'
+            TabOrder = 12
+          end
         end
         object tsDisenchantLoot: TTabSheet
           Caption = 'Disenchant Loot'
@@ -20527,15 +20504,15 @@ object MainForm: TMainForm
             901
             627)
           object lbiditem: TLabel
-            Left = 96
-            Top = 484
+            Left = 112
+            Top = 453
             Width = 19
             Height = 13
             Caption = 'item'
           end
           object btDisLootAdd: TSpeedButton
-            Left = 185
-            Top = 500
+            Left = 209
+            Top = 467
             Width = 23
             Height = 22
             Glyph.Data = {
@@ -20593,8 +20570,8 @@ object MainForm: TMainForm
             OnClick = btDisLootAddClick
           end
           object btDisLootUpd: TSpeedButton
-            Left = 217
-            Top = 500
+            Left = 238
+            Top = 467
             Width = 23
             Height = 22
             Enabled = False
@@ -20653,8 +20630,8 @@ object MainForm: TMainForm
             OnClick = btDisLootUpdClick
           end
           object btDisLootDel: TSpeedButton
-            Left = 249
-            Top = 500
+            Left = 267
+            Top = 468
             Width = 23
             Height = 22
             Enabled = False
@@ -20722,8 +20699,8 @@ object MainForm: TMainForm
             ParentColor = False
           end
           object lbidlootmode: TLabel
-            Left = 430
-            Top = 532
+            Left = 10
+            Top = 492
             Width = 43
             Height = 13
             Caption = 'lootmode'
@@ -20732,7 +20709,7 @@ object MainForm: TMainForm
             Left = 8
             Top = 32
             Width = 872
-            Height = 434
+            Height = 401
             Anchors = [akLeft, akTop, akRight]
             Columns = <
               item
@@ -20763,17 +20740,27 @@ object MainForm: TMainForm
                 Width = 60
               end
               item
+                Width = 60
+              end
+              item
+                Width = 60
+              end
+              item
+                Width = 200
+              end
+              item
                 Width = 200
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
             ViewStyle = vsReport
             OnChange = lvitDisLootChange
             OnSelectItem = lvitDisLootSelectItem
-            ColumnsOrder = '0=60,1=60,2=120,3=60,4=60,5=60,6=60,7=60,8=60,9=200'
+            ColumnsOrder = 
+              '0=60,1=60,2=120,3=60,4=60,5=60,6=60,7=60,8=60,9=60,10=60,11=200,' +
+              '12=200'
             ExtendedColumns = <
               item
               end
@@ -20794,11 +20781,17 @@ object MainForm: TMainForm
               item
               end
               item
+              end
+              item
+              end
+              item
+              end
+              item
               end>
           end
-          object edidentry: TLabeledEdit
-            Left = 8
-            Top = 500
+          object edidEntry: TLabeledEdit
+            Left = 10
+            Top = 468
             Width = 80
             Height = 21
             EditLabel.Width = 23
@@ -20806,39 +20799,39 @@ object MainForm: TMainForm
             EditLabel.Caption = 'entry'
             TabOrder = 1
           end
-          object edidChanceOrQuestChance: TLabeledEdit
-            Left = 8
-            Top = 548
-            Width = 125
+          object edidChance: TLabeledEdit
+            Left = 408
+            Top = 468
+            Width = 80
             Height = 21
-            EditLabel.Width = 113
+            EditLabel.Width = 37
             EditLabel.Height = 13
-            EditLabel.Caption = 'ChanceOrQuestChance'
+            EditLabel.Caption = 'Chance'
             TabOrder = 3
           end
-          object edidgroupid: TLabeledEdit
-            Left = 139
-            Top = 548
-            Width = 105
+          object edidGroupId: TLabeledEdit
+            Left = 112
+            Top = 508
+            Width = 80
             Height = 21
             EditLabel.Width = 35
             EditLabel.Height = 13
             EditLabel.Caption = 'groupid'
             TabOrder = 4
           end
-          object edidmincountOrRef: TLabeledEdit
-            Left = 256
-            Top = 548
+          object edidMinCount: TLabeledEdit
+            Left = 210
+            Top = 508
             Width = 80
             Height = 21
-            EditLabel.Width = 71
+            EditLabel.Width = 43
             EditLabel.Height = 13
-            EditLabel.Caption = 'mincountOrRef'
+            EditLabel.Caption = 'mincount'
             TabOrder = 5
           end
-          object edidmaxcount: TLabeledEdit
-            Left = 344
-            Top = 548
+          object edidMaxCount: TLabeledEdit
+            Left = 312
+            Top = 508
             Width = 80
             Height = 21
             EditLabel.Width = 46
@@ -20846,9 +20839,9 @@ object MainForm: TMainForm
             EditLabel.Caption = 'maxcount'
             TabOrder = 6
           end
-          object ediditem: TJvComboEdit
-            Left = 96
-            Top = 500
+          object edidItem: TJvComboEdit
+            Left = 112
+            Top = 468
             Width = 80
             Height = 21
             ButtonWidth = 22
@@ -20884,8 +20877,8 @@ object MainForm: TMainForm
             OnButtonClick = GetItem
           end
           object btScriptDisLoot: TButton
-            Left = 8
-            Top = 588
+            Left = 10
+            Top = 548
             Width = 169
             Height = 25
             Caption = 'Show Disenchant Loot Script'
@@ -20893,17 +20886,17 @@ object MainForm: TMainForm
             OnClick = btScriptItemLootClick
           end
           object btFullScriptDisLoot: TButton
-            Left = 661
-            Top = 588
+            Left = 613
+            Top = 548
             Width = 185
             Height = 25
             Caption = 'Show FULL Disenchant Loot Script'
             TabOrder = 9
             OnClick = btFullScriptDisLootClick
           end
-          object edidlootmode: TJvComboEdit
-            Left = 430
-            Top = 548
+          object edidLootMode: TJvComboEdit
+            Left = 10
+            Top = 508
             Width = 80
             Height = 21
             ButtonWidth = 22
@@ -20937,6 +20930,36 @@ object MainForm: TMainForm
               FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
             TabOrder = 7
             OnButtonClick = GetLootCondition
+          end
+          object edidReference: TLabeledEdit
+            Left = 312
+            Top = 468
+            Width = 80
+            Height = 21
+            EditLabel.Width = 70
+            EditLabel.Height = 13
+            EditLabel.Caption = 'edidReference'
+            TabOrder = 10
+          end
+          object edidQuestRequired: TLabeledEdit
+            Left = 512
+            Top = 468
+            Width = 80
+            Height = 21
+            EditLabel.Width = 91
+            EditLabel.Height = 13
+            EditLabel.Caption = 'edidQuestRequired'
+            TabOrder = 11
+          end
+          object edidComment: TLabeledEdit
+            Left = 408
+            Top = 508
+            Width = 184
+            Height = 21
+            EditLabel.Width = 64
+            EditLabel.Height = 13
+            EditLabel.Caption = 'edidComment'
+            TabOrder = 12
           end
         end
         object tsProspectingLoot: TTabSheet
@@ -21142,8 +21165,8 @@ object MainForm: TMainForm
             ParentColor = False
           end
           object lbiplootmode: TLabel
-            Left = 430
-            Top = 532
+            Left = 8
+            Top = 529
             Width = 43
             Height = 13
             Caption = 'lootmode'
@@ -21183,17 +21206,27 @@ object MainForm: TMainForm
                 Width = 60
               end
               item
+                Width = 60
+              end
+              item
+                Width = 60
+              end
+              item
+                Width = 200
+              end
+              item
                 Width = 200
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
             ViewStyle = vsReport
             OnChange = lvitProsLootChange
             OnSelectItem = lvitProsLootSelectItem
-            ColumnsOrder = '0=60,1=60,2=120,3=60,4=60,5=60,6=60,7=60,8=60,9=200'
+            ColumnsOrder = 
+              '0=60,1=60,2=120,3=60,4=60,5=60,6=60,7=60,8=60,9=60,10=60,11=200,' +
+              '12=200'
             ExtendedColumns = <
               item
               end
@@ -21214,9 +21247,15 @@ object MainForm: TMainForm
               item
               end
               item
+              end
+              item
+              end
+              item
+              end
+              item
               end>
           end
-          object edipentry: TLabeledEdit
+          object edipEntry: TLabeledEdit
             Left = 8
             Top = 500
             Width = 80
@@ -21226,38 +21265,38 @@ object MainForm: TMainForm
             EditLabel.Caption = 'entry'
             TabOrder = 1
           end
-          object edipChanceOrQuestChance: TLabeledEdit
-            Left = 8
-            Top = 548
-            Width = 125
+          object edipChance: TLabeledEdit
+            Left = 392
+            Top = 500
+            Width = 80
             Height = 21
-            EditLabel.Width = 113
+            EditLabel.Width = 37
             EditLabel.Height = 13
-            EditLabel.Caption = 'ChanceOrQuestChance'
+            EditLabel.Caption = 'Chance'
             TabOrder = 3
           end
-          object edipgroupid: TLabeledEdit
-            Left = 139
+          object edipGroupId: TLabeledEdit
+            Left = 94
             Top = 548
-            Width = 105
+            Width = 82
             Height = 21
             EditLabel.Width = 35
             EditLabel.Height = 13
             EditLabel.Caption = 'groupid'
             TabOrder = 4
           end
-          object edipmincountOrRef: TLabeledEdit
-            Left = 256
+          object edipMinCount: TLabeledEdit
+            Left = 200
             Top = 548
             Width = 80
             Height = 21
-            EditLabel.Width = 71
+            EditLabel.Width = 43
             EditLabel.Height = 13
-            EditLabel.Caption = 'mincountOrRef'
+            EditLabel.Caption = 'mincount'
             TabOrder = 5
           end
-          object edipmaxcount: TLabeledEdit
-            Left = 344
+          object edipMaxCount: TLabeledEdit
+            Left = 304
             Top = 548
             Width = 80
             Height = 21
@@ -21266,7 +21305,7 @@ object MainForm: TMainForm
             EditLabel.Caption = 'maxcount'
             TabOrder = 6
           end
-          object edipitem: TJvComboEdit
+          object edipItem: TJvComboEdit
             Left = 96
             Top = 500
             Width = 80
@@ -21321,8 +21360,8 @@ object MainForm: TMainForm
             TabOrder = 9
             OnClick = btFullScriptProsLootClick
           end
-          object ediplootmode: TJvComboEdit
-            Left = 430
+          object edipLootMode: TJvComboEdit
+            Left = 8
             Top = 548
             Width = 80
             Height = 21
@@ -21358,6 +21397,36 @@ object MainForm: TMainForm
             TabOrder = 7
             OnButtonClick = GetLootCondition
           end
+          object edipReference: TLabeledEdit
+            Left = 304
+            Top = 500
+            Width = 80
+            Height = 21
+            EditLabel.Width = 70
+            EditLabel.Height = 13
+            EditLabel.Caption = 'edipReference'
+            TabOrder = 10
+          end
+          object edipQuestRequired: TLabeledEdit
+            Left = 496
+            Top = 500
+            Width = 80
+            Height = 21
+            EditLabel.Width = 91
+            EditLabel.Height = 13
+            EditLabel.Caption = 'edipQuestRequired'
+            TabOrder = 11
+          end
+          object edipComment: TLabeledEdit
+            Left = 392
+            Top = 548
+            Width = 184
+            Height = 21
+            EditLabel.Width = 64
+            EditLabel.Height = 13
+            EditLabel.Caption = 'edipComment'
+            TabOrder = 12
+          end
         end
         object tsMillingLoot: TTabSheet
           Caption = 'Milling Loot'
@@ -21374,8 +21443,8 @@ object MainForm: TMainForm
             Caption = 'item'
           end
           object Label3: TLabel
-            Left = 430
-            Top = 532
+            Left = 8
+            Top = 529
             Width = 43
             Height = 13
             Caption = 'lootmode'
@@ -21594,18 +21663,34 @@ object MainForm: TMainForm
                 Width = 60
               end
               item
+                Width = 60
+              end
+              item
+                Width = 60
+              end
+              item
+                Width = 200
+              end
+              item
                 Width = 200
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
             ViewStyle = vsReport
             OnChange = lvitMillingLootChange
             OnSelectItem = lvitMillingLootSelectItem
-            ColumnsOrder = '0=60,1=60,2=120,3=60,4=60,5=60,6=60,7=60,8=60,9=200'
+            ColumnsOrder = 
+              '0=60,1=60,2=120,3=60,4=60,5=60,6=60,7=60,8=60,9=60,10=60,11=200,' +
+              '12=200'
             ExtendedColumns = <
+              item
+              end
+              item
+              end
+              item
+              end
               item
               end
               item
@@ -21627,7 +21712,7 @@ object MainForm: TMainForm
               item
               end>
           end
-          object edimitem: TJvComboEdit
+          object edimItem: TJvComboEdit
             Left = 96
             Top = 500
             Width = 80
@@ -21664,7 +21749,7 @@ object MainForm: TMainForm
             TabOrder = 1
             OnButtonClick = GetItem
           end
-          object edimentry: TLabeledEdit
+          object edimEntry: TLabeledEdit
             Left = 8
             Top = 500
             Width = 80
@@ -21674,38 +21759,38 @@ object MainForm: TMainForm
             EditLabel.Caption = 'entry'
             TabOrder = 2
           end
-          object edimChanceOrQuestChance: TLabeledEdit
-            Left = 8
-            Top = 548
-            Width = 125
+          object edimChance: TLabeledEdit
+            Left = 393
+            Top = 500
+            Width = 80
             Height = 21
-            EditLabel.Width = 113
+            EditLabel.Width = 37
             EditLabel.Height = 13
-            EditLabel.Caption = 'ChanceOrQuestChance'
+            EditLabel.Caption = 'Chance'
             TabOrder = 3
           end
-          object edimgroupid: TLabeledEdit
-            Left = 139
+          object edimGroupId: TLabeledEdit
+            Left = 96
             Top = 548
-            Width = 105
+            Width = 80
             Height = 21
             EditLabel.Width = 35
             EditLabel.Height = 13
             EditLabel.Caption = 'groupid'
             TabOrder = 4
           end
-          object edimmincountOrRef: TLabeledEdit
-            Left = 256
+          object edimMinCount: TLabeledEdit
+            Left = 192
             Top = 548
             Width = 80
             Height = 21
-            EditLabel.Width = 71
+            EditLabel.Width = 43
             EditLabel.Height = 13
-            EditLabel.Caption = 'mincountOrRef'
+            EditLabel.Caption = 'mincount'
             TabOrder = 5
           end
-          object edimmaxcount: TLabeledEdit
-            Left = 344
+          object edimMaxCount: TLabeledEdit
+            Left = 296
             Top = 548
             Width = 80
             Height = 21
@@ -21714,8 +21799,8 @@ object MainForm: TMainForm
             EditLabel.Caption = 'maxcount'
             TabOrder = 6
           end
-          object edimlootmode: TJvComboEdit
-            Left = 430
+          object edimLootMode: TJvComboEdit
+            Left = 8
             Top = 548
             Width = 80
             Height = 21
@@ -21768,6 +21853,36 @@ object MainForm: TMainForm
             Caption = 'Show Milling Loot Script'
             TabOrder = 9
             OnClick = btScriptItemLootClick
+          end
+          object edimReference: TLabeledEdit
+            Left = 296
+            Top = 500
+            Width = 80
+            Height = 21
+            EditLabel.Width = 72
+            EditLabel.Height = 13
+            EditLabel.Caption = 'edimReference'
+            TabOrder = 10
+          end
+          object edimComment: TLabeledEdit
+            Left = 393
+            Top = 548
+            Width = 183
+            Height = 21
+            EditLabel.Width = 66
+            EditLabel.Height = 13
+            EditLabel.Caption = 'edimComment'
+            TabOrder = 11
+          end
+          object edimQuestRequired: TLabeledEdit
+            Left = 496
+            Top = 500
+            Width = 80
+            Height = 21
+            EditLabel.Width = 93
+            EditLabel.Height = 13
+            EditLabel.Caption = 'edimQuestRequired'
+            TabOrder = 12
           end
         end
         object tsReferenceLoot: TTabSheet
@@ -21963,8 +22078,8 @@ object MainForm: TMainForm
             OnClick = btReferenceLootDelClick
           end
           object Label4: TLabel
-            Left = 430
-            Top = 532
+            Left = 8
+            Top = 529
             Width = 43
             Height = 13
             Caption = 'lootmode'
@@ -22011,18 +22126,34 @@ object MainForm: TMainForm
                 Width = 60
               end
               item
+                Width = 60
+              end
+              item
+                Width = 60
+              end
+              item
+                Width = 200
+              end
+              item
                 Width = 200
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
             ViewStyle = vsReport
             OnChange = lvitReferenceLootChange
             OnSelectItem = lvitReferenceLootSelectItem
-            ColumnsOrder = '0=60,1=60,2=120,3=60,4=60,5=60,6=60,7=60,8=60,9=200'
+            ColumnsOrder = 
+              '0=60,1=60,2=120,3=60,4=60,5=60,6=60,7=60,8=60,9=60,10=60,11=200,' +
+              '12=200'
             ExtendedColumns = <
+              item
+              end
+              item
+              end
+              item
+              end
               item
               end
               item
@@ -22044,7 +22175,7 @@ object MainForm: TMainForm
               item
               end>
           end
-          object ediritem: TJvComboEdit
+          object edirItem: TJvComboEdit
             Left = 96
             Top = 500
             Width = 80
@@ -22081,38 +22212,38 @@ object MainForm: TMainForm
             TabOrder = 1
             OnButtonClick = GetItem
           end
-          object edirChanceOrQuestChance: TLabeledEdit
-            Left = 8
-            Top = 548
-            Width = 125
+          object edirChance: TLabeledEdit
+            Left = 393
+            Top = 500
+            Width = 80
             Height = 21
-            EditLabel.Width = 113
+            EditLabel.Width = 37
             EditLabel.Height = 13
-            EditLabel.Caption = 'ChanceOrQuestChance'
+            EditLabel.Caption = 'Chance'
             TabOrder = 2
           end
-          object edirgroupid: TLabeledEdit
-            Left = 139
+          object edirGroupId: TLabeledEdit
+            Left = 96
             Top = 548
-            Width = 105
+            Width = 80
             Height = 21
             EditLabel.Width = 35
             EditLabel.Height = 13
             EditLabel.Caption = 'groupid'
             TabOrder = 3
           end
-          object edirmincountOrRef: TLabeledEdit
-            Left = 256
+          object edirMinCount: TLabeledEdit
+            Left = 192
             Top = 548
             Width = 80
             Height = 21
-            EditLabel.Width = 71
+            EditLabel.Width = 43
             EditLabel.Height = 13
-            EditLabel.Caption = 'mincountOrRef'
+            EditLabel.Caption = 'mincount'
             TabOrder = 4
           end
           object edirmaxcount: TLabeledEdit
-            Left = 344
+            Left = 296
             Top = 548
             Width = 80
             Height = 21
@@ -22121,8 +22252,8 @@ object MainForm: TMainForm
             EditLabel.Caption = 'maxcount'
             TabOrder = 5
           end
-          object edirlootmode: TJvComboEdit
-            Left = 430
+          object edirLootMode: TJvComboEdit
+            Left = 8
             Top = 548
             Width = 80
             Height = 21
@@ -22176,7 +22307,7 @@ object MainForm: TMainForm
             TabOrder = 8
             OnClick = btFullScriptReferenceLootClick
           end
-          object edirentry: TJvComboEdit
+          object edirEntry: TJvComboEdit
             Left = 8
             Top = 500
             Width = 80
@@ -22227,7 +22358,37 @@ object MainForm: TMainForm
               1C26174A4A4A4A4A4A4A4A4A4A4A2E082F2C4A4A4A4A4A4A4A4A4A4A4A4A4A10
               0E4A4A4A4A4A4A4A4A4A4A4A4A4A4A4A4A4A4A4A4A4A4A4A4A4A}
             TabOrder = 9
-            OnButtonClick = edirentryButtonClick
+            OnButtonClick = edirEntryButtonClick
+          end
+          object edirReference: TLabeledEdit
+            Left = 296
+            Top = 500
+            Width = 80
+            Height = 21
+            EditLabel.Width = 67
+            EditLabel.Height = 13
+            EditLabel.Caption = 'edirReference'
+            TabOrder = 10
+          end
+          object edirQuestRequired: TLabeledEdit
+            Left = 489
+            Top = 500
+            Width = 80
+            Height = 21
+            EditLabel.Width = 88
+            EditLabel.Height = 13
+            EditLabel.Caption = 'edirQuestRequired'
+            TabOrder = 11
+          end
+          object edirComment: TLabeledEdit
+            Left = 393
+            Top = 548
+            Width = 176
+            Height = 21
+            EditLabel.Width = 61
+            EditLabel.Height = 13
+            EditLabel.Caption = 'edirComment'
+            TabOrder = 12
           end
         end
         object tsEnchantment: TTabSheet
@@ -22444,7 +22605,6 @@ object MainForm: TMainForm
                 Width = 90
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -22545,7 +22705,6 @@ object MainForm: TMainForm
               item
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -22577,10 +22736,6 @@ object MainForm: TMainForm
           Caption = 'Involved in'
           ImageIndex = 8
           OnShow = tsItemInvolvedInShow
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           object Panel22: TPanel
             Left = 0
             Top = 0
@@ -22632,7 +22787,6 @@ object MainForm: TMainForm
                     Width = 80
                   end>
                 HideSelection = False
-                Items.ItemData = {}
                 ReadOnly = True
                 RowSelect = True
                 TabOrder = 0
@@ -22688,7 +22842,6 @@ object MainForm: TMainForm
                     Width = 80
                   end>
                 HideSelection = False
-                Items.ItemData = {}
                 ReadOnly = True
                 RowSelect = True
                 TabOrder = 0
@@ -22744,7 +22897,6 @@ object MainForm: TMainForm
                     Width = 80
                   end>
                 HideSelection = False
-                Items.ItemData = {}
                 ReadOnly = True
                 RowSelect = True
                 TabOrder = 0
@@ -22800,7 +22952,6 @@ object MainForm: TMainForm
                     Width = 80
                   end>
                 HideSelection = False
-                Items.ItemData = {}
                 ReadOnly = True
                 RowSelect = True
                 TabOrder = 0
@@ -22856,7 +23007,6 @@ object MainForm: TMainForm
                     Width = 80
                   end>
                 HideSelection = False
-                Items.ItemData = {}
                 ReadOnly = True
                 RowSelect = True
                 TabOrder = 0
@@ -22883,10 +23033,6 @@ object MainForm: TMainForm
           Caption = 'Script'
           ImageIndex = 3
           OnShow = tsItemScriptShow
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             901
             627)
@@ -22940,10 +23086,6 @@ object MainForm: TMainForm
     object SmartAI: TTabSheet
       Caption = 'SmartAI'
       ImageIndex = 5
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object PageControl9: TPageControl
         Left = 0
         Top = 25
@@ -23440,7 +23582,6 @@ object MainForm: TMainForm
               item
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -23935,10 +24076,6 @@ object MainForm: TMainForm
           Caption = 'Script'
           ImageIndex = 1
           OnShow = tsSmartAIScriptShow
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             873
             620)
@@ -24001,10 +24138,6 @@ object MainForm: TMainForm
     object Conditions: TTabSheet
       Caption = 'Conditions'
       ImageIndex = 5
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object PageControl10: TPageControl
         Left = 0
         Top = 25
@@ -24358,7 +24491,6 @@ object MainForm: TMainForm
                 Width = 135
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -24623,10 +24755,6 @@ object MainForm: TMainForm
           Caption = 'Script'
           ImageIndex = 1
           OnShow = tsConditionsScriptShow
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             873
             620)
@@ -24689,10 +24817,6 @@ object MainForm: TMainForm
     object tsOther: TTabSheet
       Caption = 'Other'
       ImageIndex = 4
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Panel12: TPanel
         Left = 0
         Top = 0
@@ -24961,7 +25085,6 @@ object MainForm: TMainForm
                 Width = 200
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 2
@@ -25234,7 +25357,6 @@ object MainForm: TMainForm
                 Caption = 'VerifiedBuild'
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 0
@@ -26041,7 +26163,6 @@ object MainForm: TMainForm
                 end>
               Enabled = False
               HideSelection = False
-              Items.ItemData = {}
               ReadOnly = True
               RowSelect = True
               TabOrder = 0
@@ -26085,7 +26206,6 @@ object MainForm: TMainForm
                 end>
               Enabled = False
               HideSelection = False
-              Items.ItemData = {}
               ReadOnly = True
               RowSelect = True
               TabOrder = 2
@@ -26242,7 +26362,6 @@ object MainForm: TMainForm
                   Caption = 'announce'
                 end>
               HideSelection = False
-              Items.ItemData = {}
               ReadOnly = True
               RowSelect = True
               TabOrder = 0
@@ -26564,10 +26683,6 @@ object MainForm: TMainForm
           Caption = 'Script'
           ImageIndex = 3
           OnShow = tsOtherScriptShow
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             901
             627)
@@ -26621,10 +26736,6 @@ object MainForm: TMainForm
     object tsChars: TTabSheet
       Caption = 'Character'
       ImageIndex = 6
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Panel1: TPanel
         Left = 0
         Top = 0
@@ -26791,7 +26902,6 @@ object MainForm: TMainForm
                 Width = 60
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 1
@@ -27953,7 +28063,6 @@ object MainForm: TMainForm
                 Width = 250
               end>
             HideSelection = False
-            Items.ItemData = {}
             ReadOnly = True
             RowSelect = True
             TabOrder = 2
@@ -28018,10 +28127,6 @@ object MainForm: TMainForm
           Caption = 'Script'
           ImageIndex = 2
           OnShow = tsCharacterScriptShow
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           DesignSize = (
             901
             627)
@@ -28075,10 +28180,6 @@ object MainForm: TMainForm
     object tsSQL: TTabSheet
       Caption = 'SQL'
       ImageIndex = 5
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Panel14: TPanel
         Left = 0
         Top = 0
@@ -28098,10 +28199,6 @@ object MainForm: TMainForm
         TabOrder = 1
         object tsSQL1: TTabSheet
           Caption = 'Recordset1'
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           object Panel15: TPanel
             Left = 0
             Top = 0
