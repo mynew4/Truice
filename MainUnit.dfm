@@ -26,7 +26,7 @@ object MainForm: TMainForm
     Top = 0
     Width = 917
     Height = 708
-    ActivePage = tsOther
+    ActivePage = tsItem
     Align = alClient
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -16094,7 +16094,7 @@ object MainForm: TMainForm
         Top = 25
         Width = 909
         Height = 655
-        ActivePage = tsReferenceLoot
+        ActivePage = tsItemLootedFrom
         Align = alClient
         TabOrder = 1
         object tsSearchItem: TTabSheet
@@ -22703,6 +22703,12 @@ object MainForm: TMainForm
               item
               end
               item
+              end
+              item
+                Width = 60
+              end
+              item
+                Width = 150
               end>
             HideSelection = False
             ReadOnly = True
@@ -22710,8 +22716,12 @@ object MainForm: TMainForm
             TabOrder = 0
             ViewStyle = vsReport
             OnDblClick = lvitItemLootedFromDblClick
-            ColumnsOrder = '0=50,1=50,2=60,3=60,4=60,5=60,6=60,7=50,8=50'
+            ColumnsOrder = '0=50,1=50,2=60,3=60,4=60,5=60,6=60,7=50,8=50,9=60,10=150'
             ExtendedColumns = <
+              item
+              end
+              item
+              end
               item
               end
               item
