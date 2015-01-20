@@ -5,8 +5,7 @@ It is a fork of Quice, which was made for MaNGoS.
 
 You can edit Quests, Creatures, GameObjects, Items, Loot, Events, EventAI, SmartAI, Conditions and some minor things.
 
-It is written in Delphi using Embarcadero Delphi XE and the source is available under http://github.com/Faq/Truice
-and precompiled binarys under http://github.com/Faq/Truice/downloads
+It is written in Delphi using Embarcadero Delphi XE and the source is available under http://github.com/chaosua/Truice
 
 To compile use Delphi XE2 and next additional components:
 
@@ -28,10 +27,5 @@ AlphaControls 2010 7.69
 http://www.alphaskins.com/
 
 Original topic on TC forum:
-http://www.trinitycore.org/f/topic/180-bin-truice-win32/
-http://www.trinitycore.org/f/topic/7639-bin-truice-win32/
-
-Truice Downlod:
-http://www.trinitycore.org/f/files/category/2-tools/
-
-Author: Faq
+EN: http://www.trinitycore.org/f/topic/7639-bin-truice-win32/
+RU: http://trinity-core.ru/threads/truice.7924/
